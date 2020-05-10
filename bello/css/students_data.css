@@ -1,0 +1,55 @@
+.students_area {
+	background: url(../images/blog_1.jpg) no-repeat;
+	background-position: center;
+	background-attachment: all;
+	background-size: 100% 100%;
+	display: flex;
+	width: 80%;
+	margin: auto;
+	height: 100%;
+	background-color: red;
+}
+
+.students_area_first, .students_area_second {
+	width: 40%;
+	margin-left: 40%;
+}
+
+.students_area_first {
+	background-color: green;
+}
+
+.students_area_second {
+	float: left;
+}
+
+.label1 {
+	font-family: inherit;
+	color: blue;
+	padding: auto;
+}
+
+.label1_input {
+	width: 200px;
+	line-height: 30px;
+	border-top: none;
+	border-right: none;
+	border-left: none;
+	border-bottom: 3px solid #42b9d8;
+}
+
+.sname_div, .oname_div, .class_div,  .phone_div, .p_phone_div, .email_div, .address_div {
+	
+	padding-bottom: 70px;
+	padding-left: 70px;
+}
+
+.dob_div, .age_div, .category_div,.sex_div, .f_sch_div, .yr_adm_div {
+	padding-bottom: 70px;
+	margin-left: -100px;
+}
+
+span {
+	color: red;
+}
+

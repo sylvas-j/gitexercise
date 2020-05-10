@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pilot school</title>
+
+
+<link href="css/dashstyle.css" type="text/css" rel="stylesheet" media="all">
+
+
+<!-- load JS files -->
+    <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>             <!-- jQuery (https://jquery.com/download/) -->
+<script type="text/javascript">
+	
+$(request);
+function request(){
+		var id = 1;
+		if(id != ''){
+			$.ajax({
+				url:"php/page.php",
+				method:"POST",
+				data:(id:id),
+				dataType:"JSON",
+				success:function(data){
+					//$('#di').css("display","block");
+					$('#students_id').text(data.students_id);
+					$('#sname').text(data.sname);
+					
+					$('#class').text(data.class);
+				}//end success function
+
+			})
+		}else{
+			alert('any thing here');
+	};//end if
+};//end function
+
+
+</script>
+
+
+</head>
+
+<body>
+
+<h3>PILOT FISBELL FINANCE DATABASE</h3>
+
+
+<div class="sidebar">
+	<div class="dash-content">
+		<a href="#" class="dash">DASHBOARD</a>
+		<p></p>
+		<a href="#" class="dash">CLASS INFO</a>
+		<p></p>
+		<a href="#" class="dash">PAYMENTS</a>
+		<p></p>
+		<a href="#" class="dash">BIO DATA</a>
+		<p></p>
+		<a href="#" class="dash">RESULT</a>
+		
+	</div>
+	
+</div>
+
+
+
+<div class="basicInfo">
+
+	<span class="info" id="sname"></span>
+	<span class="info" id="class"></span>
+	<span class="info" id="category">Category</span>
+	<span class="info" id="students_id"></span>
+
+
+</div>
+
+
+
+
+
+
+<div class="form_space">
+	<form action="" method="post">
+
+		<div class="col1">
+			<br>
+			<br>
+			<br>
+			<p class="pttype">School Fees</p>
+			<p class="pttype">Uniform Fees</p>
+			<p class="pttype">Text Books Fees</p>
+			<p class="pttype">Lesson Fees</p>
+			<p class="pttypelast">Total</p>
+			<button type="button" class="button" onclick="init()" >javascript</button>
+			<input type="submit" onchange="sendMail()" name="">
+
+		</div>
+
+		<div class="col2">
+
+			<div class="payment">
+				<p>Fees</p>
+				
+			</div>
+			<br>	
+			<div class="schfees">
+				<input type="text" class="schinput" id="schfeesid">
+			</div>
+
+			<div class="unifees">	
+				<input type="text" class="schinput" id="unifeesid">
+			</div>
+
+			<div class="textfees">			
+				<input type="text" class="schinput" id="textfeesid">
+			</div>
+
+			<div class="lesfees">			
+				<input type="text" class="schinput" id="lesfeesid">
+			</div>
+
+			<div class="total" id="totalid">Q</div>
+
+		</div>
+
+		<div class="col3">
+			<div class="payment">
+				<p >Amount_Paid</p>
+			</div>
+			<br>		
+			<div class="schfees">
+				<input type="text" class="amtinput" id="schfeesamt">
+			</div>
+
+			<div class="unifees">				
+				<input type="text" class="amtinput" id="unifeesamt">
+			</div>
+
+			<div class="textfees">				
+				<input type="text" class="amtinput" id="textfeesamt">
+			</div>
+
+			<div class="lesfees">			
+				<input type="text" class="amtinput" id="lesfeesamt">
+			</div>
+
+			<div class="total" id="totalamt">Q</div>
+		</div>
+
+		<div class="col4">
+			<div class="payment">
+				<p >Balance</p>				
+			</div>
+			<br>	
+			<div class="schfees balinput" id="schfeesbal"></div>
+			<!--<div id="sch" style="background-color: yellow;"></div> -->
+
+			<div class="unifees balinput" id="unifeesbal"></div>
+
+			<div class="textfees balinput" id="textfeesbal"></div>
+
+			<div class="lesfees balinput" id="lesfeesbal" ></div>
+
+			<div class="total" id="totalbal"></div>
+
+		</div>
+		<p></p>
+
+<!--		<input type="submit" name=""> -->
+		
+		
+
+	</form>
+</div>
+
+
+
+<div id="schfee"></div>
+<div id="ajaxform"></div>
+
+
+</body>
+</html>
+
+
+
+    <script type="text/javascript">     
+ /*  		$(init);
+        function init(){          
+        $("#layoutput1") .load("layout1.html");
+        $("#layoutput2") .load("layout2.html");
+                        };
+*/
+    </script>
+
+
+<script type="text/javascript">
+
+var	schfeesid = document.getElementById("schfeesid").value;
+	var	schfeesamt = document.getElementById("schfeesamt").value;
+	var	schfeesb = document.getElementById("schfeesbal");
+
+		schfeesb = schfeesid - schfeesamt;
+	alert(schfeesb);
+	
+
+//uniform fees calculations
+	var	unifeesid = document.getElementById("unifeesid").value;
+	var	unifeesamt = document.getElementById("unifeesamt").value;
+	var	unifeesb = document.getElementById("unifeesbal");
+
+	unifeesb = unifeesid - unifeesamt;
+	
+
+//text books calculations
+	var	textfeesid = document.getElementById("textfeesid").value;
+	var	textfeesamt = document.getElementById("textfeesamt").value;
+	var	textfeesb = document.getElementById("textfeesbal");
+
+	textfeesb = textfeesid - textfeesamt;
+	
+
+//lesson fess calculations
+	var	lesfeesid = document.getElementById("lesfeesid").value;
+	var	lesfeesamt = document.getElementById("lesfeesamt").value;
+	var	lesfeesb = document.getElementById("lesfeesbal");
+
+	lesfeesb = lesfeesid - lesfeesamt;
+	
+
+
+//total fees calculations
+	var	totalid = document.getElementById("totalid").value;
+	var	totalamt = document.getElementById("totalamt").value;
+	var	totalb = document.getElementById("totalbal");
+
+	totalb = totalid - totalamt;
+	
+	
+function accountbal(){
+
+		alert("This is sign of progress");
+
+};// end accountbal function
+
+
+/*
+//var obj = { "schfees":schfeesid,"schfeesp":schfeespaid};
+
+function init(){
+
+
+var tests = JSON.stringify(obj);
+var xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function() {
+  if (this.readyState == 4 && this.status == 200) {
+    var myObj = JSON.parse(this.responseText);
+    
+    document.getElementById("schfee").innerHTML = myObj;
+  }; //end if
+}; //end onreadystate
+
+xmlhttp.open("POST","test.php", true);
+xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+//xmlhttp.open("GET", "simpleGreet.php?x=" + obj.table, true);
+xmlhttp.send("x=" + tests);
+
+
+};
+*/
+
+
+function init(){
+$.post("test.php",{ "schfees": schfeesid, "schfeesp": schfeesamt}, processResult);
+};
+
+function processResult(data, textStatus){
+$("#schfee").html(data);
+};
+
+
+
+/*
+	var result="";
+			result+="<table>";
+			result+="<tr><th>First Name</th> <th>Last Name</th> <th>Message</th> <th>Email</th></tr>";
+			
+			result+="";
+			result+="<tr><td>" + fname +"</td> <td>"+ lname +"</td>  <td>"+ message +"</td> <td>"+ emailtest +"</td> </tr>";
+			
+*/
+
+
+</script>
+

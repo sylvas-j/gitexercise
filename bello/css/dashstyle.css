@@ -1,0 +1,106 @@
+.sidebar {
+	background-color: grey;
+	width: 20%;
+	height: 1000px;
+	float: left;
+}
+
+.dash-content{
+	margin-left: 5px;
+	margin-top: 10px;
+}
+
+.dash-content > a {
+	text-decoration: underline;
+	color: black;
+}
+
+.basicInfo {
+	float: left;
+	background-color: #e3e3e3;
+	width: 74%;
+	height: 130px;
+	box-shadow: 5px 5px 10px 10px;
+	border-radius: 5px;
+	
+	position: relative;
+	left: 30px;
+}
+
+.info {
+	display: inline;
+	background-color: blue;
+	margin: 80px;
+	padding: 10px;
+	width: 50px;
+	position: relative;
+	top: 80px;
+}
+
+.form_space {
+	float: left;
+	display: flex;
+	gbackground-color: red;
+	width: 80%;
+	overflow: hidden;
+}
+
+.col2, .col3, .col4 {
+	
+	float: left;
+	margin:auto;
+	padding-left: 90px;
+	gbackground-color: yellow; ;
+}
+
+.col1 {
+	
+	float: left;
+	margin:auto;
+	padding-left: 20px;
+	gbackground-color: yellow;
+}
+
+.col4 {
+	width: 110px;
+}
+
+.pttype {
+	padding-bottom: 70%;
+	gbackground-color: grey;
+}
+
+.pttypelast {
+	margin-bottom: 0%;
+}
+
+.schfees, .unifees, .textfees, .lesfees {
+	padding-bottom: 60%;
+	gbackground-color: grey;
+}
+
+
+.schinput, .amtinput {
+	border-top: none;
+}
+
+.balinput {
+	padding-bottom: 83%;
+	gbackground-color: yellow;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

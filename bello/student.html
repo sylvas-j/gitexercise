@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pilot school</title>
+
+
+<link href="css/students_data.css" type="text/css" rel="stylesheet" media="all">
+
+
+<!-- load JS files -->
+    <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script> 
+              <!-- jQuery (https://jquery.com/download/) -->
+ 
+
+</head>
+
+<body>
+
+<h3  style="text-align: center;">PILOT FISBELL STUDENTS REGISTRATION FORM</h3>
+
+<span>
+	<p style="text-align: center;" id="data"></p>
+</span>
+
+
+<form class="students_form" id="students_form">
+	
+
+<div class="students_area">
+	<div class="student_area_first">
+
+		<div class="sname_div">
+		<label class="label1">Surname<span>*</span></label>
+		<br>
+		<input class="sname label1_input" id="sname" data-error="put put"></input>
+		<span class="sname_s" id="sname_s"></span>
+		</div>
+		<br />
+
+		<div class="oname_div">
+		<label class="label1">Other Name<span>*</span></label>
+		<br />
+		<input class="oname label1_input" id="oname"></input>
+		<span id="oname_s"></span>
+		</div>
+		<br />
+
+		<div class="class_div">
+		<label class="label1">Class<span>*</span></label>
+		<br />
+		<select class="class label1_input" id="class">
+			<option style="color: grey;">Choose class</option>
+			<option value="JS1">JS1</option>
+			<option value="JS2">JS2</option>
+			<option value="JS3">JS3</option>
+			<option value="SS1">SS1</option>
+			<option value="SS2">SS2</option>
+			<option value="SS3">SS3</option>
+		</select>
+		<span id="class_s"></span>
+		</div>
+		<br />
+
+
+
+		<div class="phone_div">
+		<label class="label1">Phone</label>
+		<br />
+		<input class="phone label1_input" id="phone"></input>
+		<span id="phone_s"></span>
+		</div>
+		<br />
+
+		<div class="p_phone_div">
+		<label class="label1">Parent's Phone<span>*</span></label>
+		<br />
+		<input class="p_phone label1_input" id="p_phone"></input>
+		<span id="p_phone_s"></span>
+		</div>
+		<br />
+
+		<div class="email_div">
+		<label class="label1">Email</label>
+		<br />
+		<input class="email label1_input" id="email" placeholder="e.g user@domain.com"></input>
+		<span id="email_s"></span>
+		</div>
+		<br />
+
+		<div class="address_div">
+		<label class="label1">Address<span>*</span></label>
+		<br />
+		<textarea class="address label1_input" id="address"></textarea>
+		<span id="address_s"></span>
+		</div>
+		<br>
+
+	</div><!--end student area first-->
+
+	<div class="students_area_second">
+
+		<div class="dob_div">
+		<label class="label1">Date Of Birth<span>*</span></label>
+		<br />
+		<input class="dob label1_input" id="dob" placeholder="2020-12-31"></input><br>
+		<span id="dob_s"></span>
+		</div>
+		
+		<br />
+
+		<div class="age_div">
+		<label class="label1">Age<span>*</span></label>
+		<br />
+		<input class="age label1_input" id="age" placeholder="00"></input><br>
+		<span id="age_s"></span>
+		</div>
+		<br />
+
+		<div class="sex_div">
+		<label class="label1">Sex<span>*</span></label>
+		<br />
+		<select class="sex label1_input" id="sex">
+			<option value="Male">Male</option>
+			<option value="Female">Female</option>
+		</select>
+		</div>
+		<br />
+
+		<div class="category_div">
+		<label class="label1">Category<span>*</span></label>
+		<br />
+		<select class="category label1_input" id="category">
+			<option style="color: grey;">Chose department</option>
+			<option value="Sciences">General</option>
+			<option value="Sciences">Sciences</option>
+			<option value="Arts">Arts</option>
+			<option value="Commercial">Commercial</option>
+		</select>
+		</div>
+		<span id="category_s"></span>
+		<br />
+
+		<div class="f_sch_div">
+		<label class="label1">Former School</label>
+		<br />
+		<input class="f_sch label1_input" id="f_sch"></input>
+		</div>
+		<br />
+
+		<div class="yr_adm_div">
+		<label class="label1">Year Admitted<span>*</span></label>
+		<br />
+		<input class="yr_adm label1_input" id="yr_adm"></input><br>
+		<span id="yr_adm_s"></span>
+		<br />
+
+		<button type="button" onclick="students()">Submit</button>
+
+	</div> <!--end student area second-->
+</div><!--end student area-->
+
+
+</form> <!--end student form-->
+
+<div class="schfee"></div>
+
+</body>
+</html>
+
+
+
+<script type="text/javascript">     
+ /*  		$(init);
+        function init(){          
+        $("#layoutput1") .load("layout1.html");
+        $("#layoutput2") .load("layout2.html");
+                        };
+*/
+$("#sname_s").hide();
+$("#oname_s").hide();
+$("#phone_s").hide();
+$("#p_phone_s").hide();
+$("#email_s").hide();
+$("#address_s").hide();
+$("#dob_s").hide();
+$("#age_s").hide();
+$("#yr_adm_s").hide();
+
+
+$("#sname").focusout(function(){
+	check_sname();
+
+});
+$("#oname").focusout(function(){
+	check_oname();
+});
+$("#phone").focusout(function(){
+	check_phone();
+});
+$("#p_phone").focusout(function(){
+	check_p_phone();
+});
+$("#email").focusout(function(){
+	check_email();
+});
+$("#address").focusout(function(){
+	check_address();
+});
+$("#dob").focusout(function(){
+	check_dob();
+});
+$("#age").focusout(function(){
+	check_age();
+});
+$("#yr_adm").focusout(function(){
+	check_yr_adm();
+});
+
+
+
+
+
+var error_sname = false;
+var error_oname = false;
+var error_phone = false;
+var error_p_phone = false;
+var error_email = false;
+var error_address = false;
+var error_dob = false;
+var error_age = false;
+var error_yr_adm = false;
+
+
+
+
+	
+
+
+function check_sname(){
+	var nameRE = /^[a-zA-Z]*$/;
+	var sname_v = $("#sname").val();
+	if(nameRE.test(sname_v) && sname_v != ''){
+		$("#sname_s").hide();
+		$("#sname").css("border-bottom","3px solid #358f43");
+		error_sname = false;
+	}else{
+		$("#sname_s").html("Surname Missing");
+		$("#sname_s").show();
+		$("#sname").css("border-bottom","3px solid #893124");
+		error_sname = true;
+	};
+};
+
+function check_oname(){
+	var nameRE = /^[a-zA-Z]* *[a-zA-Z]* *[a-zA-Z]*$/;
+	var oname_v = $("#oname").val();
+	if(nameRE.test(oname_v) && oname_v != ''){
+		$("#oname_s").hide();
+		$("#oname").css("border-bottom","3px solid #358f43");
+		error_oname = false;
+	}else{
+		$("#oname_s").html("Othername Missing");
+		$("#oname_s").show();
+		$("#oname").css("border-bottom","3px solid #893124");
+		error_oname = true;
+	};
+};
+function check_phone(){
+	var phoneRE = /^.{11}$/;
+	var phone_v = $("#phone").val();
+	if(phoneRE.test(phone_v)){
+		$("#phone_s").hide();
+		$("#phone").css("border-bottom","3px solid #358f43");
+		error_phone = false;
+	}else{
+		//$("#phone_s").html("Name Missing");
+		$("#phone_s").show();
+		$("#phone").css("border-bottom","3px solid #893124");
+		error_phone = true;
+	};
+};
+
+
+function check_p_phone(){
+	var phoneRE = /^.{11}$/;
+	var p_phone_v = $("#p_phone").val();
+	if(phoneRE.test(p_phone_v) && p_phone_v != ''){
+		$("#p_phone_s").hide();
+		$("#p_phone").css("border-bottom","3px solid #358f43");
+		error_phone = false;
+	}else{
+		$("#p_phone_s").html("Parent's Contact Missing");
+		$("#p_phone_s").show();
+		$("#p_phone").css("border-bottom","3px solid #893124");
+		error_phone = true;
+	};
+};
+
+function check_email(){
+	var	emailRE = /^.+@.+\..{2,4}$/;
+	var email_v = $("#email").val();
+	if(emailRE.test(email_v) && email_v != ''){
+		$("#email_s").hide();
+		$("#email").css("border-bottom","3px solid #358f43");
+		error_email = false;
+	}else{
+		$("#email_s").html("Email Missing");
+		$("#email_s").show();
+		$("#email").css("border-bottom","3px solid #893124");
+		error_email = true;
+	};
+};
+
+function check_address(){
+
+	var address_v = $("#address").val();
+	if(address_v != ''){
+		$("#address_s").hide();
+		$("#address").css("border-bottom","3px solid #358f43");
+		error_address = false;
+	}else{
+		$("#address_s").html("Address Missing");
+		$("#address_s").show();
+		$("#address").css("border-bottom","3px solid #893124");
+		error_address = true;
+	};
+};
+
+function check_dob(){
+	var	dobRE = /^\d{4}-\d{2}-\d{2}$/;
+	var dob_v = $("#dob").val();
+	if(dobRE.test(dob_v) && dob_v != ''){
+		$("#dob_s").hide();
+		$("#dob").css("border-bottom","3px solid #358f43");
+		error_dob = false;
+	}else{
+		$("#dob_s").html("Date of Birth Missing");
+		$("#dob_s").show();
+		$("#dob").css("border-bottom","3px solid #893124");
+		error_dob = true;
+	};
+};
+function check_age(){
+	var	ageRE = /^\d{2}$/;
+	var age_v = $("#age").val();
+	if(ageRE.test(age_v) && age_v != ''){
+		$("#age_s").hide();
+		$("#age").css("border-bottom","3px solid #358f43");
+		error_age = false;
+	}else{
+		$("#age_s").html("Age Missing");
+		$("#age_s").show();
+		$("#age").css("border-bottom","3px solid #893124");
+		error_age = true;
+	};
+};
+function check_yr_adm(){
+	var	yr_admRE = /^\d{4}-\d{2}-\d{2}$/;
+	var yr_adm_v = $("#yr_adm").val();
+	if(yr_admRE.test(yr_adm_v) && yr_adm_v != ''){
+		$("#yr_adm_s").hide();
+		$("#yr_adm").css("border-bottom","3px solid #358f43");
+		error_yr_adm = false;
+	}else{
+		$("#yr_adm_s").html("Year Admitted Missing");
+		$("#yr_adm_s").show();
+		$("#yr_adm").css("border-bottom","3px solid #893124");
+		error_yr_adm = true;
+	};
+};
+
+
+
+</script>
+
+
+<script type="text/javascript">
+	
+
+//$(init);
+function students(){
+
+
+	check_sname();
+	check_oname();
+	//check_phone();
+	check_p_phone();
+	//check_email();
+	check_address();
+	check_dob();
+	check_age();
+	check_yr_adm();
+
+
+		
+
+if(error_sname === false && error_oname === false && error_p_phone === false && error_address === false && error_dob === false && error_age === false && error_yr_adm === false){
+
+	var class_v = $("#class").val();
+		var phone_v = $("#phone").val();
+		var category_v = $("#category").val();
+		var sex_v = $("#sex").val();
+		var f_sch_v = $("#f_sch").val();
+		var sname_v = $("#sname").val();
+		var oname_v = $("#oname").val();
+		var p_phone_v = $("#p_phone").val();
+		var email_v = $("#email").val();
+		var address_v = $("#address").val();
+		var dob_v = $("#dob").val();
+		var age_v = $("#age").val();
+		var yr_adm_v = $("#yr_adm").val();
+
+		var	students = {"sname":sname_v,
+		 				"oname":oname_v,
+		 				"class":class_v,
+		   				"phone":phone_v,
+		   				"p_phone":p_phone_v,
+		   				"email":email_v,
+		   				"address":address_v,
+		   				"dob":dob_v,
+		   				"age":age_v,
+		     			"sex":sex_v,
+		     			"category":category_v,
+		      			"f_sch":f_sch_v,
+		      			"yr_adm":yr_adm_v,};
+
+		var test = JSON.stringify(students);
+    	var xmlhttp = new XMLHttpRequest();
+		xmlhttp.onreadystatechange = function() {
+	  if (this.readyState == 4 && this.status == 200){
+	
+	    var datas = xmlhttp.responseText;
+	    $('#data').html(datas);
+
+	  }else{
+	  	//alert(Error-   + xmlhttp.status + ":"  + xmlhttp.statusText);
+	  		}; //end if
+	}; //end onreadystate
+
+	xmlhttp.open("POST", "php/students.php", true);
+	xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	
+	xmlhttp.send("y=" + test);
+
+
+
+
+}else{
+	alert("hmmmmm");
+}; // end error check if
+
+} // end init function
+</script>
+
+
+
+
+
+<script type="text/javascript">
+
+
+/*
+$(function(){
+
+/*	
+function students(){
+//pass a hero id, retrieve all data about that hero
+alert("hi   goooooooooooood");
+		
+/*
+//school fees calculations
+	var	sname_v = document.getElementById("sname").value;
+	var	oname_v = document.getElementById("oname").value;
+	var	class_v = document.getElementById("class").value;
+	//alert(schfeesb);
+	
+//uniform fees calculations
+	var	phone_v = document.getElementById("phone").value;
+	var	p_phone_v = document.getElementById("p_phone").value;
+	var	email_v = document.getElementById("email").value;
+	var	address_v = document.getElementById("address").value;	
+
+//text books calculations
+	var	dob_v = document.getElementById("dob").value;
+	var	age_v = document.getElementById("age").value;
+	var	category_v = document.getElementById("category").value;
+	
+
+//lesson fess calculations
+	var	sex_v = document.getElementById("sex").value;
+	var	f_sch_v = document.getElementById("f_school").value;
+	var	yr_adm_v = document.getElementById("yr_adm").value;
+	
+	alert("hi sylvass");
+	var	sname_s = document.getElementById("sname_s");
+	
+		//sname_s.innerHTML+="errors";
+
+	//create an empty error message
+	var	errors = "";
+	//check balances - They simply needs to exist
+		
+		if (sname_v == ""){
+		errors= "Surname Missing \n";
+		};
+
+
+		if (oname_v == ""){
+		errors= "Other Name Missing. \n";
+
+		}; // end Other name if
+
+		if (class_v == ""){
+		errors+= "Class Missing. \n";
+		
+		}; // end class_v if
+		//var phoneRE = /^.{11}$/;
+		if (phone_v == ""){
+		errors+= "Phone No. Missing. \n";
+		};  // end phone_v if
+		
+		if (p_phone_v == ""){
+		errors+="Phone No. Missing. \n";
+		}; // end phone_v if
+
+		//var	emailRE = /^.+@.+\..{2,4}$/;
+		if (email == ""){
+		//console.log("email match");
+		errors+= "Email Missing.";
+		}; // end email_v if
+
+		if (address_v == ""){
+		errors+= "Address Missing.\n";
+		
+		}; // end address_v if
+
+		if (dob_v == ""){
+		errors+= "Date of Birth Missing. \n";
+		}; // end phone_v if
+
+		if (category_v == ""){
+		errors+= "Category Missing. \n";
+		
+		}; // end phone_v if
+
+		if (yr_adm_v == ""){
+		errors+= "Year Admitted Missing. \n";
+		
+		}; // end phone_v if
+
+		if (phone_v == ""){
+		errors+= "Please supply Lesson Fee. \n";
+		
+		}; // end phone_v if
+
+
+
+		if (errors == ""){
+		//alert("This is sign of progress");
+
+var result="";
+			result+="<table>";
+			result+="<tr><th>First Name</th> <th>Last Name</th> <th>Message</th> <th>Email</th></tr>";
+			
+			result+="";
+			result+="<tr><td>" + sname_v +"</td> <td>"+ oname_v +"</td>  <td>"+ class_v +"</td> <td>"+ phone_v +"</td> </tr>";
+
+			var	schfee = document.getElementById("schfee");
+
+			schfee.innerHTML+=result;
+*/
+
+
+
+/*			
+			alert("this should also work");
+
+
+var	students = { "sname":sname_v, "oname":oname_v, "class":class_v, "phone":phone_v, "email":email_v, "address":address_v, "dob":dob_v, "age":age_v, "category":category_v, "sex":sex_v, "f_sch":f_sch_v, "yr_adm":yr_adm_v};
+
+	var text = JSON.stringify(students);
+	var xmlhttp = new XMLHttpRequest();
+	xmlhttp.onreadystatechange = function() {
+	  if (this.readyState == 4 && this.status == 200){
+	    //var myObj = JSON.parse(this.responseText);
+	    var data = this.responseText;
+
+
+	    //var data = xmlhttp.responseText;
+	    document.getElementById("ajaxform").innerHTML = data;
+
+	  }else{
+	  	//alert("new XMLHttpRequest not done!");
+	  	//alert(Error-   + xmlhttp.status + ":"  + xmlhttp.statusText);
+	  		}; //end if
+	//}; //end onreadystate
+
+	xmlhttp.open("POST", "php/students_data.php", true);
+	xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	//xmlhttp.open("GET", "simpleGreet.php?x=" + obj.table, true);
+	xmlhttp.send("x=" + text);
+
+	// OOORRRR THIS
+
+
+
+			}else{
+				alert(errors);
+
+			}; // end error if
+};
+// end students function
+
+*/
+
+		
+
+</script>
+
