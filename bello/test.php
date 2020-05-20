@@ -142,52 +142,6 @@ echo $class_vp;
 
 ?>
 
-<?php
-
-
-//$get = filter_input(INPUT_POST, "id");
-//$obj = json_decode($get, false);
-
-
-
-//if($class_vp == 'JS1' || $class_vp == 'JS2' || $class_vp == 'JS3' || $class_vp == 'SS1' || $class_vp == 'SS2' || $class_vp == 'SS3'){
-if($_POST["class_listphp"] == "JS1" || 
-	$_POST["class_listphp"] == "JS2" || 
-	$_POST["class_listphp"] == "JS3" || 
-	$_POST["class_listphp"] == "SS1" || 
-	$_POST["class_listphp"] == "SS2" || 
-	$_POST["class_listphp"] == "SS3")
-{
-
-	$class_vp = $_POST["class_listphp"];
-	//echo $class_vp;
-
-	$dsn1='localhost';
-	$user= 'root';
-	$password='?/iPTSJ\^@\$TYOEs\|';  
-	$dbname  = 'pilot';
-
-	$conn = new mysqli ($dsn1, $user, $password, $dbname);
-
-	if ($conn->connect_error){
-		die("Connection Failed: " . $conn->connect_error);
-	};
-
-	$sql = "SELECT students_id, other_name FROM students_data WHERE class = '$class_vp' ORDER BY other_name";
-	//$result = $conn->query('SELECT * FROM students_data');
-	$result = mysqli_query($conn, $sql);
-
-	$color1 = "lightblue";
-	$color2 = "teal";
-	$color = $color1;
-	//} else {
-	//	 echo  "A drop of comment will enhance our services to you!";
-	//};	
-};
-//this insert data in my stufent list select tag base
-
-
-?>
 
 
 
@@ -307,6 +261,56 @@ if($_POST["class_listphp"] == "JS1" ||
                 <select class="list students_list" id="students_list">
                 	<!---->
                   <option value="">ok</option>
+
+
+<?php
+
+
+//$get = filter_input(INPUT_POST, "id");
+//$obj = json_decode($get, false);
+
+
+
+//if($class_vp == 'JS1' || $class_vp == 'JS2' || $class_vp == 'JS3' || $class_vp == 'SS1' || $class_vp == 'SS2' || $class_vp == 'SS3'){
+if($_POST["class_listphp"] == "JS1" || 
+  $_POST["class_listphp"] == "JS2" || 
+  $_POST["class_listphp"] == "JS3" || 
+  $_POST["class_listphp"] == "SS1" || 
+  $_POST["class_listphp"] == "SS2" || 
+  $_POST["class_listphp"] == "SS3")
+{
+
+  $class_vp = $_POST["class_listphp"];
+  //echo $class_vp;
+
+  $dsn1='localhost';
+  $user= 'root';
+  $password='?/iPTSJ\^@\$TYOEs\|';  
+  $dbname  = 'pilot';
+
+  $conn = new mysqli ($dsn1, $user, $password, $dbname);
+
+  if ($conn->connect_error){
+    die("Connection Failed: " . $conn->connect_error);
+  };
+
+  $sql = "SELECT students_id, other_name FROM students_data WHERE class = '$class_vp' ORDER BY other_name";
+  //$result = $conn->query('SELECT * FROM students_data');
+  $result = mysqli_query($conn, $sql);
+
+  $color1 = "lightblue";
+  $color2 = "teal";
+  $color = $color1;
+  //} else {
+  //   echo  "A drop of comment will enhance our services to you!";
+  //};  
+};
+//this insert data in my stufent list select tag base
+
+
+?>
+
+                  
 <?php
 	//if($class_vp == 'JS1' || $class_vp == 'JS2' || $class_vp == 'JS3' || $class_vp == 'SS1' || $class_vp == 'SS2' || $class_vp == 'SS3'){
 if($_POST["class_listphp"] == "JS1" || 

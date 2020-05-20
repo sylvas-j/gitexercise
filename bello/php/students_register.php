@@ -30,21 +30,21 @@ if ($conn->connect_error){
 	die("Connection Failed: " . $conn->connect_error);
 };
 
-$sql_s1 = "SELECT students_id FROM students_data WHERE students_id = '$students->pageid'";
+$sql_s1 = "SELECT students_id, sname, other_name, dob FROM students_data WHERE dob = '$students->dob'";
 
 $res1 = $conn->query($sql_s1);
 $row1 = mysqli_fetch_array($res1);
 
 
-
+//echo $row1[1];
 
 
 if ($conn->query($sql_s1) == True){
 
 
-	if($row1 != ''){
+	if($row1[1] == $students->sname && $row1[2] == $students->oname && $row1[3] == $students->dob){
 
-		$sql1 = "UPDATE students_data SET sname = '$students->sname', other_name = '$students->oname', class = '$students->class', phone = '$students->phone', parents_no = '$students->p_phone', email = '$students->email', address = '$students->address', dob = '$students->dob', age = '$students->age', sex = '$students->sex', category = '$students->category', former_sch = '$students->f_sch',year_admin = '$students->yr_adm' WHERE students_id = '$obj->pageid'";
+		$sql1 = "UPDATE students_data SET sname = '$students->sname', other_name = '$students->oname', class = '$students->class', phone = '$students->phone', parents_no = '$students->p_phone', email = '$students->email', address = '$students->address', dob = '$students->dob', age = '$students->age', sex = '$students->sex', category = '$students->category', former_sch = '$students->f_sch',year_admin = '$students->yr_adm' WHERE students_id = '$row1[2]'";
 
 		$result = $conn->query($sql1);
 

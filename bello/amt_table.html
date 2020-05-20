@@ -1,0 +1,675 @@
+
+<link href="css/dashstyle.css" type="text/css" rel="stylesheet" media="all">
+
+
+<script src="js/jquery-3.3.1.min.js"></script>  
+
+
+
+
+
+
+<div class="loadin">
+
+
+<!--form div-->
+<div class="form_space"><!--this control the region of the form -->
+
+<form action="" method="POST" class="form_space1">
+ 
+<div class="fund_table_space"> <!--this control the region of the fund tables-->
+
+<div class="fund_table"><!--this control the set in the immediate above region of the fund tables-->
+
+<table class="amt_table input_table">
+  <div class="th_head_div">
+    <tr>
+      <th class="tb_head">TERM</th>
+      <th class="tb_head">AMOUNT DUE(#)</th>
+      <th class="tb_head">RATE</th>
+      <th class="tb_head">BALANCE C/D(#)</th>
+      <th class="tb_head">PAID(#)</th>
+      <th class="tb_head">COMMENT</th>
+    </tr>
+    </div>
+
+    <div class="tb_row">
+      <tr>
+        <td>
+          <select class="term" id="term">
+            <option>FIRST TERM</option>
+            <option>SECOND TERM</option>
+            <option>THIRD TERM</option>
+          </select>
+        </td>
+
+        <td>40000</td>
+
+        <td>
+          <select class="installment" id="installment">
+            <option>FIRST INSTALLMENT</option>
+            <option>SECOND INSTALLMEMT</option>
+            <option>THIRD INSTALLMENT</option>
+            <option>FOURTH INSTALLMENT</option>
+          </select>
+        </td>
+        </td>
+        <td><textarea class="amt" id="amt">0</textarea></td>
+        <td><textarea class="paid" id="paid">0</textarea></td>
+        <td><textarea class="com" id="com">ok</textarea></td>
+      </tr>      
+    </div>
+
+    <div class="cal">
+      <tr class="cal_tr">
+        <td colspan="6">
+          <div class="button_div" onclick="account()">CALCULATE</div>
+        </td>
+      </tr>
+    </div>
+
+</table>
+
+    
+
+
+
+<p></p>
+<p></p>
+<p></p>
+<!--FIRST TERM TABLE-->
+<table class="amt_table input_table">
+
+  <div class="th_head_div">
+    <tr>
+      <th class="head" colspan="6">FIRST TERM</th>
+    </tr>
+  </div>
+
+  <div class="th_head_div">
+    <tr>
+      <th class="tb_head">RATE</th>
+      <th class="tb_head">AMOUNT(#)</th>
+      <th class="tb_head">AMT PAID(#)</th>
+      <th class="tb_head">BALANCE(#)</th>
+      <th class="tb_head">DATE</th>
+      <th class="tb_head">COMMENT</th>
+    </tr>
+  </div>
+
+    <div class="tb_row">
+      <tr id="ff_tb_row">
+        <td id="ff_install_d">1st installment</td>
+        <td id="ff_amt_d">0</td>
+        <td id="ff_amt_paid_d">0</td>
+        <td id="ff_bal_d"></td>
+        <td id="ff_date_d"></td>
+        <td class="com" id="ff_com_d"></td>
+      </tr>      
+    </div>
+
+    <div class="tb_row">
+      <tr id="fs_tb_row">
+        <td id="fs_install_d">2nd installment</td>
+        <td id="fs_amt_d">0</td>
+        <td id="fs_amt_paid_d">0</td>
+        <td id="fs_bal_d">0</td>
+        <td id="fs_date_d"></td>
+        <td class="com" id="fs_com_d"></td>
+      </tr>      
+    </div>
+
+    <div class="tb_row">
+
+      <tr id="ft_tb_row">
+        <td id="ft_install_d">3nd installment</td>
+        <td id="ft_amt_d">0</td>
+        <td id="ft_amt_paid_d">0</td>
+        <td id="ft_bal_d">0</td>
+        <td id="ft_date_d"></td>
+        <td class="com" id="ft_com_d"></td>
+      </tr>      
+    </div>
+
+    <div class="tb_row">
+      <tr id="fft_tb_row">
+        <td id="fft_install_d">4nd installment</td>
+        <td id="fft_amt_d">0</td>
+        <td id="fft_amt_paid_d">0</td>
+        <td id="fft_bal_d">0</td>
+        <td id="fft_date_d"></td>
+        <td class="com" id="fft_com_d"></td>
+      </tr>       
+    </div>
+
+    <div class="tb_row">
+      <tr>
+        <td>TOTAL</td>
+        <td>0</td>
+        <td id="f_paid_total">0</td>
+        <td id="bal_total">0</td>
+        <td></td>
+        <td class="com"></td>
+      </tr>      
+    </div>
+ 
+</table>
+
+
+
+
+<p></p>
+<p></p>
+<p></p>
+<!--SECOND TERM TABLE-->
+<table class="amt_table">
+
+  <div class="th_head_div">
+    <tr>
+      <th class="head" colspan="6">SECOND TERM</th>
+    </tr>
+  </div>
+
+  <div class="th_head_div">
+    <tr>
+      <th class="tb_head">RATE</th>
+      <th class="tb_head">AMOUNT(#)</th>
+      <th class="tb_head">AMT PAID(#)</th>
+      <th class="tb_head">BALANCE(#)</th>
+      <th class="tb_head">DATE</th>
+      <th class="com" class="tb_head">COMMENT</th>
+    </tr>
+  </div>
+
+    <div class="tb_row">
+      <tr id="sf_tb_row">
+        <td id="sf_install_d">1st installment</td>
+        <td id="sf_amt_d">0</td>
+        <td id="sf_amt_paid_d">0</td>
+        <td id="sf_bal_d"></td>
+        <td id="sf_date_d"></td>
+        <td class="com" id="sf_com_d"></td>
+      </tr>      
+    </div>
+
+    <div class="tb_row">
+      <tr id="ss_tb_row">
+        <td id="ss_install_d">2nd installment</td>
+        <td id="ss_amt_d">0</td>
+        <td id="ss_amt_paid_d">0</td>
+        <td id="ss_bal_d">0</td>
+        <td id="ss_date_d"></td>
+        <td class="com" id="ss_com_d"></td>
+      </tr>      
+    </div>
+
+    <div class="tb_row">
+
+      <tr id="st_tb_row">
+        <td id="st_install_d">3nd installment</td>
+        <td id="st_amt_d">0</td>
+        <td id="st_amt_paid_d">0</td>
+        <td id="st_bal_d">0</td>
+        <td id="st_date_d"></td>
+        <td class="com" id="st_com_d"></td>
+      </tr>      
+    </div>
+
+    <div class="tb_row">
+      <tr id="sft_tb_row">
+        <td id="sft_install_d">4nd installment</td>
+        <td id="sft_amt_d">0</td>
+        <td id="sft_amt_paid_d">0</td>
+        <td id="sft_bal_d">0</td>
+        <td id="sft_date_d"></td>
+        <td class="com" id="sft_com_d"></td>
+      </tr>       
+    </div>
+
+    <div class="tb_row">
+      <tr>
+        <td>TOTAL</td>
+        <td>0</td>
+        <td id="s_paid_total">0</td>
+        <td>0</td>
+        <td></td>
+        <td class="com"></td>
+      </tr>      
+    </div>
+ 
+</table>
+
+
+
+<p></p>
+<p></p>
+<p></p>
+<!--THIRD TERM TABLE-->
+<table class="amt_table">
+
+  <div class="th_head_div">
+    <tr>
+      <th class="head" colspan="6">THIRD TERM</th>
+    </tr>
+  </div>
+
+  <div class="th_head_div">
+    <tr>
+      <th class="tb_head">RATE</th>
+      <th class="tb_head">AMOUNT(#)</th>
+      <th class="tb_head">AMT PAID(#)</th>
+      <th class="tb_head">BALANCE(#)</th>
+      <th class="tb_head">DATE</th>
+      <th class="com" class="tb_head">COMMENT</th>
+    </tr>
+  </div>
+
+    <div class="tb_row">
+      <tr id="tf_tb_row">
+        <td id="tf_install_d">1st installment</td>
+        <td id="tf_amt_d">0</td>
+        <td id="tf_amt_paid_d">0</td>
+        <td id="tf_bal_d"></td>
+        <td id="tf_date_d"></td>
+        <td class="com" id="tf_com_d"></td>
+      </tr>      
+    </div>
+
+    <div class="tb_row">
+      <tr id="ts_tb_row">
+        <td id="ts_install_d">2nd installment</td>
+        <td id="ts_amt_d">0</td>
+        <td id="ts_amt_paid_d">0</td>
+        <td id="ts_bal_d">0</td>
+        <td id="ts_date_d"></td>
+        <td class="com" id="ts_com_d"></td>
+      </tr>      
+    </div>
+
+    <div class="tb_row">
+
+      <tr id="tt_tb_row">
+        <td id="tt_install_d">3nd installment</td>
+        <td id="tt_amt_d">0</td>
+        <td id="tt_amt_paid_d">0</td>
+        <td id="tt_bal_d">0</td>
+        <td id="tt_date_d"></td>
+        <td class="com" id="tt_com_d"></td>
+      </tr>      
+    </div>
+
+    <div class="tb_row">
+      <tr id="tft_tb_row">
+        <td id="tft_install_d">4nd installment</td>
+        <td id="tft_amt_d">0</td>
+        <td id="tft_amt_paid_d">0</td>
+        <td id="tft_bal_d">0</td>
+        <td id="tft_date_d"></td>
+        <td class="com" id="tft_com_d"></td>
+      </tr>       
+    </div>
+
+    <div class="tb_row">
+      <tr>
+        <td>Total</td>
+        <td>0</td>
+        <td id="t_paid_total">0</td>
+        <td>0</td>
+        <td></td>
+        <td class="com"></td>
+      </tr>      
+    </div>
+ 
+</table>
+
+
+</div>
+
+
+</div>
+
+</form>
+	
+
+
+</div>
+</div>
+
+
+
+
+<script type="text/javascript">
+      //ajax page info load
+// another ajax reguest
+//
+
+$(init);
+
+
+
+var iddd = localStorage.getItem('id_passed');
+
+function init(){
+  //alert("alright");
+    //var iddd = localStorage.getItem('id_passed');
+    //var idd = 5;
+//alert(iddd);
+
+    var page = { "pageid": iddd};
+
+    var test = JSON.stringify(page);
+      var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200){
+      //var myObj = JSON.parse(this.responseText);
+
+      var data = JSON.parse(this.responseText);
+
+      alert(data);
+      //var data = xmlhttp.responseText;
+
+      var first = 'FIRST TERM';
+      var second = 'SECOND TERM';
+      var third = 'THIRD TERM';
+
+
+      var f_install = "FIRST INSTALLMENT";
+      var s_install = "SECOND INSTALLMEMT";
+      var t_install = "THIRD INSTALLMENT";
+      var ft_install = "FOURTH INSTALLMENT";
+
+//beginning first term valus display
+      if(data.ff_installment == f_install){
+        $("#ff_tb_row").show();
+        $('#ff_install_d').html(data.ff_installment);
+      $('#ff_amt_d').html(data.ff_amount);
+      $('#ff_amt_paid_d').html(data.ff_amt_paid);
+      $('#ff_bal_d').html(data.ff_balance);
+      $('#ff_date_d').html(data.ff_timedate);
+      $('#ff_com_d').html(data.ff_comments);
+
+      }else{
+        $("#ff_tb_row").hide();
+      };
+
+      if(data.fs_installment == s_install){
+        $("#fs_tb_row").show();
+        $('#fs_install_d').html(data.fs_installment);
+      $('#fs_amt_d').html(data.fs_amount);
+      $('#fs_amt_paid_d').html(data.fs_amt_paid);
+      $('#fs_bal_d').html(data.fs_balance);
+      $('#fs_date_d').html(data.fs_timedate);
+      $('#fs_com_d').html(data.fs_comments);
+
+      }else{
+        $("#fs_tb_row").hide();
+      };
+
+      if(data.ft_installment == t_install){
+        $("#ft_tb_row").show();
+        $('#ft_install_d').html(data.ft_installment);
+      $('#ft_amt_d').html(data.ft_amount);
+      $('#ft_amt_paid_d').html(data.ft_amt_paid);
+      $('#ft_bal_d').html(data.ft_balance);
+      $('#ft_date_d').html(data.ft_timedate);
+      $('#ft_com_d').html(data.ft_comments);
+
+      }else{
+        $("#ft_tb_row").hide();
+      };
+      
+      if(data.fft_installment == ft_install){
+        $("#fft_tb_row").show();
+        $('#fft_install_d').html(data.fft_installment);
+      $('#fft_amt_d').html(data.fft_amount);
+      $('#fft_amt_paid_d').html(data.fft_amt_paid);
+      $('#fft_bal_d').html(data.fft_balance);
+      $('#fft_date_d').html(data.fft_timedate);
+      $('#fft_com_d').html(data.fft_comments);
+
+      }else{
+        $("#fft_tb_row").hide();
+      };
+
+
+//alert(data.ft_amt_paid);
+//first term range of total.
+var f_amtp_total = parseFloat(data.ff_amt_paid) + 
+              parseFloat(data.fs_amt_paid) +
+              parseFloat(data.ft_amt_paid) + 
+              parseFloat(data.fft_amt_paid);
+$("#f_paid_total").html(f_amtp_total);
+
+//end of first term values display      
+
+
+
+//beginning second term valus display
+      if(data.sf_installment == f_install){
+        $("#sf_tb_row").show();
+        $('#sf_install_d').html(data.sf_installment);
+      $('#sf_amt_d').html(data.sf_amount);
+      $('#sf_amt_paid_d').html(data.sf_amt_paid);
+      $('#sf_bal_d').html(data.sf_balance);
+      $('#sf_date_d').html(data.sf_timedate);
+      $('#sf_com_d').html(data.sf_comments);
+
+      }else{
+        $("#sf_tb_row").hide();
+      };
+
+      if(data.ss_installment == s_install){
+        $("#ss_tb_row").show();
+        $('#ss_install_d').html(data.ss_installment);
+      $('#ss_amt_d').html(data.ss_amount);
+      $('#ss_amt_paid_d').html(data.ss_amt_paid);
+      $('#ss_bal_d').html(data.ss_balance);
+      $('#ss_date_d').html(data.ss_timedate);
+      $('#ss_com_d').html(data.ss_comments);
+
+      }else{
+        $("#ss_tb_row").hide();
+      };
+
+      if(data.st_installment == t_install){
+        $("#st_tb_row").show();
+        $('#st_install_d').html(data.st_installment);
+      $('#st_amt_d').html(data.st_amount);
+      $('#st_amt_paid_d').html(data.st_amt_paid);
+      $('#st_bal_d').html(data.st_balance);
+      $('#st_date_d').html(data.st_timedate);
+      $('#st_com_d').html(data.st_comments);
+
+      }else{
+        $("#st_tb_row").hide();
+      };
+      
+      if(data.sft_installment == ft_install){
+        $("#sft_tb_row").show();
+        $('#sft_install_d').html(data.sft_installment);
+      $('#sft_amt_d').html(data.sft_amount);
+      $('#sft_amt_paid_d').html(data.sft_amt_paid);
+      $('#sft_bal_d').html(data.sft_balance);
+      $('#sft_date_d').html(data.sft_timedate);
+      $('#sft_com_d').html(data.sft_comments);
+
+      }else{
+        $("#sft_tb_row").hide();
+      };
+
+
+//first term range of total.
+var s_amtp_total = parseFloat(data.sf_amt_paid) + 
+              parseFloat(data.ss_amt_paid) +
+              parseFloat(data.st_amt_paid) + 
+              parseFloat(data.sft_amt_paid);
+$("#s_paid_total").html(s_amtp_total);
+
+//end of second term values display      
+
+
+
+//beginning third term valus display
+      if(data.tf_installment == f_install){
+        $("#tf_tb_row").show();
+        $('#tf_install_d').html(data.tf_installment);
+      $('#tf_amt_d').html(data.tf_amount);
+      $('#tf_amt_paid_d').html(data.tf_amt_paid);
+      $('#tf_bal_d').html(data.tf_balance);
+      $('#tf_date_d').html(data.tf_timedate);
+      $('#tf_com_d').html(data.tf_comments);
+
+      }else{
+        $("#tf_tb_row").hide();
+      };
+
+      if(data.ts_installment == s_install){
+        $("#ts_tb_row").show();
+        $('#ts_install_d').html(data.ts_installment);
+      $('#ts_amt_d').html(data.ts_amount);
+      $('#ts_amt_paid_d').html(data.ts_amt_paid);
+      $('#ts_bal_d').html(data.ts_balance);
+      $('#ts_date_d').html(data.ts_timedate);
+      $('#ts_com_d').html(data.ts_comments);
+
+      }else{
+        $("#ts_tb_row").hide();
+      };
+
+      if(data.tt_installment == t_install){
+        $("#tt_tb_row").show();
+        $('#tt_install_d').html(data.tt_installment);
+      $('#tt_amt_d').html(data.tt_amount);
+      $('#tt_amt_paid_d').html(data.tt_amt_paid);
+      $('#tt_bal_d').html(data.tt_balance);
+      $('#tt_date_d').html(data.tt_timedate);
+      $('#tt_com_d').html(data.tt_comments);
+
+      }else{
+        $("#tt_tb_row").hide();
+      };
+      
+      if(data.tft_installment == ft_install){
+        $("#tft_tb_row").show();
+        $('#tft_install_d').html(data.tft_installment);
+      $('#tft_amt_d').html(data.tft_amount);
+      $('#tft_amt_paid_d').html(data.tft_amt_paid);
+      $('#tft_bal_d').html(data.tft_balance);
+      $('#tft_date_d').html(data.tft_timedate);
+      $('#tft_com_d').html(data.tft_comments);
+
+      }else{
+        $("#tft_tb_row").hide();
+      };
+
+var t_amtp_total = parseFloat(data.tf_amt_paid) + 
+              parseFloat(data.ts_amt_paid) +
+              parseFloat(data.tt_amt_paid) + 
+              parseFloat(data.tft_amt_paid);
+$("#t_paid_total").html(t_amtp_total);
+
+//end of third term values display      
+
+
+
+
+      //document.getElementById("schfeesbal").innerHTML = data.sname;// this also works
+
+    }else{
+      //alert(Error-   + xmlhttp.status + ":"  + xmlhttp.statusText);
+        }; //end if
+  }; //end onreadystate
+
+  xmlhttp.open("POST", "php/amt_table_res.php", true);
+  xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  //xmlhttp.open("GET", "simpleGreet.php?x=" + obj.table, true);
+  xmlhttp.send("y=" + test);
+
+} // end init function
+    </script>
+
+
+
+
+
+
+<script type="text/javascript">
+  
+
+  function account(){
+
+
+//text books calculations
+  var term = document.getElementById("term").value;
+  var installment = document.getElementById("installment").value;
+  var amt = document.getElementById("amt").value;
+  var paid = document.getElementById("paid").value;
+  var com = document.getElementById("com").value;
+  var date = new Date().toLocaleString();
+
+alert(date);
+//var holdate = "mySQL datetome - " +date.toISOString().slice(0, 20).replace('T', ' ');
+//alert(holdate);
+
+
+
+  var bal = parseFloat(amt) - parseFloat(paid);
+
+  alert(term+ "\n"
+        +installment+ "\n"
+        +amt+ "\n"
+        +paid+ "\n"
+        +com+ "\n"
+        +bal+ "\n");
+  
+
+
+var fund = {"students_id": iddd, "term_v":term, "install_v":installment, "amt_v":amt, "paid_v":paid, "date_v":date, "com_v":com};
+
+
+  var text = JSON.stringify(fund);
+  var xmlhttp = new XMLHttpRequest();
+  xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200){
+      //var myObj = JSON.parse(this.responseText);
+      var data = this.responseText;
+
+
+      //var data = xmlhttp.responseText;
+      //document.getElementById("ajaxform").innerHTML = data;
+      alert(data);
+
+    }else{
+      //alert("new XMLHttpRequest not done!");
+      //alert(Error-   + xmlhttp.status + ":"  + xmlhttp.statusText);
+        }; //end if
+  }; //end onreadystate
+
+  xmlhttp.open("POST", "php/amt_table.php", true);
+  xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  //xmlhttp.open("GET", "simpleGreet.php?x=" + obj.table, true);
+  xmlhttp.send("z=" + text);
+
+  // OOORRRR THIS
+
+
+setTimeout("window.location.reload(true);", 3000);
+
+ 
+
+
+  }// end account
+
+
+
+</script>
+
+
+
+<script type="text/javascript">
+  $("#tb_row").hide();
+</script>
+
+
+
+

@@ -1,24 +1,17 @@
 
-            
-
 <script type="text/javascript">
     	//ajax page info load
 // another ajax reguest
 //
 
-$(init);
 
 
-
-
+//$(init);
 
 function init(){
 	//alert("alright");
-		var idd = localStorage.getItem('id_passed');
-		//var idd = 5;
-
-
-		var	obj = { "id": idd};
+		var id = localStorage.getItem('id_passed');
+		var	obj = { "id": id};
 
 		var test = JSON.stringify(obj);
     	var xmlhttp = new XMLHttpRequest();
@@ -28,32 +21,11 @@ function init(){
 
 	    var data = JSON.parse(this.responseText);
 
-	    alert(data);
 	    //var data = xmlhttp.responseText;
-	    
-	    $('#schfeesid').html(data.schfees_amt);
-	    $('#unifeesid').html(data.unifees_amt);
-	    $('#textfeesid').html(data.textfees_amt);
-	    $('#lesfeesid').html(data.lesfees_amt);
-
-	    var amtbal = parseFloat(data.schfees_amt) + parseFloat(data.unifees_amt) + parseFloat(data.textfees_amt) + parseFloat(data.lesfees_amt);
-	    $("#totalid").html(amtbal);
-
-	    $('#schfeesamt').html(data.amount_sch);
-	    $('#unifeesamt').html(data.amount_uni);
-	    $('#textfeesamt').html(data.amount_text);
-	    $('#lesfeesamt').html(data.amount_les);
-
-	    var paidbal = parseFloat(data.amount_sch) + parseFloat(data.amount_uni) + parseFloat(data.amount_text) + parseFloat(data.amount_les);
-	    $("#totalamt").html(paidbal);
-
-		$('#schfeesbal').html(data.bal_sch);
-		$('#unifeesbal').html(data.bal_uni);
-		$('#textfeesbal').html(data.bal_text);
-		$('#lesfeesbal').html(data.bal_les);
-
-		var bal = parseFloat(data.bal_sch) + parseFloat(data.bal_uni) + parseFloat(data.bal_text) + parseFloat(data.bal_les);
-	    $("#totalbal").html(bal);
+	    $('#snameinfo').html(data.sname);
+	    $('#students_id').text(data.students_id);
+	    $('#classinfo').text(data.class);
+	    $('#categoryinfo').text(data.category);
 	    //document.getElementById("schfeesbal").innerHTML = data.sname;// this also works
 
 	  }else{
@@ -61,7 +33,7 @@ function init(){
 	  		}; //end if
 	}; //end onreadystate
 
-	xmlhttp.open("POST", "php/fundsdash.php", true);
+	xmlhttp.open("POST", "php/page.php", true);
 	xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	//xmlhttp.open("GET", "simpleGreet.php?x=" + obj.table, true);
 	xmlhttp.send("y=" + test);
@@ -71,44 +43,7 @@ function init(){
 
 
 
-
-<style type="text/css">
-	
-.schinput, .amtinput, .balinput {
-	display: ;
-}
-
-.schinput, .amtinput {
-	display: block;
-	height: 25px;
-	position: relative;
-	margin-top: 0px;
-	margin-bottom: 85px;
-	padding-bottom: 0px;	
-}
-
-.balinput {
-	position: relative;
-	margin-top: 0px;
-	padding-bottom: 75px;	
-}
-
-.button {
-	width: 100px;
-	position: relative;
-	top: 20px;
-}
-
-
-
-
-
-
-
-</style>
-
-<div class="loadin">
-
+<h3>FISBELL FINANCE DATABASE </h3>
 
 <!--form div-->
 <div class="form_space">
@@ -123,7 +58,7 @@ function init(){
 			<p class="pttype">Text Books Fees</p>
 			<p class="pttype">Lesson Fees</p>
 			<p class="pttypelast">Total</p>
-			<button type="button" class="button" onclick="accountbal()" >Update</button>
+			<button type="button" class="button" onclick="accountbal()" >javascript</button>
 
 		</div>
 
@@ -134,24 +69,21 @@ function init(){
 				
 			</div>
 			<br>	
-			
-				
-				<textarea class="schinput pttype" id="schfeesid"></textarea>
-				
+			<div class="schfees">
+				<input type="text" class="schinput" id="schfeesid">
+			</div>
 
-				<textarea class="schinput pttype" id="unifeesid"></textarea>	
-				
-			
+			<div class="unifees">	
+				<input type="text" class="schinput" id="unifeesid">
+			</div>
 
-			
-				<textarea class="schinput pttype" id="textfeesid"></textarea>
+			<div class="textfees">			
+				<input type="text" class="schinput" id="textfeesid">
+			</div>
 
-			
-
-			
-				<textarea class="schinput pttype" id="lesfeesid"></textarea>
-
-			
+			<div class="lesfees">			
+				<input type="text" class="schinput" id="lesfeesid">
+			</div>
 
 			<div class="total" id="totalid"></div>
 
@@ -162,22 +94,21 @@ function init(){
 				<p >Amount_Paid</p>
 			</div>
 			<br>		
-			
-				<textarea class="amtinput pttype" id="schfeesamt"></textarea>
+			<div class="schfees">
+				<input type="text" class="amtinput" id="schfeesamt">
+			</div>
 
-			
+			<div class="unifees">				
+				<input type="text" class="amtinput" id="unifeesamt">
+			</div>
 
-			
-				<textarea class="amtinput pttype" id="unifeesamt"></textarea>
-			
+			<div class="textfees">				
+				<input type="text" class="amtinput" id="textfeesamt">
+			</div>
 
-			
-				<textarea class="amtinput pttype" id="textfeesamt"></textarea>
-			
-
-			
-				<textarea class="amtinput pttype" id="lesfeesamt"></textarea>
-			
+			<div class="lesfees">			
+				<input type="text" class="amtinput" id="lesfeesamt">
+			</div>
 
 			<div class="total" id="totalamt"></div>
 		</div>
@@ -187,14 +118,14 @@ function init(){
 				<p >Balance</p>				
 			</div>
 			<br>	
-			<p class="balinput pttype" id="schfeesbal"></p>
+			<div class="schfees balinput" id="schfeesbal"></div>
 			<!--<div id="sch" style="background-color: yellow;"></div> -->
 
-			<p class="balinput pttype" id="unifeesbal"></p>
+			<div class="unifees balinput" id="unifeesbal"></div>
 
-			<p class="balinput pttype" id="textfeesbal"></p>
+			<div class="textfees balinput" id="textfeesbal"></div>
 
-			<p class="balinput pttype" id="lesfeesbal"></p>
+			<div class="lesfees balinput" id="lesfeesbal" ></div>
 
 			<div class="total" id="totalbal"></div>
 
@@ -212,6 +143,7 @@ function init(){
 
 <div id="schfee"></div>
 <div id="ajaxform"></div>
+
 
 
 
@@ -234,8 +166,6 @@ function init(){
 
 	
 function accountbal(){
-	alert(id);
-	//window.location.reload();
 //pass a hero id, retrieve all data about that hero
 
 //school fees calculations
@@ -335,7 +265,7 @@ var result="";
 			//alert("this should also work");
 
 
-var	amount = { "schfees_id":schfeesid, "schfees_amt":schfeesamt, "unifees_id":unifeesid, "unifees_amt":unifeesamt, "textfees_id":textfeesid, "textfees_amt":textfeesamt, "lesfees_id":textfeesid, "lesfees_amt":lesfeesamt, "pageid":id};
+var	amount = { "schfees_id":schfeesid, "schfees_amt":schfeesamt, "unifees_id":unifeesid, "unifees_amt":unifeesamt, "textfees_id":textfeesid, "textfees_amt":textfeesamt, "lesfees_id":textfeesid, "lesfees_amt":lesfeesamt};
 
 	var text = JSON.stringify(amount);
 	var xmlhttp = new XMLHttpRequest();
@@ -366,8 +296,6 @@ var	amount = { "schfees_id":schfeesid, "schfees_amt":schfeesamt, "unifees_id":un
 			}else{
 				alert(errors);
 			}; // end error if
-
-setTimeout("window.location.reload(true);", 3000)
 
 }; // end accountbal function
 
@@ -427,5 +355,4 @@ xmlhttp.send("x=" + test);
 		
 
 </script>
-
 

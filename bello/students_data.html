@@ -1,6 +1,84 @@
 
+<link href="css/students_data.css" type="text/css" rel="stylesheet" media="all">
 
-<h3  style="text-align: center;">PILOT FISBELL STUDENTS REGISTRATION FORM</h3>
+  
+
+
+<!-- load JS files -->
+    <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>             
+
+
+    <script type="text/javascript">
+    	//ajax page info load
+// another ajax reguest
+//
+
+$(init);
+
+
+
+var ig = localStorage.getItem('id_passed');
+//var ig = 14;
+
+
+function init(){
+	//alert("alright");
+		
+		var	obj = { "id": ig};
+
+		var test = JSON.stringify(obj);
+    	var xmlhttp = new XMLHttpRequest();
+		xmlhttp.onreadystatechange = function() {
+	  if (this.readyState == 4 && this.status == 200){
+	    //var myObj = JSON.parse(this.responseText);
+
+	    var data = JSON.parse(this.responseText);
+
+	    //var data = xmlhttp.responseText;
+	    $('#sname').html(data.sname);
+	    //$('#class').text(data.class);
+	    //$('#category').text(data.category);
+	    $('#oname').html(data.other_name);
+	    $('#phone').text(data.phone);
+	    $('#p_phone').text(data.parents_no);
+	    $('#email').text(data.email);
+	    $('#address').html(data.address);
+	    $('#dob').text(data.dob);
+	    $('#age').text(data.age);
+	    //$('#sex').text(data.sex);
+	    $('#f_sch').html(data.former_sch);
+	    $('#yr_adm').text(data.year_admin);
+	    
+	    //document.getElementById("schfeesbal").innerHTML = data.sname;// this also works
+
+	  }else{
+	  	//alert(Error-   + xmlhttp.status + ":"  + xmlhttp.statusText);
+	  		}; //end if
+	}; //end onreadystate
+
+	xmlhttp.open("POST", "php/students_page.php", true);
+	xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	//xmlhttp.open("GET", "simpleGreet.php?x=" + obj.table, true);
+	xmlhttp.send("x=" + test);
+
+
+
+
+
+//$("#display").load("fundsdash.html");
+}; // end init function
+
+
+</script>
+
+
+
+<div class="logo">
+	
+</div>
+
+
+<h3  style="text-align: center; color: blue;">PILOT FISBELL STUDENTS REGISTRATION FORM</h3>
 
 <span>
 	<p style="text-align: center;" id="data"></p>
@@ -16,7 +94,9 @@
 		<div class="sname_div">
 		<label class="label1">Surname<span>*</span></label>
 		<br>
-		<input class="sname label1_input" id="sname"></input>
+		<textarea class="sname label1_input" id="sname"></textarea>
+		<!--<input class="sname label1_input" id="sname"></input>
+		-->		
 		<span class="sname_s" id="sname_s"></span>
 		</div>
 		<br />
@@ -24,7 +104,7 @@
 		<div class="oname_div">
 		<label class="label1">Other Name<span>*</span></label>
 		<br />
-		<input class="oname label1_input" id="oname"></input>
+		<textarea class="oname label1_input" id="oname"></textarea>
 		<span id="oname_s"></span>
 		</div>
 		<br />
@@ -50,7 +130,7 @@
 		<div class="phone_div">
 		<label class="label1">Phone</label>
 		<br />
-		<input class="phone label1_input" id="phone"></input>
+		<textarea class="phone label1_input" id="phone"></textarea>
 		<span id="phone_s"></span>
 		</div>
 		<br />
@@ -58,7 +138,7 @@
 		<div class="p_phone_div">
 		<label class="label1">Parent's Phone<span>*</span></label>
 		<br />
-		<input class="p_phone label1_input" id="p_phone"></input>
+		<textarea class="p_phone label1_input" id="p_phone"></textarea>
 		<span id="p_phone_s"></span>
 		</div>
 		<br />
@@ -66,7 +146,7 @@
 		<div class="email_div">
 		<label class="label1">Email</label>
 		<br />
-		<input class="email label1_input" id="email" placeholder="e.g user@domain.com"></input>
+		<textarea class="email label1_input" id="email" placeholder="e.g user@domain.com"></textarea>
 		<span id="email_s"></span>
 		</div>
 		<br />
@@ -86,7 +166,8 @@
 		<div class="dob_div">
 		<label class="label1">Date Of Birth<span>*</span></label>
 		<br />
-		<input class="dob label1_input" id="dob" placeholder="2020-12-31"></input><br>
+		<textarea class="dob label1_input" id="dob" placeholder="2020-12-31"></textarea>
+		<br>
 		<span id="dob_s"></span>
 		</div>
 		
@@ -95,7 +176,8 @@
 		<div class="age_div">
 		<label class="label1">Age<span>*</span></label>
 		<br />
-		<input class="age label1_input" id="age" placeholder="00"></input><br>
+		<textarea  class="age label1_input" id="age" placeholder="00"></textarea>
+		<br>
 		<span id="age_s"></span>
 		</div>
 		<br />
@@ -127,14 +209,16 @@
 		<div class="f_sch_div">
 		<label class="label1">Former School</label>
 		<br />
-		<input class="f_sch label1_input" id="f_sch"></input>
+		<textarea class="f_sch label1_input" id="f_sch"></textarea>
+		
 		</div>
 		<br />
 
 		<div class="yr_adm_div">
 		<label class="label1">Year Admitted<span>*</span></label>
 		<br />
-		<input class="yr_adm label1_input" id="yr_adm"></input><br>
+		<textarea class="yr_adm label1_input" id="yr_adm"></textarea>
+		<br>
 		<span id="yr_adm_s"></span>
 		<br />
 
@@ -405,7 +489,8 @@ if(error_sname === false && error_oname === false && error_p_phone === false && 
 		     			"sex":sex_v,
 		     			"category":category_v,
 		      			"f_sch":f_sch_v,
-		      			"yr_adm":yr_adm_v,};
+		      			"yr_adm":yr_adm_v,
+		      			"pageid":ig};
 
 		var test = JSON.stringify(students);
     	var xmlhttp = new XMLHttpRequest();
@@ -429,8 +514,13 @@ if(error_sname === false && error_oname === false && error_p_phone === false && 
 
 
 }else{
-	alert("hmmmmm");
+	//alert("hmmmmm");
 }; // end error check if
+
+
+
+
+setTimeout("window.location.reload(true);", 3000)
 
 } // end init function
 </script>

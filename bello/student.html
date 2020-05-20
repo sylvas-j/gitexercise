@@ -16,8 +16,21 @@
 
 <body>
 
-<h3  style="text-align: center;">PILOT FISBELL STUDENTS REGISTRATION FORM</h3>
+<div class="logo">
+	<img src="images/photo.jpg" >	
+</div>
 
+
+<div class="students_title">
+	<h3 class="students_title"  style="text-align: center; text-align: center; color: #000080; font-size: 30px; font-family: verdana; ">PILOT FISBELL STUDENTS REGISTRATION FORM</h3>
+</div>
+
+
+<div class="logout" style=" position: relative;top: -50px; left: 1150px;">
+	<a href="test.php" class="dash">LOG OUT</a>		
+</div>
+
+<!--The reult after submission will display here.-->
 <span>
 	<p style="text-align: center;" id="data"></p>
 </span>
@@ -30,24 +43,33 @@
 	<div class="student_area_first">
 
 		<div class="sname_div">
-		<label class="label1">Surname<span>*</span></label>
-		<br>
+			<div class="labelback">
+				<label class="label1">Surname<span>*</span></label>
+			</div>
+		
+		
 		<input class="sname label1_input" id="sname" data-error="put put"></input>
 		<span class="sname_s" id="sname_s"></span>
 		</div>
 		<br />
 
 		<div class="oname_div">
-		<label class="label1">Other Name<span>*</span></label>
-		<br />
+			<div class="labelback">
+				<label class="label1">Other Name<span>*</span></label>
+			</div>
+		
+		
 		<input class="oname label1_input" id="oname"></input>
 		<span id="oname_s"></span>
 		</div>
 		<br />
 
 		<div class="class_div">
-		<label class="label1">Class<span>*</span></label>
-		<br />
+			<div class="labelback">
+				<label class="label1">Class<span>*</span></label>
+
+			</div>
+				
 		<select class="class label1_input" id="class">
 			<option style="color: grey;">Choose class</option>
 			<option value="JS1">JS1</option>
@@ -64,32 +86,44 @@
 
 
 		<div class="phone_div">
-		<label class="label1">Phone</label>
-		<br />
+			<div class="labelback">
+				<label class="label1">Phone</label>
+			</div>
+		
+		
 		<input class="phone label1_input" id="phone"></input>
 		<span id="phone_s"></span>
 		</div>
 		<br />
 
 		<div class="p_phone_div">
-		<label class="label1">Parent's Phone<span>*</span></label>
-		<br />
+			<div class="labelback">
+				<label class="label1">Parent's Phone<span>*</span></label>
+			</div>
+		
+		
 		<input class="p_phone label1_input" id="p_phone"></input>
 		<span id="p_phone_s"></span>
 		</div>
 		<br />
 
 		<div class="email_div">
-		<label class="label1">Email</label>
-		<br />
+			<div class="labelback">
+				<label class="label1">Email</label>
+			</div>
+		
+		
 		<input class="email label1_input" id="email" placeholder="e.g user@domain.com"></input>
 		<span id="email_s"></span>
 		</div>
 		<br />
 
 		<div class="address_div">
-		<label class="label1">Address<span>*</span></label>
-		<br />
+			<div class="labelback">
+				<label class="label1">Address<span>*</span></label>
+			</div>
+		
+		
 		<textarea class="address label1_input" id="address"></textarea>
 		<span id="address_s"></span>
 		</div>
@@ -100,8 +134,11 @@
 	<div class="students_area_second">
 
 		<div class="dob_div">
-		<label class="label1">Date Of Birth<span>*</span></label>
-		<br />
+			<div class="labelback">
+				<label class="label1">Date of Birth<span>*</span></label>
+			</div>
+		
+		
 		<input class="dob label1_input" id="dob" placeholder="2020-12-31"></input><br>
 		<span id="dob_s"></span>
 		</div>
@@ -109,16 +146,22 @@
 		<br />
 
 		<div class="age_div">
-		<label class="label1">Age<span>*</span></label>
-		<br />
+			<div class="labelback">
+				<label class="label1">Age<span>*</span></label>
+			</div>
+		
+		
 		<input class="age label1_input" id="age" placeholder="00"></input><br>
 		<span id="age_s"></span>
 		</div>
 		<br />
 
 		<div class="sex_div">
-		<label class="label1">Sex<span>*</span></label>
-		<br />
+			<div class="labelback">
+				<label class="label1">Sex<span>*</span></label>
+			</div>
+
+
 		<select class="sex label1_input" id="sex">
 			<option value="Male">Male</option>
 			<option value="Female">Female</option>
@@ -127,8 +170,12 @@
 		<br />
 
 		<div class="category_div">
-		<label class="label1">Category<span>*</span></label>
-		<br />
+			<div class="labelback">
+				<label class="label1">Category<span>*</span></label>
+			</div>
+
+		
+		
 		<select class="category label1_input" id="category">
 			<option style="color: grey;">Chose department</option>
 			<option value="Sciences">General</option>
@@ -141,15 +188,22 @@
 		<br />
 
 		<div class="f_sch_div">
-		<label class="label1">Former School</label>
-		<br />
+			<div class="labelback">
+				<label class="label1">Former School</label>
+			</div>
+
+	
 		<input class="f_sch label1_input" id="f_sch"></input>
 		</div>
 		<br />
 
 		<div class="yr_adm_div">
-		<label class="label1">Year Admitted<span>*</span></label>
-		<br />
+			<div class="labelback">
+				<label class="label1">Year Admitted<span>*</span></label>
+			</div>
+
+		
+		
 		<input class="yr_adm label1_input" id="yr_adm"></input><br>
 		<span id="yr_adm_s"></span>
 		<br />
@@ -422,7 +476,8 @@ if(error_sname === false && error_oname === false && error_p_phone === false && 
 		     			"sex":sex_v,
 		     			"category":category_v,
 		      			"f_sch":f_sch_v,
-		      			"yr_adm":yr_adm_v,};
+		      			"yr_adm":yr_adm_v,
+		      			"pageid":"0"};
 
 		var test = JSON.stringify(students);
     	var xmlhttp = new XMLHttpRequest();
@@ -431,13 +486,15 @@ if(error_sname === false && error_oname === false && error_p_phone === false && 
 	
 	    var datas = xmlhttp.responseText;
 	    $('#data').html(datas);
+	    alert("Data successfully received.");
+	    setTimeout("window.location.reload(true);", 3000);
 
 	  }else{
 	  	//alert(Error-   + xmlhttp.status + ":"  + xmlhttp.statusText);
 	  		}; //end if
 	}; //end onreadystate
 
-	xmlhttp.open("POST", "php/students.php", true);
+	xmlhttp.open("POST", "php/students_register.php", true);
 	xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	
 	xmlhttp.send("y=" + test);
@@ -448,6 +505,10 @@ if(error_sname === false && error_oname === false && error_p_phone === false && 
 }else{
 	alert("hmmmmm");
 }; // end error check if
+
+
+//setTimeout("window.location.reload(true);", 3000)
+
 
 } // end init function
 </script>

@@ -65,21 +65,112 @@ if ($conn->connect_error){
 	die("Connection Failed: " . $conn->connect_error);
 };
 
-$sql1 = "INSERT INTO school_fees (schfees_amt, amount_paid, balance)
-VALUES ('$obj->schfees_id', '$obj->schfees_amt', '$schfeesbal')";
-$sql2 = "INSERT INTO uniform (unifees_amt, amount_paid, balance)
-VALUES ('$obj->unifees_id', '$obj->unifees_amt', '$unifeesbal')";
-$sql3 = "INSERT INTO text_books (textfees_amt, amount_paid, balance)
-VALUES ('$obj->textfees_id', '$obj->textfees_amt', '$textfeesbal')";
-$sql4 = "INSERT INTO lesson (lesfees_amt, amount_paid, balance)
-VALUES ('$obj->lesfees_id', '$obj->lesfees_amt', '$lesfeesbal')";
 
-if ($conn->query($sql1) == True && 
-	$conn->query($sql2) == True && 
-	$conn->query($sql3) == True && 
-	$conn->query($sql4) == True){
 
-	echo  "Data received successfully!";
+$sql_s1 = "SELECT students_id FROM school_fees WHERE students_id = '$obj->pageid'";
+
+$res1 = $conn->query($sql_s1);
+$row1 = mysqli_fetch_array($res1);
+
+$sql_s2 = "SELECT students_id FROM uniform WHERE students_id = '$obj->pageid'";
+
+$res2 = $conn->query($sql_s2);
+$row2 = mysqli_fetch_array($res2);
+
+$sql_s3 = "SELECT students_id FROM text_books WHERE students_id = '$obj->pageid'";
+
+$res3 = $conn->query($sql_s3);
+$row3 = mysqli_fetch_array($res3);
+
+$sql_s4 = "SELECT students_id FROM lesson WHERE students_id = '$obj->pageid'";
+
+$res4 = $conn->query($sql_s4);
+$row4 = mysqli_fetch_array($res4);
+
+
+
+
+if ($conn->query($sql_s1) == True && 
+	$conn->query($sql_s2) == True && 
+	$conn->query($sql_s3) == True && 
+	$conn->query($sql_s4) == True){
+
+	//echo  "Data received successfully!";
+
+	if($row1 != ''){
+
+		$sql1 = "UPDATE school_fees SET schfees_amt = '$obj->schfees_id', amount_paid = '$obj->schfees_amt', balance = '$schfeesbal' WHERE students_id = '$obj->pageid'";
+		$result = $conn->query($sql1);
+
+		echo "School fees already exist, inserted <br />" ;
+		//echo $row1;
+
+	}else{
+		$sql1 = "INSERT INTO school_fees (students_id, schfees_amt, amount_paid, balance)
+		VALUES ('$obj->pageid', '$obj->schfees_id', '$obj->schfees_amt', '$schfeesbal')";
+
+		$result = $conn->query($sql1);
+		//echo $result;
+		echo "School fees inserted. <br />";
+	};
+
+	if($row2 != ''){
+
+		$sql2 = "UPDATE uniform SET unifees_amt = '$obj->unifees_id', amount_paid = '$obj->unifees_amt', balance = '$unifeesbal' WHERE students_id = '$obj->pageid'";
+		$result = $conn->query($sql2);
+
+		echo "Uniform fees already exist, inserted <br />";
+		//echo $row2;
+
+	}else{
+		$sql2 = "INSERT INTO uniform (students_id, unifees_amt, amount_paid, balance)
+VALUES ('$obj->pageid', '$obj->unifees_id', '$obj->unifees_amt', '$unifeesbal')";
+
+
+		$result = $conn->query($sql2);
+		//echo $result;
+		echo "uniform fees inserted. <br />";
+	};
+
+	if($row3 != ''){
+
+		$sql3 = "UPDATE text_books SET textfees_amt = '$obj->textfees_id', amount_paid = '$obj->textfees_amt', balance = '$textfeesbal' WHERE students_id = '$obj->pageid'";
+		$result = $conn->query($sql3);
+
+		echo "Text books already exist, inserted <br />";
+		//echo $row3;
+
+	}else{
+		$sql3 = "INSERT INTO text_books (students_id, textfees_amt, amount_paid, balance)
+VALUES ('$obj->pageid', '$obj->textfees_id', '$obj->textfees_amt', '$textfeesbal')";
+
+		$result = $conn->query($sql3);
+		//echo $result;
+		echo "Text books inserted. <br />" ;
+	};
+
+	if($row4 != ''){
+
+		$sql4 = "UPDATE lesson SET lesfees_amt = '$obj->lesfees_id', amount_paid = '$obj->lesfees_amt', balance = '$lesfeesbal' WHERE students_id = '$obj->pageid'";
+		$result = $conn->query($sql4);
+
+		echo "Lesson fees already exist, inserted";
+		//echo $row4;
+
+	}else{
+		$sql4 = "INSERT INTO lesson (students_id, lesfees_amt, amount_paid, balance)
+VALUES ('$obj->pageid', '$obj->lesfees_id', '$obj->lesfees_amt', '$lesfeesbal')";
+
+		$result = $conn->query($sql4);
+		//echo $result;
+		echo "Lesson fees inserted.";
+	};
+
+
+
+
+
+//	header("refresh: 1000; location: ../dashboard.html");
 
 /*
 print <<< HERE
@@ -156,80 +247,7 @@ $conn->close();
 };
 //echo  "A drop of comment will enhance our services to you!";
 
-
-/**
-
-
-
-//get heroID
-$heroID = filter_input(INPUT_POST, 'heroID');
-try {
-$con= new PDO('mysql:host=localhost;dbname=dbName', "user", "pwd");
-$con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-$stmt = $con->prepare("SELECT * FROM hero WHERE heroID = ?");
-$stmt->execute(array($heroID));
-$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-foreach($result as $row){
-foreach ($row as $field => $value){
-print <<< HERE
-<strong>$field: </strong>$value <br />
-HERE;
-} // end field loop
-} // end record loop
-} catch(PDOException $e) {
-echo 'ERROR: ' . $e->getMessage();
-} // end try
-
-
-
-
-
-//connect to database
-try {
-$con= new PDO('mysql:host=host;dbname=dbName', "user", "pwd");
-$con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-$result = $con->query('SELECT * FROM hero');
-$result->setFetchMode(PDO::FETCH_ASSOC);
-
-foreach($result as $row){
-$id = $row["heroID"];
-$name = $row["name"];
-
-print <<< HERE
-<option value = "$id">$name</option>
-HERE;
-} // end record loop
-} catch(PDOException $e) {
-echo 'ERROR: ' . $e->getMessage();
-} // end try
-
-
-
-*/
-
-
-
-
-
-
-
-
-/**
-<form method="POST"
- action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-
-<input type="text" name="name"
- value="<?php echo htmlspecialchars($name);?>">
-<span class="error"><?php echo $nameErr;?></span>
-
-<?php
-// define variables and initialize with empty values
-$nameErr = $addrErr = $emailErr = $howManyErr = $favFruitErr = "";
-$name = $address = $email = $howMany = "";
-$favFruit = array();
-
-*/
-//<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);
+	//header("refresh: 10");
 
 ?>
 

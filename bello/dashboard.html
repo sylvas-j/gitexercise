@@ -3,6 +3,10 @@
 <head>
 	<title>Pilot school</title>
 
+<!--
+	to refresh page in 10 seconds
+<meta http-equiv="refresh" content="10" >
+-->
 
 <link href="css/dashstyle.css" type="text/css" rel="stylesheet" media="all">
 
@@ -20,11 +24,10 @@ $(init);
 
 
 
-
-
+var id = localStorage.getItem('id_passed');
 function init(){
 	//alert("alright");
-		var id = localStorage.getItem('id_passed');
+		
 		var	obj = { "id": id};
 
 		var test = JSON.stringify(obj);
@@ -52,25 +55,92 @@ function init(){
 	//xmlhttp.open("GET", "simpleGreet.php?x=" + obj.table, true);
 	xmlhttp.send("x=" + test);
 
-} // end init function
+
+
+
+
+$("#display").load("fundsdash.html");
+}; // end init function
+
+
+
+
+
     </script>
+
+
+
+<style type="text/css">
+	.col2, .col3, .col4 {
+	
+	float: left;
+	margin:auto;
+	padding-left: 80px;
+	background-color: rgba(143,207,218, 0.8);
+	position: relative;
+	left: 80px;
+	height: 563px;
+}
+
+.col1 {
+	
+	float: left;
+	margin:auto;
+	padding-left: 20px;
+	background-color: rgba(243,207,218, 0.8);
+	position: relative;
+	left: 80px;
+}
+
+.col4 {
+	width: 110px;
+}
+
+.fundstitle{
+	text-align: center;
+}
+
+
+
+</style>
+
+
+
 
 </head>
 
 <body>
 
-<h3>STUDENT DASHBOARD</h3>
+<h3 style="text-align: center;">STUDENT DASHBOARD</h3>
+
+<div class="logout" style="float: right; position: relative;top: -50px;">
+	
+	<a href="test.php" class="dash">LOG OUT</a>
+		
+</div>
 
 <!--sidebar div-->
 <div class="sidebar">
 	<div class="dash-content">
-		<a href="dashboard.html" class="dash">DASHBOARD</a>
+		<div class="side">
+			<a href="dashboard.html" class="side dash">DASHBOARD</a>
+		</div>
+		
 		<p></p>
-		<a href="#" class="fund" id="fund">PAYMENTS</a>
+		<div class="side">
+			<a href="#" class="side fund" id="fund">PAYMENTS</a>
+		</div>
+		
 		<p></p>
-		<a href="#" class="student_data" id="student_data">BIO DATA</a>
+		<div class="side">
+			<a href="#" class="side student_data" id="student_data">BIO DATA</a>
+		</div>
+		
 		<p></p>
-		<a href="#" class="dash">RESULT</a>
+		<div class="side">
+			<a href="#" class="side dash">RESULT</a>
+		</div>
+		
 	</div>
 </div>
 
@@ -87,6 +157,18 @@ function init(){
 
 <div class="div" id="display"></div>
 
+
+
+
+
+
+
+
+
+
+
+
+
 </body>
 </html>
 
@@ -97,7 +179,8 @@ function init(){
 
 $("#fund").click(function(){
 
-	$("#display").load("funds.html");
+	//$("#display").load("funds.html");
+	$("#display").load("amt_table.html");
 
 });
 

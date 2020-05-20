@@ -1,5 +1,5 @@
 .sidebar {
-	background-color: grey;
+	background-color: rgba(227,227,227, 1);
 	width: 20%;
 	height: 1000px;
 	float: left;
@@ -10,9 +10,9 @@
 	margin-top: 10px;
 }
 
-.dash-content > a {
-	text-decoration: underline;
-	color: black;
+.side {
+	text-align: center;
+	margin:50px 30px 100px 20px;
 }
 
 .basicInfo {
@@ -25,6 +25,7 @@
 	
 	position: relative;
 	left: 30px;
+	margin-bottom: 40px;
 }
 
 .info {
@@ -37,7 +38,59 @@
 	top: 80px;
 }
 
+.fund_table_space{
+	margin: auto;
+	padding-left: 60px;
+}
+
+.fund_table{
+	width: 90%;
+	float: left;
+	background-color: rgba(227,227,227,0.8);
+	padding-left: 5px;
+}
+
+.lllinput_table{
+	width: 10%;
+}
+.com{
+	height: 30px;
+	width: 300px;
+}
+
+.amt_table, tr, th, td{
+	border:3px solid green;
+
+}
+
+textarea{
+	height: 20px;
+	width: 100px;
+}
+
+
+
+.cal_tr{
+	background-color: grey;
+}
+.cal_tr:hover {
+	background-color: green;
+	color: red;
+	font-weight: bold;
+}
+.button_div {
+	text-align: center;
+	color:;
+}
+
+
+
+
 .form_space {
+	background: url(../images/blog_1.jpg) no-repeat;
+	background-position: center;
+	background-attachment: all;
+	background-size: 100% 100%;
 	float: left;
 	display: flex;
 	gbackground-color: red;
@@ -45,12 +98,18 @@
 	overflow: hidden;
 }
 
+
+
+
 .col2, .col3, .col4 {
 	
 	float: left;
 	margin:auto;
 	padding-left: 90px;
-	gbackground-color: yellow; ;
+	background-color: rgba(143,207,218, 0.8);
+	position: relative;
+	left: 140px;
+	height: 563px;
 }
 
 .col1 {
@@ -58,7 +117,9 @@
 	float: left;
 	margin:auto;
 	padding-left: 20px;
-	gbackground-color: yellow;
+	background-color: rgba(243,207,218, 0.8);
+	position: relative;
+	left: 140px;
 }
 
 .col4 {
@@ -88,6 +149,16 @@
 	padding-bottom: 83%;
 	gbackground-color: yellow;
 }
+
+
+
+
+.button {
+	width: 100px;
+	position: relative;
+	top: 20px;
+}
+
 
 
 

@@ -1,5 +1,11 @@
 
-            
+
+<link href="css/dashstyle.css" type="text/css" rel="stylesheet" media="all">
+
+
+
+<!-- load JS files -->
+    <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>             
 
 <script type="text/javascript">
     	//ajax page info load
@@ -78,15 +84,16 @@ function init(){
 	display: ;
 }
 
-.schinput, .amtinput {
-	display: block;
-	height: 25px;
+.schinput {
 	position: relative;
 	margin-top: 0px;
-	margin-bottom: 85px;
-	padding-bottom: 0px;	
+	padding-bottom: 75px;	
 }
-
+.amtinput {
+	position: relative;
+	margin-top: 0px;
+	padding-bottom: 75px;	
+}
 .balinput {
 	position: relative;
 	margin-top: 0px;
@@ -94,7 +101,6 @@ function init(){
 }
 
 .button {
-	width: 100px;
 	position: relative;
 	top: 20px;
 }
@@ -107,8 +113,9 @@ function init(){
 
 </style>
 
-<div class="loadin">
 
+<div class="loadin">
+<h3 style="position: relative;left: 20%;">FISBELL FINANCE DATABASE </h3>
 
 <!--form div-->
 <div class="form_space">
@@ -135,21 +142,22 @@ function init(){
 			</div>
 			<br>	
 			
-				
-				<textarea class="schinput pttype" id="schfeesid"></textarea>
-				
-
-				<textarea class="schinput pttype" id="unifeesid"></textarea>	
+				<p class="schinput pttype" id="schfeesid">Total</p>
 				
 			
 
 			
-				<textarea class="schinput pttype" id="textfeesid"></textarea>
+				<p class="schinput pttype" id="unifeesid">Total</p>	
+				
+			
+
+			
+				<p class="schinput pttype" id="textfeesid">Total</p>
 
 			
 
 			
-				<textarea class="schinput pttype" id="lesfeesid"></textarea>
+				<p class="schinput pttype" id="lesfeesid">Total</p>
 
 			
 
@@ -163,20 +171,20 @@ function init(){
 			</div>
 			<br>		
 			
-				<textarea class="amtinput pttype" id="schfeesamt"></textarea>
+				<p class="amtinput pttype" id="schfeesamt">Total</p>
 
 			
 
 			
-				<textarea class="amtinput pttype" id="unifeesamt"></textarea>
+				<p class="amtinput pttype" id="unifeesamt">Total</p>
 			
 
 			
-				<textarea class="amtinput pttype" id="textfeesamt"></textarea>
+				<p class="amtinput pttype" id="textfeesamt">Total</p>
 			
 
 			
-				<textarea class="amtinput pttype" id="lesfeesamt"></textarea>
+				<p class="amtinput pttype" id="lesfeesamt">Total</p>
 			
 
 			<div class="total" id="totalamt"></div>
@@ -187,14 +195,14 @@ function init(){
 				<p >Balance</p>				
 			</div>
 			<br>	
-			<p class="balinput pttype" id="schfeesbal"></p>
+			<p class="balinput pttype" id="schfeesbal">Total</p>
 			<!--<div id="sch" style="background-color: yellow;"></div> -->
 
-			<p class="balinput pttype" id="unifeesbal"></p>
+			<p class="balinput pttype" id="unifeesbal">Total</p>
 
-			<p class="balinput pttype" id="textfeesbal"></p>
+			<p class="balinput pttype" id="textfeesbal">Total</p>
 
-			<p class="balinput pttype" id="lesfeesbal"></p>
+			<p class="balinput pttype" id="lesfeesbal">Total</p>
 
 			<div class="total" id="totalbal"></div>
 
@@ -214,6 +222,7 @@ function init(){
 <div id="ajaxform"></div>
 
 
+</div>
 
 
     <script type="text/javascript">     
@@ -234,144 +243,9 @@ function init(){
 
 	
 function accountbal(){
-	alert(id);
-	//window.location.reload();
 //pass a hero id, retrieve all data about that hero
-
-//school fees calculations
-	var	schfeesid = document.getElementById("schfeesid").value;
-	var	schfeesamt = document.getElementById("schfeesamt").value;
-	var	schfeesb = document.getElementById("schfeesbal");
-	schfeesb = schfeesid - schfeesamt;
-	//alert(schfeesb);
-
-	
-
-//uniform fees calculations
-	var	unifeesid = document.getElementById("unifeesid").value;
-	var	unifeesamt = document.getElementById("unifeesamt").value;
-	var	unifeesb = document.getElementById("unifeesbal");
-
-	unifeesb = unifeesid - unifeesamt;
-	
-
-//text books calculations
-	var	textfeesid = document.getElementById("textfeesid").value;
-	var	textfeesamt = document.getElementById("textfeesamt").value;
-	var	textfeesb = document.getElementById("textfeesbal");
-
-	textfeesb = textfeesid - textfeesamt;
-	
-
-//lesson fess calculations
-	var	lesfeesid = document.getElementById("lesfeesid").value;
-	var	lesfeesamt = document.getElementById("lesfeesamt").value;
-	var	lesfeesb = document.getElementById("lesfeesbal");
-
-	lesfeesb = lesfeesid - lesfeesamt;
-	
-
-
-//total fees calculations
-	var	total = document.getElementById("totalid")
-	var	totala = document.getElementById("totalamt")
-	var	totalb = document.getElementById("totalbal");
-
-	
-	var total = parseFloat(schfeesid) + parseFloat(unifeesid) + parseFloat(textfeesid) + parseFloat(lesfeesid);
-	
-	totala = parseFloat(schfeesamt) + parseFloat(unifeesamt) +parseFloat(textfeesamt) + parseFloat(lesfeesamt);
-
-	totalb = parseFloat(total) - parseFloat(totala);
-	
-	
-
-
-	//alert("hi sylvass");
-
-	//create an empty error message
-	var	errors = "";
-	//check balances - They simply needs to exist
-		
-		if (schfeesid == ""){
-		errors+= "Please supply School Fee \n"
-		}; // end schfeesid if
-
-		if (unifeesid == ""){
-		errors+= "Please Supply Uniform Fee. \n"
-		}; // end unifeesid if
-
-		if (textfeesid == ""){
-		errors+= "Please supply Text Books Fee. \n"
-		}; // end textfeesid if
-
-		if (lesfeesid == ""){
-		errors+= "Please supply Lesson Fee. \n"
-		}; // end lesfeesid if
-
-		if (errors == ""){
-		// temporarily holding the formout1div for observations
-		//alert("This is sign of progress");
-
-var result="";
-			result+="<table>";
-			result+="<tr><th>First Name</th> <th>Last Name</th> <th>Message</th> <th>Email</th></tr>";
-			
-			result+="";
-			result+="<tr><td>" + schfeesb +"</td> <td>"+ unifeesb +"</td>  <td>"+ textfeesb +"</td> <td>"+ lesfeesb +"</td> </tr>";
-
-			var	schfee = document.getElementById("schfee");
-
-			schfee.innerHTML+=result;
-
-			totalid.innerHTML+=total;
-			totalamt.innerHTML+=totala;
-			totalbal.innerHTML+=totalb;
-
-			schfeesbal.innerHTML+=schfeesb;
-			unifeesbal.innerHTML+=unifeesb;
-			textfeesbal.innerHTML+=textfeesb;
-			lesfeesbal.innerHTML+=lesfeesb;
-			//alert("this should also work");
-
-
-var	amount = { "schfees_id":schfeesid, "schfees_amt":schfeesamt, "unifees_id":unifeesid, "unifees_amt":unifeesamt, "textfees_id":textfeesid, "textfees_amt":textfeesamt, "lesfees_id":textfeesid, "lesfees_amt":lesfeesamt, "pageid":id};
-
-	var text = JSON.stringify(amount);
-	var xmlhttp = new XMLHttpRequest();
-	xmlhttp.onreadystatechange = function() {
-	  if (this.readyState == 4 && this.status == 200){
-	    //var myObj = JSON.parse(this.responseText);
-	    var data = this.responseText;
-
-
-	    //var data = xmlhttp.responseText;
-	    document.getElementById("ajaxform").innerHTML = data;
-
-	  }else{
-	  	//alert("new XMLHttpRequest not done!");
-	  	//alert(Error-   + xmlhttp.status + ":"  + xmlhttp.statusText);
-	  		}; //end if
-	}; //end onreadystate
-
-	xmlhttp.open("POST", "php/fund.php", true);
-	xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-	//xmlhttp.open("GET", "simpleGreet.php?x=" + obj.table, true);
-	xmlhttp.send("x=" + text);
-
-	// OOORRRR THIS
-
-
-
-			}else{
-				alert(errors);
-			}; // end error if
-
-setTimeout("window.location.reload(true);", 3000)
-
+$("#display").load("funds.html");
 }; // end accountbal function
-
-
 
 
 /*
@@ -427,5 +301,4 @@ xmlhttp.send("x=" + test);
 		
 
 </script>
-
 
