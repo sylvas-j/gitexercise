@@ -96,49 +96,6 @@ var two = 2;
 
 
 <?php
-//\
-
-/*
-if($_POST["class_listphp"] == "JS1"){
-
-$class_vp = $_POST["class_listphp"];
-echo $class_vp;
-
-}else if($_POST["class_listphp"] == "JS2"){
-
-$class_vp = $_POST["class_listphp"];
-echo $class_vp;
-
-}else if($_POST["class_listphp"] == "JS3"){
-
-$class_vp = $_POST["class_listphp"];
-echo $class_vp;
-
-}else if($_POST["class_listphp"] == "SS1"){
-
-$class_vp = $_POST["class_listphp"];
-echo $class_vp;
-
-}else if($_POST["class_listphp"] == "SS2"){
-
-$class_vp = $_POST["class_listphp"];
-echo $class_vp;
-
-}else{
-	echo "nothing come out";
-};
-
-
-if($_POST["class_listphp"] == "JS1" || $_POST["class_listphp"] == "JS2" || $_POST["class_listphp"] == "JS1" || $_POST["class_listphp"] == "JS3"){
-
-	$class_vp = $_POST["class_listphp"];
-echo $class_vp;
-
-}else{
-	echo "nothing come out";
-};
-
-*/
 
 ?>
 
@@ -167,7 +124,7 @@ echo $class_vp;
             <a href="#" class="small mr-3"><span class="icon-envelope-o mr-2"></span> info@mydomain.com</a> 
           </div>
           <div class="col-lg-3 text-right">
-            <a href="login.html" class="small mr-3"><span class="icon-unlock-alt"></span> Log In</a>
+            <a href="masterboard.html" class="small mr-3"><span class="icon-unlock-alt"></span> Log In</a>
             <a href="student.html" class="small btn btn-primary px-4 py-2 rounded-0"><span class="icon-users"></span> Register</a>
           </div>
         </div>
@@ -178,7 +135,7 @@ echo $class_vp;
       <div class="container">
         <div class="d-flex align-items-center">
           <div class="site-logo">
-            <a href="index.html" class="d-block">
+            <a href="#" class="d-block">
               <img src="images/logo.jpg" alt="Image" class="img-fluid">
             </a>
           </div>
@@ -186,23 +143,23 @@ echo $class_vp;
             <nav class="site-navigation position-relative text-right" role="navigation">
               <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
                 <li>
-                  <a href="index.html" class="nav-link text-left">Home</a>
+                  <a href="#" class="nav-link text-left">Home</a>
                 </li>
                 <li class="has-children">
-                  <a href="about.html" class="nav-link text-left">About Us</a>
+                  <a href="#" class="nav-link text-left">About Us</a>
                   <ul class="dropdown">
-                    <li><a href="teachers.html">Our Teachers</a></li>
-                    <li><a href="about.html">Our School</a></li>
+                    <li><a href="#">Our Teachers</a></li>
+                    <li><a href="#">Our School</a></li>
                   </ul>
                 </li>
                 <li>
-                  <a href="admissions.html" class="nav-link text-left">Admissions</a>
+                  <a href="#" class="nav-link text-left">Admissions</a>
                 </li>
                 <li>
-                  <a href="courses.html" class="nav-link text-left">Courses</a>
+                  <a href="#" class="nav-link text-left">Courses</a>
                 </li>
                 <li>
-                    <a href="contact.html" class="nav-link text-left">Contact</a>
+                    <a href="#" class="nav-link text-left">Contact</a>
                   </li>
               </ul>                                                                                                                                                                                                                                                                                          </ul>
             </nav>

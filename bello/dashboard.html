@@ -39,11 +39,11 @@ function init(){
 	    var data = JSON.parse(this.responseText);
 
 	    //var data = xmlhttp.responseText;
-	    $('#snameinfo').html(data.sname);
+	    $('#snameinfo').html(data.other_name);
 	    $('#students_id').text(data.students_id);
 	    $('#classinfo').text(data.class);
 	    $('#categoryinfo').text(data.category);
-	    //document.getElementById("schfeesbal").innerHTML = data.sname;// this also works
+	    //document.getElementById("testd").innerHTML = data.sname;// this also works
 
 	  }else{
 	  	//alert(Error-   + xmlhttp.status + ":"  + xmlhttp.statusText);
@@ -156,10 +156,6 @@ $("#display").load("fundsdash.html");
 
 
 <div class="div" id="display"></div>
-
-
-
-
 
 
 

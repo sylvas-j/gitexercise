@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+
+
+<link href="css/dashstyle.css" type="text/css" rel="stylesheet" media="all">
+
+<link href="css/students_data.css" type="text/css" rel="stylesheet" media="all">
+<!-- load JS files -->
+ <!-- 
+    <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>            jQuery (https://jquery.com/download/) -->
+<script src="js/jquery-3.3.1.min.js"></script>  
+
+<style type="text/css">
+  
+.fund_table{
+  width: 100%;
+  float: left;
+  background-color: rgba(227,227,227,0.8);
+  padding-left: 5px;
+}
+
+
+</style>
+
+
+
+
+
+
+
+
+</head>
+
+<body>
+
+<h3 style="text-align: center;">STUDENT DASHBOARD</h3>
+
+<div class="logout" style="float: right; position: relative;top: -50px;">
+  
+  <a href="test.php" class="dash">LOG OUT</a>
+    
+</div>
+
+<!--sidebar div-->
+<div class="sidebar">
+  <div class="dash-content">
+    <div class="side">
+      <a href="masterboard.html" class="side dash">DASHBOARD</a>
+    </div>
+    
+    <p></p>
+    <div class="side">
+      <a href="#" class="side fund" id="fund">PAYMENTS</a>
+    </div>
+    
+    <p></p>
+    <div class="side">
+      <a href="#" class="side student_data" id="student_data">BIO DATA</a>
+    </div>
+    
+    <p></p>
+    <div class="side">
+      <a href="#" class="side dash">RESULT</a>
+    </div>
+    
+  </div>
+</div>
+
+<div class="basicInfo">
+
+  <span class="info snameinfo" id="snameinfo"></span>
+  <span class="info classinfo" id="classinfo"></span>
+  <span class="info categoryinfo" id="categoryinfo"></span>
+  <span class="info students_id" id="students_id"></span>
+</div>
+
+
+
+
+<div class="div" id="display"></div>
+
+
+
+
+
+
+
+
+
+<div class="loadin">
+
+
+<!--form div-->
+<div class="form_space"><!--this control the region of the form -->
+
+<form action="" method="POST" class="form_space1">
+ 
+<div class="fund_table_space"> <!--this control the region of the fund tables-->
+
+<div class="fund_table"><!--this control the set in the immediate above region of the fund tables-->
+
+<table class="amt_table input_table">
+  <div class="th_head_div">
+    <tr>
+      <th class="tb_head">ACADEMIC SECTION</th>
+      <th class="tb_head">YEAR</th>
+      <th class="tb_head">SPECIATIES</th>
+    </tr>
+    </div>
+
+    <div class="tb_row">
+      <tr>
+        <td>
+          <select class="textarea" id="section">
+            <option>Choose Section</option>
+            <option value="FIRST TERM">2019/2020</option>
+            <option value="SECOND TERM">2020/2021</option>
+            <option value="THIRD TERM">2021/2022</option>
+          </select>
+        </td>
+
+
+        <td>
+          <select class="textarea" id="year">
+            <option value="">Select Year</option>
+            <option value="2020">2019/2020</option>
+            <option value="2021">2020/2021</option>
+            <option value="2022">2021/2022</option>
+            <option value="2023">2022/2023</option>
+          </select>
+        </td>
+        </td>
+
+        <td><textarea class="com" id="com">ok</textarea></td>
+      </tr>      
+    </div>
+
+    <div class="cal">
+      <tr class="cal_tr">
+        <td colspan="6">
+          <div class="button_div" onclick="account()">CHECKOUT/UPDATE</div>
+        </td>
+      </tr>
+    </div>
+
+</table>
+
+    
+
+
+
+<p></p>
+<p></p>
+<p></p>
+<!--FIRST TERM TABLE-->
+<table class="amt_table input_table">
+
+  <div class="th_head_div">
+    <tr>
+      <th class="head" colspan="4">FIRST TERM</th>
+    </tr>
+  </div>
+
+  <div class="th_head_div">
+    <tr>
+      <th class="tb_head">CLASS</th>
+      <th class="tb_head">FIRST TERM AMOUNT</th>
+      <th>SECOND TERM AMOUNT</th>
+      <th>THIRD TERM AMOUNT</th>
+    </tr>
+  </div>
+
+    <div class="tb_row">
+      <tr id="ff_tb_row">
+        <td><div id="js1">JS1</div></td>
+        <td><textarea class="textarea" id="js1_fterm_amt"></textarea></td>
+        <td><textarea class="textarea" id="js1_sterm_amt"></textarea></td>
+        <td><textarea class="textarea" id="js1_tterm_amt"></textarea></td>
+      </tr>      
+    </div>
+
+    <div class="tb_row">
+      <tr id="ff_tb_row">
+        <td><div id="js2">JS2</div></td>
+        <td><textarea class="textarea" id="js2_fterm_amt"></textarea></td>
+        <td><textarea class="textarea" id="js2_sterm_amt"></textarea></td>
+        <td><textarea class="textarea" id="js2_tterm_amt"></textarea></td>
+      </tr>      
+    </div>
+
+    <div class="tb_row">
+      <tr id="fs_tb_row">
+        <td><div id="js3">JS3</div></td>
+        <td><textarea class="textarea" id="js3_fterm_amt"></textarea></td>
+        <td><textarea class="textarea" id="js3_sterm_amt"></textarea></td>
+        <td><textarea class="textarea" id="js3_tterm_amt"></textarea></td>
+      </tr>      
+    </div>
+
+    <div class="tb_row">
+
+      <tr id="ft_tb_row">
+        <td><div id="ss1">SS1</div></td>
+        <td><textarea class="textarea" id="ss1_fterm_amt"></textarea></td>
+        <td><textarea class="textarea" id="ss1_sterm_amt"></textarea></td>
+        <td><textarea class="textarea" id="ss1_tterm_amt"></textarea></td>
+      </tr>      
+    </div>
+
+    <div class="tb_row">
+      <tr id="fft_tb_row">
+        <td><div id="ss2">SS2</div></td>
+        <td><textarea class="textarea" id="ss2_fterm_amt"></textarea></td>
+        <td><textarea class="textarea" id="ss2_sterm_amt"></textarea></td>
+        <td><textarea class="textarea" id="ss2_tterm_amt"></textarea></td>
+
+      </tr>       
+    </div>
+
+    <div class="tb_row">
+      <tr>
+        <td><div id="ss3">SS3</div></td>
+        <td><textarea class="textarea" id="ss3_fterm_amt"></textarea></td>
+        <td><textarea class="textarea" id="ss3_sterm_amt"></textarea></td>
+        <td><textarea class="textarea" id="ss3_tterm_amt"></textarea></td>
+
+      </tr> 
+
+      <div class="cal">
+      <tr class="cal_tr">
+        <td colspan="6">
+          <div class="button_div" onclick="test()">UPDATE</div>
+        </td>
+      </tr>
+    </div>
+    </div>
+ 
+</table>
+
+
+
+
+<p></p>
+<p></p>
+<p></p>
+<!--SECOND TERM TABLE-->
+
+
+
+</div>
+
+
+</div>
+
+</form>
+  
+
+
+</div>
+</div>
+
+
+
+
+
+
+<script type="text/javascript">
+
+function test(){
+
+var js1 = "JS1";
+var js2 = "JS2";
+var js3 = "JS3";
+
+var ss1 = "SS1";
+var ss2 = "SS2";
+var ss3 = "SS3";
+
+var js1_fterm_amt = document.getElementById("js1_fterm_amt").value;
+var js1_sterm_amt = document.getElementById("js1_sterm_amt").value;
+var js1_tterm_amt = document.getElementById("js1_tterm_amt").value;
+
+var js2_fterm_amt = document.getElementById("js2_fterm_amt").value;
+var js2_sterm_amt = document.getElementById("js2_sterm_amt").value;
+var js2_tterm_amt = document.getElementById("js2_tterm_amt").value;
+
+var js3_fterm_amt = document.getElementById("js3_fterm_amt").value;
+var js3_sterm_amt = document.getElementById("js3_sterm_amt").value;
+var js3_tterm_amt = document.getElementById("js3_tterm_amt").value;
+
+var ss1_fterm_amt = document.getElementById("ss1_fterm_amt").value;
+var ss1_sterm_amt = document.getElementById("ss1_sterm_amt").value;
+var ss1_tterm_amt = document.getElementById("ss1_tterm_amt").value;
+
+var ss2_fterm_amt = document.getElementById("ss2_fterm_amt").value;
+var ss2_sterm_amt = document.getElementById("ss2_sterm_amt").value;
+var ss2_tterm_amt = document.getElementById("ss2_tterm_amt").value;
+
+var ss3_fterm_amt = document.getElementById("ss3_fterm_amt").value;
+var ss3_sterm_amt = document.getElementById("ss3_sterm_amt").value;
+var ss3_tterm_amt = document.getElementById("ss3_tterm_amt").value;
+
+var year = document.getElementById("year").value;
+
+/*
+alert(js1_fterm_amt);
+alert(ss3_sterm_amt);
+
+alert(js1_tterm_amt);
+
+
+alert(js2_fterm_amt);
+alert(js2_sterm_amt);
+alert(js2_tterm_amt);
+
+alert(js3_fterm_amt);
+alert(js3_sterm_amt);
+alert(js3_tterm_amt);
+
+alert(ss1_fterm_amt);
+alert(ss1_sterm_amt);
+alert(ss1_tterm_amt);
+
+alert(ss2_fterm_amt);
+alert(ss2_sterm_amt);
+alert(ss2_tterm_amt);
+
+alert(ss3_fterm_amt);
+alert(ss3_sterm_amt);
+alert(ss3_tterm_amt);
+*/
+
+
+
+
+//function check_phone(){
+  var error = '';
+  var phoneRE = /^\d{0,20}$/;
+
+if(phoneRE.test(js1_fterm_amt)){
+  //alert("This is working");
+  }else{
+    //$("#phone_s").html("Name Missing");
+error+="Please enter a valid JS1 FIRST term amount \n\n";
+  };
+
+if(phoneRE.test(js1_sterm_amt)){
+  //alert("This is working");
+  }else{
+    //$("#phone_s").html("Name Missing");
+error+="Please enter valid JS1 SECOND term amount \n\n";
+  };
+
+if(phoneRE.test(js1_tterm_amt)){
+  //alert("This is working");
+  }else{
+    //$("#phone_s").html("Name Missing");
+error+="Please enter valid JS1 THIRD term amount \n\n";
+  };
+
+ // this is for js two 
+if(phoneRE.test(js2_fterm_amt)){
+  //alert("This is working");
+  }else{
+    //$("#phone_s").html("Name Missing");
+error+="Please enter a valid JS2 FIRST term amount \n\n";
+  };
+
+if(phoneRE.test(js2_sterm_amt)){
+  //alert("This is working");
+  }else{
+    //$("#phone_s").html("Name Missing");
+error+="Please enter valid JS2 SECOND term amount \n\n";
+  };
+
+if(phoneRE.test(js2_tterm_amt)){
+  //alert("This is working");
+  }else{
+    //$("#phone_s").html("Name Missing");
+error+="Please enter valid JS2 THIRD term amount \n\n";
+  };
+
+
+ // this is for js three 
+if(phoneRE.test(js3_fterm_amt)){
+  //alert("This is working");
+  }else{
+    //$("#phone_s").html("Name Missing");
+error+="Please enter a valid JS3 FIRST term amount \n\n";
+  };
+
+if(phoneRE.test(js3_sterm_amt)){
+  //alert("This is working");
+  }else{
+    //$("#phone_s").html("Name Missing");
+error+="Please enter valid JS3 SECOND term amount \n\n";
+  };
+
+if(phoneRE.test(js3_tterm_amt)){
+  //alert("This is working");
+  }else{
+    //$("#phone_s").html("Name Missing");
+error+="Please enter valid JS3 THIRD term amount \n\n";
+  };
+
+
+ // this is for SS ONE
+if(phoneRE.test(ss1_fterm_amt)){
+  //alert("This is working");
+  }else{
+    //$("#phone_s").html("Name Missing");
+error+="Please enter a valid SS1 FIRST term amount \n\n";
+  };
+
+if(phoneRE.test(ss1_sterm_amt)){
+  //alert("This is working");
+  }else{
+    //$("#phone_s").html("Name Missing");
+error+="Please enter valid SS1 SECOND term amount \n\n";
+  };
+
+if(phoneRE.test(ss1_tterm_amt)){
+  //alert("This is working");
+  }else{
+    //$("#phone_s").html("Name Missing");
+error+="Please enter valid SS1 THIRD term amount \n\n";
+  };
+
+
+ // this is for SS ONE
+if(phoneRE.test(ss2_fterm_amt)){
+  //alert("This is working");
+  }else{
+    //$("#phone_s").html("Name Missing");
+error+="Please enter a valid SS2 FIRST term amount \n\n";
+  };
+
+if(phoneRE.test(ss2_sterm_amt)){
+  //alert("This is working");
+  }else{
+    //$("#phone_s").html("Name Missing");
+error+="Please enter valid SS2 SECOND term amount \n\n";
+  };
+
+if(phoneRE.test(ss2_tterm_amt)){
+  //alert("This is working");
+  }else{
+    //$("#phone_s").html("Name Missing");
+error+="Please enter valid SS2 THIRD term amount \n\n";
+  };
+
+
+ // this is for SS ONE
+if(phoneRE.test(ss3_fterm_amt)){
+  //alert("This is working");
+  }else{
+    //$("#phone_s").html("Name Missing");
+error+="Please enter a valid SS3 FIRST term amount \n\n";
+  };
+
+if(phoneRE.test(ss3_sterm_amt)){
+  //alert("This is working");
+  }else{
+    //$("#phone_s").html("Name Missing");
+error+="Please enter valid SS3 SECOND term amount \n\n";
+  };
+
+if(phoneRE.test(ss3_tterm_amt)){
+  //alert("This is working");
+  }else{
+    //$("#phone_s").html("Name Missing");
+error+="Please enter valid SS3 THIRD term amount \n";
+  };
+
+var yearRE = /^\d{4}$/;
+if(yearRE.test(year)){
+  //alert("This is working");
+  }else{
+    //$("#phone_s").html("Name Missing");
+error+="Please select SCHOOL FEES YEAR. \n";
+  };
+
+
+
+
+
+if(error == ''){
+    alert("tou asre good");
+
+
+
+//};
+
+//};// end of test function
+
+
+// function accounthhhhhh(){
+if(year != ''){
+
+var termsamt = {"js1_fterm": js1_fterm_amt,
+            "js1_sterm": js1_sterm_amt,
+            "js1_tterm": js1_tterm_amt,
+            "js2_fterm": js2_fterm_amt,
+            "js2_sterm": js2_sterm_amt,
+            "js2_tterm": js2_tterm_amt,
+            "js3_fterm": js3_fterm_amt,
+            "js3_sterm": js3_sterm_amt,
+            "js3_tterm": js3_tterm_amt,
+            "ss1_fterm": ss1_fterm_amt,
+            "ss1_sterm": ss1_sterm_amt,
+            "ss1_tterm": ss1_tterm_amt,
+            "ss2_fterm": ss2_fterm_amt,
+            "ss2_sterm": ss2_sterm_amt,
+            "ss2_tterm": ss2_tterm_amt,
+            "ss3_fterm": ss3_fterm_amt,
+            "ss3_sterm": ss3_sterm_amt,
+            "ss3_tterm": ss3_tterm_amt,
+            "year_selected": year};
+
+
+  var text = JSON.stringify(termsamt);
+  var xmlhttp = new XMLHttpRequest();
+  xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200){
+      //var myObj = JSON.parse(this.responseText);
+      var data = this.responseText;
+
+
+      //var data = xmlhttp.responseText;
+      //document.getElementById("ajaxform").innerHTML = data;
+      alert(data);
+
+    }else{
+      //alert("new XMLHttpRequest not done!");
+      //alert(Error-   + xmlhttp.status + ":"  + xmlhttp.statusText);
+        }; //end if
+  }; //end onreadystate
+
+  xmlhttp.open("POST", "php/masterboard.php", true);
+  xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  //xmlhttp.open("GET", "simpleGreet.php?x=" + obj.table, true);
+  xmlhttp.send("z=" + text);
+
+  // OOORRRR THIS
+
+
+setTimeout("window.location.reload(true);", 3000);
+
+}else{
+  alert("Please select year!");
+}// end of year if
+
+  }else{
+    alert(error);
+};//end of error if
+
+
+//}// end account
+
+}// end of test function
+
+</script>
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+    <script type="text/javascript">
+      //ajax page info load
+// another ajax reguest
+//
+
+$(init);
+
+
+
+//var ig = localStorage.getItem('id_passed');
+//var ig = 14;
+
+
+function init(){
+  //alert("alright");
+    
+    var year_res = {"year_selected": year};
+
+    var test = JSON.stringify(year_res);
+      var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200){
+      //var myObj = JSON.parse(this.responseText);
+
+      var data = JSON.parse(this.responseText);
+
+      //var data = xmlhttp.responseText;
+      $('#sname').html(data.sname);
+
+      //$('#oname').html(data.other_name);
+
+      
+      //document.getElementById("schfeesbal").innerHTML = data.sname;// this also works
+
+    }else{
+      //alert(Error-   + xmlhttp.status + ":"  + xmlhttp.statusText);
+        }; //end if
+  }; //end onreadystate
+
+  xmlhttp.open("POST", "php/masterboardresult.php", true);
+  xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  //xmlhttp.open("GET", "simpleGreet.php?x=" + obj.table, true);
+  xmlhttp.send("x=" + test);
+
+
+
+
+
+//$("#display").load("fundsdash.html");
+}; // end init function
+
+
+</script>
+
+
+
+
+
+<script type="text/javascript">     
+  
+
+/*
+$("#fund").click(function(){
+
+  //$("#display").load("funds.html");
+  $("#display").load("amt_table.html");
+
+});
+
+$("#student_data").click(function(){
+
+  $("#display").load("students_data.html");
+
+});
+*/
+
+</script>

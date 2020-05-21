@@ -37,13 +37,14 @@
       <tr>
         <td>
           <select class="term" id="term">
-            <option>FIRST TERM</option>
-            <option>SECOND TERM</option>
-            <option>THIRD TERM</option>
+            <option>Choose term</option>
+            <option value="FIRST TERM">FIRST TERM</option>
+            <option value="SECOND TERM">SECOND TERM</option>
+            <option value="THIRD TERM">THIRD TERM</option>
           </select>
         </td>
 
-        <td>40000</td>
+        <td id="amt_due">In what term?</td>
 
         <td>
           <select class="installment" id="installment">
@@ -596,8 +597,7 @@ $("#t_paid_total").html(t_amtp_total);
 <script type="text/javascript">
   
 
-  function account(){
-
+function account(){
 
 //text books calculations
   var term = document.getElementById("term").value;
@@ -610,8 +610,25 @@ $("#t_paid_total").html(t_amtp_total);
 alert(date);
 //var holdate = "mySQL datetome - " +date.toISOString().slice(0, 20).replace('T', ' ');
 //alert(holdate);
+  var error = '';
+  var phoneRE = /^\d{0,20}$/;
+
+if(phoneRE.test(amt)){
+  //alert("This is working");
+  }else{
+    //$("#phone_s").html("Name Missing");
+error+="Please enter a valid BALANCE amount \n\n";
+  };
+
+if(phoneRE.test(paid)){
+  //alert("This is working");
+  }else{
+    //$("#phone_s").html("Name Missing");
+error+="Please enter valid PAID amount \n";
+  };
 
 
+if(error == ''){
 
   var bal = parseFloat(amt) - parseFloat(paid);
 
@@ -655,12 +672,60 @@ var fund = {"students_id": iddd, "term_v":term, "install_v":installment, "amt_v"
 
 setTimeout("window.location.reload(true);", 3000);
 
- 
+}else{
+  alert(error);
+}//end check error if function
 
 
-  }// end account
 
 
+
+}// end account
+
+</script>
+
+
+
+
+<script type="text/javascript">
+
+
+  //$("#term").click(function(){
+$(document).on('change', '#term', function(){
+
+  alert("this is for the term change function");
+
+var term_t = document.getElementById("term").value;
+
+var classfund = {"students_id": iddd, "term_tv": term_t};
+
+
+  var text = JSON.stringify(classfund);
+  var xmlhttp = new XMLHttpRequest();
+  xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200){
+      //var myObj = JSON.parse(this.responseText);
+      //var data = this.responseText;
+      var data = JSON.parse(this.responseText);
+
+      //var data = xmlhttp.responseText;
+      //document.getElementById("ajaxform").innerHTML = data;
+      alert(data.amount);
+      $("#amt_due").html(data.amount);
+
+    }else{
+      //alert("new XMLHttpRequest not done!");
+      //alert(Error-   + xmlhttp.status + ":"  + xmlhttp.statusText);
+        }; //end if
+  }; //end onreadystate
+
+  xmlhttp.open("POST", "php/class.php", true);
+  xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  //xmlhttp.open("GET", "simpleGreet.php?x=" + obj.table, true);
+  xmlhttp.send("k=" + text);
+
+
+  });
 
 </script>
 
