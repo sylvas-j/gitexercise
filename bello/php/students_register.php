@@ -85,6 +85,54 @@ VALUES ('$students->sname',
 	};
 
 
+
+
+
+
+$output1 = <<< HERE
+surname: $students->sname
+other name: $students->oname
+class: $students->class
+phone: $students->phone
+parent's phone: $students->p_phone
+email: $students->email
+address: $students->address
+dob: $students->dob
+age: $students->age
+sex: $students->sex
+category: $students->category
+former school: $students->f_sch
+date admitted: $students->yr_adm
+.....
+.....
+.....
+
+HERE;
+
+//open file for output
+$fp1 = fopen("C:\\xampp\\htdocs\\projects\\bello\\students_backup.txt", "a");
+//write to the file
+fwrite($fp1, $output1);
+fclose($fp1);
+
+
+
+
+// writing to and reading from a comma-separated value file
+//generate output for text file
+
+
+$list = array($students->sname, $students->oname, $students->class, $students->phone, $students->p_phone, $students->email, $students->address, $students->dob, $students->age, $students->sex, $students->category, $students->f_sch, $students->yr_adm);
+
+$fp = fopen("C:\\xampp\\htdocs\\projects\\bello\\student_register.csv", "a");
+//write to the file
+//foreach($list as $line){
+	fputcsv($fp, $list);
+//};
+//fwrite($fp, $output);
+fclose($fp);
+
+
 } else {echo "ERROR: " . $sql1 . "<br>"  . $conn->error;
 	};
 $conn->close();

@@ -71,6 +71,7 @@ var two = 2;
 	 	localStorage.setItem('var2', two);
 
 		window.document.location = './dashboard.html';
+    //window.document.location = './dashboard.html' + '?id_passed=' + class_v;
 	}else{
 		alert("Select valid name.");
 	};
@@ -124,7 +125,7 @@ var two = 2;
             <a href="#" class="small mr-3"><span class="icon-envelope-o mr-2"></span> info@mydomain.com</a> 
           </div>
           <div class="col-lg-3 text-right">
-            <a href="masterboard.html" class="small mr-3"><span class="icon-unlock-alt"></span> Log In</a>
+            <a href="masterboard.html" class="small mr-3"><span class="icon-unlock-alt"></span> Master Log In</a>
             <a href="student.html" class="small btn btn-primary px-4 py-2 rounded-0"><span class="icon-users"></span> Register</a>
           </div>
         </div>
@@ -136,7 +137,7 @@ var two = 2;
         <div class="d-flex align-items-center">
           <div class="site-logo">
             <a href="#" class="d-block">
-              <img src="images/logo.jpg" alt="Image" class="img-fluid">
+              <img src="images/photo.jpg" alt="Image" class="img-fluid" style="height: 50px; width: 100px;">
             </a>
           </div>
           <div class="mr-auto">
@@ -186,8 +187,8 @@ var two = 2;
         <div class="container">
           <div class="row align-items-end justify-content-center text-center">
             <div class="col-lg-7">
-              <h2 class="mb-0">Login</h2>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+              <h2 class="mb-0">Pilot Fisbell</h2>
+              <p>Expanding Your Horrizons.</p>
             </div>
           </div>
         </div>
@@ -229,12 +230,23 @@ var two = 2;
 
 
 //if($class_vp == 'JS1' || $class_vp == 'JS2' || $class_vp == 'JS3' || $class_vp == 'SS1' || $class_vp == 'SS2' || $class_vp == 'SS3'){
-if($_POST["class_listphp"] == "JS1" || 
+if($_POST["class_listphp"] == "KINDERGARTEN" || 
+  $_POST["class_listphp"] == "CRECHE" || 
+  $_POST["class_listphp"] == "NURSERY ONE" || 
+  $_POST["class_listphp"] == "NURSERY TWO" || 
+  $_POST["class_listphp"] == "NURSERY THREE" ||
+  $_POST["class_listphp"] == "BASIC ONE" || 
+  $_POST["class_listphp"] == "BASIC TWO" || 
+  $_POST["class_listphp"] == "BASIC THREE" || 
+  $_POST["class_listphp"] == "BASIC FOUR" || 
+  $_POST["class_listphp"] == "BASIC FIVE" ||
+  $_POST["class_listphp"] == "JS1" || 
   $_POST["class_listphp"] == "JS2" || 
   $_POST["class_listphp"] == "JS3" || 
   $_POST["class_listphp"] == "SS1" || 
   $_POST["class_listphp"] == "SS2" || 
-  $_POST["class_listphp"] == "SS3")
+  $_POST["class_listphp"] == "SS3" ||
+  $_POST["class_listphp"] == "EX STUDENTS")
 {
 
   $class_vp = $_POST["class_listphp"];
@@ -270,12 +282,23 @@ if($_POST["class_listphp"] == "JS1" ||
                   
 <?php
 	//if($class_vp == 'JS1' || $class_vp == 'JS2' || $class_vp == 'JS3' || $class_vp == 'SS1' || $class_vp == 'SS2' || $class_vp == 'SS3'){
-if($_POST["class_listphp"] == "JS1" || 
+if($_POST["class_listphp"] == "KINDERGARTEN" || 
+  $_POST["class_listphp"] == "CRECHE" || 
+  $_POST["class_listphp"] == "NURSERY ONE" || 
+  $_POST["class_listphp"] == "NURSERY TWO" || 
+  $_POST["class_listphp"] == "NURSERY THREE" ||
+  $_POST["class_listphp"] == "BASIC ONE" || 
+  $_POST["class_listphp"] == "BASIC TWO" || 
+  $_POST["class_listphp"] == "BASIC THREE" || 
+  $_POST["class_listphp"] == "BASIC FOUR" || 
+  $_POST["class_listphp"] == "BASIC FIVE" ||
+  $_POST["class_listphp"] == "JS1" || 
 	$_POST["class_listphp"] == "JS2" || 
 	$_POST["class_listphp"] == "JS3" || 
 	$_POST["class_listphp"] == "SS1" || 
 	$_POST["class_listphp"] == "SS2" || 
-	$_POST["class_listphp"] == "SS3")
+  $_POST["class_listphp"] == "SS3" ||
+  $_POST["class_listphp"] == "EX STUDENTS")
 {
 
 				if ($result == true){
@@ -314,12 +337,24 @@ if($_POST["class_listphp"] == "JS1" ||
 
                 <select class="list class_list" id="class_list" name="class_listphp">
                 	<option value="">Classes</option>
+
+      <option value="KINDERGARTEN">KINDERGARTEN</option>
+      <option value="CCRECHE">CRECHE</option>
+      <option value="NURSERY ONE">NURSERY ONE</option>
+      <option value="NURSERY TWO">NURSERY TWO</option>
+      <option value="NURSERY THREE">NURSERY THREE</option>
+      <option value="BASIC ONE">BASIC ONE</option>
+      <option value="BASIC TWO">BASIC TWO</option>
+      <option value="BASIC THREE">BASIC THREE</option>
+      <option value="BASIC FOUR">BASIC FOUR</option>
+      <option value="BASIC FIVE">BASIC FIVE</option>
                 	<option value="JS1">JS1</option>
                 	<option value="JS2">JS2</option>
                 	<option value="JS3">JS3</option>
                 	<option value="SS1">SS1</option>
                 	<option value="SS2">SS2</option>
                 	<option value="SS3">SS3</option>
+                  <option value="EX STUDENTS">EX STUDENTS</option>
                 </select>
 
 

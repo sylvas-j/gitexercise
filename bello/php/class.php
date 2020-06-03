@@ -23,7 +23,7 @@ if ($conn->connect_error){
 };
 
  
-$sql = "SELECT amount FROM termly_fees WHERE term = '$obj->term_tv' AND class = (SELECT class FROM students_data WHERE students_id = '$obj->students_id')";
+$sql = "SELECT amount FROM termly_fees WHERE term = '$obj->term_tv' AND year = '$obj->year_v' AND class = (SELECT class FROM students_data WHERE students_id = '$obj->students_id')";
 
 $result1 = mysqli_query($conn, $sql);
 

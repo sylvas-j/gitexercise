@@ -1,0 +1,654 @@
+
+<link href="css/dashstyle.css" type="text/css" rel="stylesheet" media="all">
+
+<link href="css/students_data.css" type="text/css" rel="stylesheet" media="all">
+<!-- load JS files -->
+ <!-- 
+    <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>            jQuery (https://jquery.com/download/) -->
+<script src="js/jquery-3.3.1.min.js"></script>  
+
+
+
+
+<style type="text/css">
+  
+.fund_table{
+  width: 100%;
+  float: left;
+  background-color: rgba(227,227,227,0.8);
+  padding-left: 5px;
+}
+
+.textarea, .trans_ar{
+  text-align: center;
+}
+
+.prom_table{
+
+}
+
+.row{
+  margin: 100px;
+}
+
+</style>
+
+
+
+<div class="loadin">
+
+
+<!--form div-->
+<div class="form_space"><!--this control the region of the form -->
+
+<form action="" method="POST" class="form_space1">
+ 
+<div class="fund_table_space"> <!--this control the region of the fund tables-->
+
+<div class="fund_table"><!--this control the set in the immediate above region of the fund tables-->
+
+<table class="amt_table input_table">
+  <div class="th_head_div">
+    <tr>
+      <th class="tb_head">ACADEMIC SECTION</th>
+      <th class="tb_head">YEAR</th>
+      <th class="tb_head">SPECIATIES</th>
+    </tr>
+    </div>
+
+    <div class="tb_row">
+      <tr>
+        <td>
+          <select class="textarea" id="section">
+            <option>Invalid</option>
+          </select>
+        </td>
+
+
+        <td>
+          <select class="textarea" id="year">
+            <option value="">Invalid</option>
+          </select>
+
+        </td>
+        </td>
+
+        <td><textarea class="com" id="com">ok</textarea></td>
+      </tr>      
+    </div>
+
+    <div class="cal">
+      <tr class="cal_tr">
+        <td colspan="6">
+          <div class="button_div" onclick="checkout_year()">CHECKOUT/UPDATE</div>
+        </td>
+      </tr>
+    </div>
+
+</table>
+
+    
+
+
+
+<p></p>
+<p></p>
+<p></p>
+<!--FIRST TERM TABLE-->
+<table class="amt_table input_table prom_table">
+
+  <div class="th_head_div">
+    <tr>
+      <th class="head" colspan="3">PROMOTION</th>
+    </tr>
+  </div>
+
+  <div class="th_head_div">
+    <tr>
+      <th class="tb_head">FROM</th>
+      <th class="tb_head">TRANCENTION</th>
+      <th class="tb_head">TO</th>
+    </tr>
+  </div>
+
+
+  <div class="tb_row">
+      <tr id="ff_tb_row">
+        <td>
+          <select class="textarea" id="">
+            <option value="">KINDERGARTEN</option>
+          </select>
+        </td>
+        <td>
+          <div class="trans_ar">=></div>
+        </td>
+        <td>
+          <select class="textarea" id="js2">
+            <option value="CRECHE">CRECHE</option>
+          </select>
+        </td>
+      </tr>      
+    </div>
+
+    <div class="tb_row">
+      <tr id="ff_tb_row">
+        <td>
+          <select class="textarea" id="">
+            <option value="">CRECHE</option>
+          </select>
+        </td>
+        <td>
+          <div class="trans_ar">=></div>
+        </td>
+        <td>
+          <select class="textarea" id="js2">
+            <option value="NURSERY ONE">NURSERY ONE</option>
+          </select>
+        </td>
+      </tr>      
+    </div>
+
+    <div class="tb_row">
+      <tr id="ff_tb_row">
+        <td>
+          <select class="textarea" id="">
+            <option value="">NURSERY ONE</option>
+          </select>
+        </td>
+        <td>
+          <div class="trans_ar">=></div>
+        </td>
+        <td>
+          <select class="textarea" id="js2">
+            <option value="NURSERY TWO">NURSERY TWO</option>
+          </select>
+        </td>
+      </tr>      
+    </div>
+
+    <div class="tb_row">
+      <tr id="ff_tb_row">
+        <td>
+          <select class="textarea" id="">
+            <option value="">NURSERY TWO</option>
+          </select>
+        </td>
+        <td>
+          <div class="trans_ar">=></div>
+        </td>
+        <td>
+          <select class="textarea" id="js2">
+            <option value="NURSERY THREE">NURSERY THREE</option>
+          </select>
+        </td>
+      </tr>      
+    </div>
+
+  <div class="tb_row">
+      <tr id="ff_tb_row">
+        <td>
+          <select class="textarea" id="">
+            <option value="">NURSERY THREE</option>
+          </select>
+        </td>
+        <td>
+          <div class="trans_ar">=></div>
+        </td>
+        <td>
+          <select class="textarea" id="js2">
+            <option value="BASIC ONE">BASIC ONE</option>
+          </select>
+        </td>
+      </tr>      
+    </div>
+
+
+  <div class="tb_row">
+      <tr id="ff_tb_row">
+        <td>
+          <select class="textarea" id="">
+            <option value="">BASIC ONE</option>
+          </select>
+        </td>
+        <td>
+          <div class="trans_ar">=></div>
+        </td>
+        <td>
+          <select class="textarea" id="js2">
+            <option value="BASIC TWO">BASIC TWO</option>
+          </select>
+        </td>
+      </tr>      
+    </div>
+
+  <div class="tb_row">
+      <tr id="ff_tb_row">
+        <td>
+          <select class="textarea" id="">
+            <option value="">BASIC TWO</option>
+          </select>
+        </td>
+        <td>
+          <div class="trans_ar">=></div>
+        </td>
+        <td>
+          <select class="textarea" id="js2">
+            <option value="BASIC THREE">BASIC THREE</option>
+          </select>
+        </td>
+      </tr>      
+    </div>
+
+
+  <div class="tb_row">
+      <tr id="ff_tb_row">
+        <td>
+          <select class="textarea" id="">
+            <option value="">BASIC THREE</option>
+          </select>
+        </td>
+        <td>
+          <div class="trans_ar">=></div>
+        </td>
+        <td>
+          <select class="textarea" id="js2">
+            <option value="BASIC FOUR">BASCI FOUR</option>
+          </select>
+        </td>
+      </tr>      
+    </div>
+
+
+  <div class="tb_row">
+      <tr id="ff_tb_row">
+        <td>
+          <select class="textarea" id="">
+            <option value="">BASIC FOUR</option>
+          </select>
+        </td>
+        <td>
+          <div class="trans_ar">=></div>
+        </td>
+        <td>
+          <select class="textarea" id="js2">
+            <option value="BASIC FIVE">BASIC FIVE</option>
+          </select>
+        </td>
+      </tr>      
+    </div>
+
+  <div class="tb_row">
+      <tr id="ff_tb_row">
+        <td>
+          <select class="textarea" id="">
+            <option value="">BASIC FIVE</option>
+          </select>
+        </td>
+        <td>
+          <div class="trans_ar">=></div>
+        </td>
+        <td>
+          <select class="textarea" id="js2">
+            <option value="JSI">JS1</option>
+          </select>
+        </td>
+      </tr>      
+    </div>
+
+
+
+
+
+
+
+    <div class="tb_row">
+      <tr id="ff_tb_row">
+        <td>
+          <select class="textarea" id="">
+            <option value="">JS1</option>
+          </select>
+        </td>
+        <td>
+          <div class="trans_ar">=></div>
+        </td>
+        <td>
+          <select class="textarea" id="js2">
+            <option value="JS2">JS2</option>
+          </select>
+        </td>
+      </tr>      
+    </div>
+
+    <div class="tb_row">
+      <tr id="ff_tb_row">
+        <td>        
+          <select class="textarea" id="year">
+            <option value="">JS2</option>
+          </select>
+        </td>
+        <td>
+          <div class="trans_ar">=></div>
+        </td>
+
+        <td>
+          <select class="textarea" id="js3">
+            <option value="JS3">JS3</option>
+          </select>
+        </td>
+      </tr>      
+    </div>
+
+    <div class="tb_row">
+      <tr id="fs_tb_row">
+        
+        <td>
+          <select class="textarea" id="year">
+            <option value="">JS3</option>
+          </select>
+        </td>
+        <td>
+          <div class="trans_ar">=></div>
+        </td>
+        <td>
+          <select class="textarea" id="ss1">
+            <option value="SS1">SS1</option>
+          </select>
+        </td>
+      </tr>      
+    </div>
+
+    <div class="tb_row">
+      <tr class="row" id="ft_tb_row">
+        
+        <td>
+          <select class="textarea" id="year">
+            <option value="">SS1</option>
+          </select>
+        </td>
+        <td>
+          <div class="trans_ar">=></div>
+        </td>
+        <td>
+          <select class="textarea" id="ss2">
+            <option value="SS2">SS2</option>
+          </select>
+        </td>
+      </tr>      
+    </div>
+
+    <div class="tb_row">
+      <tr class="row" id="ft_tb_row">
+        
+        <td>
+          <select class="textarea" id="year">
+            <option value="">SS2</option>
+          </select>
+        </td>
+        <td>
+          <div class="trans_ar">=></div>
+        </td>
+        <td>
+          <select class="textarea" id="ss3">
+            <option value="SS3">SS3</option>
+          </select>
+        </td>
+      </tr>      
+    </div>
+
+    <div class="tb_row">
+      <tr class="row" id="ft_tb_row">
+        
+        <td>
+          <select class="textarea" id="year">
+            <option value="">SS3</option>
+          </select>
+        </td>
+        <td>
+          <div class="trans_ar">=></div>
+        </td>
+        <td>
+          <select class="textarea" id="ex_students">
+            <option value="SS3">EX STUDENTS</option>
+          </select>
+        </td>
+      </tr>      
+    </div>
+
+    <div class="tb_row">
+
+      <div class="cal">
+      <tr class="cal_tr">
+        <td colspan="6">
+          <div class="button_div" onclick="classprom()">MOVE</div>
+        </td>
+      </tr>
+    </div>
+    </div>
+ 
+</table>
+
+
+
+
+<p></p>
+<p></p>
+<p></p>
+<!--SECOND TERM TABLE-->
+
+
+
+</div>
+
+
+</div>
+
+</form>
+  
+</div>
+</div>
+
+
+
+
+
+
+<script type="text/javascript">
+
+function classprom(){
+
+var kind = "KINDERGARTEN";
+var cre = "CRECHE";
+
+var nur1 = "NURSERY ONE";
+var nur2 = "NURSERY TWO";
+var nur3 = "NURSERY THREE";
+
+var bas1 = "BASIC ONE";
+var bas2 = "BASIC TWO";
+var bas3 = "BASIC THREE";
+var bas4 = "BASIC FOUR";
+var bas5 = "BASIC FIVE";
+
+
+
+
+var js1 = "JS1";
+var js2 = "JS2";
+var js3 = "JS3";
+
+var ss1 = "SS1";
+var ss2 = "SS2";
+var ss3 = "SS3";
+
+var ex_students = "EX STUDENTS";
+/*
+var js2 = document.getElementById("js2").value;
+
+
+var js3 = document.getElementById("js3").value;
+
+var ss1 = document.getElementById("ss1").value;
+
+
+var ss2 = document.getElementById("ss2").value;
+
+
+var ss3 = document.getElementById("ss3").value;
+
+
+var year = document.getElementById("year").value;
+*/
+
+//};// end of test function
+
+
+// function accounthhhhhh(){
+
+
+var termsamt = {
+            "kind_v": kind,
+            "cre_v": cre,
+            "nur1_v": nur1,
+            "nur2_v": nur2,
+            "nur3_v": nur3,
+            "bas1_v": bas1,
+            "bas2_v": bas2,
+            "bas3_v": bas3,
+            "bas4_v": bas4,
+            "bas5_v": bas5,
+            "js1_v": js1,
+            "js2_v": js2,
+            "js3_v": js3,
+            "ss1_v": ss1,
+            "ss2_v": ss2,
+            "ss3_v": ss3,
+            "ex_students_v": ex_students};
+
+
+  var text = JSON.stringify(termsamt);
+  var xmlhttp = new XMLHttpRequest();
+  xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200){
+      //var myObj = JSON.parse(this.responseText);
+      var data = this.responseText;
+
+
+      //var data = xmlhttp.responseText;
+      //document.getElementById("ajaxform").innerHTML = data;
+      alert(data);
+
+    }else{
+      //alert("new XMLHttpRequest not done!");
+      //alert(Error-   + xmlhttp.status + ":"  + xmlhttp.statusText);
+        }; //end if
+  }; //end onreadystate
+
+  xmlhttp.open("POST", "php/class_promotions.php", true);
+  xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  //xmlhttp.open("GET", "simpleGreet.php?x=" + obj.table, true);
+  xmlhttp.send("k=" + text);
+
+
+setTimeout("window.location.reload(true);", 3000);
+
+}// end of test function
+
+</script>
+
+
+
+
+
+
+<script type="text/javascript">
+  
+//$(init);
+
+//$(document).on('change', '#year', function(){
+
+//setTimeout("window.location.reload(true);", 1000);
+
+//});
+
+function checkout_yearggggggg(){
+//$(document).on('change', '#year', function(){
+
+//setTimeout("window.location.reload(true);", 1000);
+
+alert("alright");
+var year = document.getElementById("year").value;
+    
+    var yearres = {"year_selected": year};
+
+    var test = JSON.stringify(yearres);
+      var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200){
+      //var myObj = JSON.parse(this.responseText);
+
+      var data = JSON.parse(this.responseText);
+
+      //var data = xmlhttp.responseText;
+      $("#js1_fterm_amt").html(data.js1_fterm_amt);
+      $("#js1_sterm_amt").html(data.js1_sterm_amt);
+      $("#js1_tterm_amt").html(data.js1_tterm_amt);
+      $("#js2_fterm_amt").html(data.js2_fterm_amt);
+      $("#js2_sterm_amt").html(data.js2_sterm_amt);
+      $("#js2_tterm_amt").html(data.js2_tterm_amt);
+      $("#js3_fterm_amt").html(data.js3_fterm_amt);
+      $("#js3_sterm_amt").html(data.js3_sterm_amt);
+      $("#js3_tterm_amt").html(data.js3_tterm_amt);
+
+      $("#ss1_fterm_amt").html(data.ss1_fterm_amt);
+      $("#ss1_sterm_amt").html(data.ss1_sterm_amt);
+      $("#ss1_tterm_amt").html(data.ss1_tterm_amt);
+      $("#ss2_fterm_amt").html(data.ss2_fterm_amt);
+      $("#ss2_sterm_amt").html(data.ss2_sterm_amt);
+      $("#ss2_tterm_amt").html(data.ss2_tterm_amt);
+      $("#ss3_fterm_amt").html(data.ss3_fterm_amt);
+      $("#ss3_sterm_amt").html(data.ss3_sterm_amt);
+      $("#ss3_tterm_amt").html(data.ss3_tterm_amt);
+      alert(data.ss3_fterm_amt);
+      
+      //document.getElementById("schfeesbal").innerHTML = data.sname;// this also works
+
+    }else{
+      //alert(Error-   + xmlhttp.status + ":"  + xmlhttp.statusText);
+        }; //end if
+  }; //end onreadystate
+
+  xmlhttp.open("POST", "php/masterboardresult.php", true);
+  xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  //xmlhttp.open("GET", "simpleGreet.php?x=" + obj.table, true);
+  xmlhttp.send("g=" + test);
+
+
+
+//}); // end onchange function
+};// end of checkout_year function
+
+</script>
+
+
+
+
+
+<script type="text/javascript">     
+  
+
+/*
+$("#fund").click(function(){
+
+  //$("#display").load("funds.html");
+  $("#display").load("amt_table.html");
+
+});
+
+$("#student_data").click(function(){
+
+  $("#display").load("students_data.html");
+
+});
+*/
+
+</script>

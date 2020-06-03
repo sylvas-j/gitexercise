@@ -1,0 +1,31 @@
+students_id: 14
+year : 2020
+installment: SECOND INSTALLMEMT
+amount: 425
+amount paid: 25
+balance : 400
+date: 5/28/2020, 11:56:00 PM
+comments: ok
+....
+....
+....students_id: 37
+year : 2020
+installment: FIRST INSTALLMENT
+amount: 10000
+amount paid: 5000
+balance : 5000
+date: 5/29/2020, 9:37:12 PM
+comments: ok
+....
+....
+....students_id: 38
+year : 2020
+installment: FIRST INSTALLMENT
+amount: 5252
+amount paid: 3000
+balance : 2252
+date: 6/1/2020, 11:20:13 AM
+comments: PAID
+....
+....
+....

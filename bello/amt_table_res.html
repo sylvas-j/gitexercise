@@ -21,57 +21,6 @@
 
 <div class="fund_table"><!--this control the set in the immediate above region of the fund tables-->
 
-<table class="amt_table input_table">
-  <div class="th_head_div">
-    <tr>
-      <th class="tb_head">TERM</th>
-      <th class="tb_head">AMOUNT DUE(#)</th>
-      <th class="tb_head">RATE</th>
-      <!--<th class="tb_head">BALANCE C/D(#)</th>-->
-      <th class="tb_head">PAID(#)</th>
-      <th class="tb_head">BALANCE C/D(#)</th>
-      <th class="tb_head">COMMENT</th>
-    </tr>
-    </div>
-
-    <div class="tb_row">
-      <tr>
-        <td>
-          <select class="term" id="term">
-            <option>Choose term</option>
-            <option value="FIRST TERM">FIRST TERM</option>
-            <option value="SECOND TERM">SECOND TERM</option>
-            <option value="THIRD TERM">THIRD TERM</option>
-          </select>
-        </td>
-
-        <td id="amt_due">In what term?</td>
-
-        <td>
-          <select class="installment" id="installment">
-            <option>FIRST INSTALLMENT</option>
-            <option>SECOND INSTALLMEMT</option>
-            <option>THIRD INSTALLMENT</option>
-            <option>FOURTH INSTALLMENT</option>
-          </select>
-        </td>
-        <td><textarea class="paid" id="paid">0</textarea></td>
-        <td><textarea class="amt" id="amt">0</textarea></td>
-        <!--<td><textarea class="paid" id="paid">0</textarea></td>-->
-        <td><textarea class="com" id="com">ok</textarea></td>
-      </tr>      
-    </div>
-
-    <div class="cal">
-      <tr class="cal_tr">
-        <td colspan="6">
-          <div class="button_div" onclick="account()">CALCULATE</div>
-        </td>
-      </tr>
-    </div>
-
-</table>
-
     
 
 
@@ -358,7 +307,7 @@ $(init);
 
 
 var iddd = localStorage.getItem('id_passed');
-//var id = document.location.search.replace(/^.*?\=/, '');
+//var iddd = document.location.search.replace(/^.*?\=/, '');
 
 var year = document.getElementById("year").value;
 
@@ -466,7 +415,6 @@ $("#f_paid_total").html(f_amtp_total);
 var ft_outstand = data.ff_amount - f_amtp_total;
 
 var ft_bal_bd = parseFloat(data.ff_fees_amt) + parseFloat(ft_outstand);
-
 
 $("#ft_bal_bd").html("<b>NB: First term fees</b> of <span><b>" +data.ff_fees_amt + "</b></span>");
 /*
@@ -626,7 +574,7 @@ $("#t_paid_total").html(t_amtp_total);
 var tt_bal_bd = parseFloat(data.tf_fees_amt) + parseFloat(st_outstand);
 $("#tt_bal_bd").html("<b>NB: Third term fees</b> of <span><b>" +data.tf_fees_amt + "</b></span> and <b>second term balance</b> of <span><b>" +st_outstand + "</b></span> gives you a total of <span><b>" +tt_bal_bd+ "</b></span> to settle in this <b>Third term</b>.");
 
-//end of third term values display        
+//end of third term values display      
 
 
 

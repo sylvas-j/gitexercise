@@ -27,6 +27,20 @@ if ($conn->connect_error){
 };
 
 
+
+$kind = "KINDERGARTEN";
+$cre = "CRECHE";
+
+$nur1 = "NURSERY ONE";
+$nur2 = "NURSERY TWO";
+$nur3 = "NURSERY THREE";
+
+$bas1 = "BASIC ONE";
+$bas2 = "BASIC TWO";
+$bas3 = "BASIC THREE";
+$bas4 = "BASIC FOUR";
+$bas5 = "BASIC FIVE";
+
 $js1 = "JS1";
 $js2 = "JS2";
 $js3 = "JS3";
@@ -38,6 +52,135 @@ $ss3 = "SS3";
 $fterm = "FIRST TERM";
 $sterm = "SECOND TERM";
 $tterm = "THIRD TERM";
+
+
+$sql_kind1 = "SELECT amount FROM termly_fees WHERE year = '$obj->year_selected' AND term = '$fterm' AND class = '$kind'";
+$res_kind1 = $conn->query($sql_kind1);
+$row_kind1 = mysqli_fetch_array($res_kind1);
+
+$sql_kind2 = "SELECT amount FROM termly_fees WHERE year = '$obj->year_selected' AND term = '$sterm' AND class = '$kind'";
+$res_kind2 = $conn->query($sql_kind2);
+$row_kind2 = mysqli_fetch_array($res_kind2);
+
+$sql_kind3 = "SELECT amount FROM termly_fees WHERE year = '$obj->year_selected' AND term = '$tterm' AND class = '$kind'";
+$res_kind3 = $conn->query($sql_kind3);
+$row_kind3 = mysqli_fetch_array($res_kind3);
+
+$sql_cre1 = "SELECT amount FROM termly_fees WHERE year = '$obj->year_selected' AND term = '$fterm' AND class = '$cre'";
+$res_cre1 = $conn->query($sql_cre1);
+$row_cre1 = mysqli_fetch_array($res_cre1);
+
+$sql_cre2 = "SELECT amount FROM termly_fees WHERE year = '$obj->year_selected' AND term = '$sterm' AND class = '$cre'";
+$res_cre2 = $conn->query($sql_cre2);
+$row_cre2 = mysqli_fetch_array($res_cre2);
+
+$sql_cre3 = "SELECT amount FROM termly_fees WHERE year = '$obj->year_selected' AND term = '$tterm' AND class = '$cre'";
+$res_cre3 = $conn->query($sql_cre3);
+$row_cre3 = mysqli_fetch_array($res_cre3);
+
+
+$sql_nur11 = "SELECT amount FROM termly_fees WHERE year = '$obj->year_selected' AND term = '$fterm' AND class = '$nur1'";
+$res_nur11 = $conn->query($sql_nur11);
+$row_nur11 = mysqli_fetch_array($res_nur11);
+
+$sql_nur12 = "SELECT amount FROM termly_fees WHERE year = '$obj->year_selected' AND term = '$sterm' AND class = '$nur1'";
+$res_nur12 = $conn->query($sql_nur12);
+$row_nur12 = mysqli_fetch_array($res_nur12);
+
+$sql_nur13 = "SELECT amount FROM termly_fees WHERE year = '$obj->year_selected' AND term = '$tterm' AND class = '$nur1'";
+$res_nur13 = $conn->query($sql_nur13);
+$row_nur13 = mysqli_fetch_array($res_nur13);
+
+
+$sql_nur21 = "SELECT amount FROM termly_fees WHERE year = '$obj->year_selected' AND term = '$fterm' AND class = '$nur2'";
+$res_nur21 = $conn->query($sql_nur21);
+$row_nur21 = mysqli_fetch_array($res_nur21);
+
+$sql_nur22 = "SELECT amount FROM termly_fees WHERE year = '$obj->year_selected' AND term = '$sterm' AND class = '$nur2'";
+$res_nur22 = $conn->query($sql_nur22);
+$row_nur22 = mysqli_fetch_array($res_nur22);
+
+$sql_nur23 = "SELECT amount FROM termly_fees WHERE year = '$obj->year_selected' AND term = '$tterm' AND class = '$nur2'";
+$res_nur23 = $conn->query($sql_nur23);
+$row_nur23 = mysqli_fetch_array($res_nur23);
+
+
+$sql_nur31 = "SELECT amount FROM termly_fees WHERE year = '$obj->year_selected' AND term = '$fterm' AND class = '$nur3'";
+$res_nur31 = $conn->query($sql_nur31);
+$row_nur31 = mysqli_fetch_array($res_nur31);
+
+$sql_nur32 = "SELECT amount FROM termly_fees WHERE year = '$obj->year_selected' AND term = '$sterm' AND class = '$nur3'";
+$res_nur32 = $conn->query($sql_nur32);
+$row_nur32 = mysqli_fetch_array($res_nur32);
+
+$sql_nur33 = "SELECT amount FROM termly_fees WHERE year = '$obj->year_selected' AND term = '$tterm' AND class = '$nur3'";
+$res_nur33 = $conn->query($sql_nur33);
+$row_nur33 = mysqli_fetch_array($res_nur33);
+
+
+
+$sql_bas11 = "SELECT amount FROM termly_fees WHERE year = '$obj->year_selected' AND term = '$fterm' AND class = '$bas1'";
+$res_bas11 = $conn->query($sql_bas11);
+$row_bas11 = mysqli_fetch_array($res_bas11);
+
+$sql_bas12 = "SELECT amount FROM termly_fees WHERE year = '$obj->year_selected' AND term = '$sterm' AND class = '$bas1'";
+$res_bas12 = $conn->query($sql_bas12);
+$row_bas12 = mysqli_fetch_array($res_bas12);
+
+$sql_bas13 = "SELECT amount FROM termly_fees WHERE year = '$obj->year_selected' AND term = '$tterm' AND class = '$bas1'";
+$res_bas13 = $conn->query($sql_bas13);
+$row_bas13 = mysqli_fetch_array($res_bas13);
+
+$sql_bas21 = "SELECT amount FROM termly_fees WHERE year = '$obj->year_selected' AND term = '$fterm' AND class = '$bas2'";
+$res_bas21 = $conn->query($sql_bas21);
+$row_bas21 = mysqli_fetch_array($res_bas21);
+
+$sql_bas22 = "SELECT amount FROM termly_fees WHERE year = '$obj->year_selected' AND term = '$sterm' AND class = '$bas2'";
+$res_bas22 = $conn->query($sql_bas22);
+$row_bas22 = mysqli_fetch_array($res_bas22);
+
+$sql_bas23 = "SELECT amount FROM termly_fees WHERE year = '$obj->year_selected' AND term = '$tterm' AND class = '$bas2'";
+$res_bas23 = $conn->query($sql_bas23);
+$row_bas23 = mysqli_fetch_array($res_bas23);
+
+$sql_bas31 = "SELECT amount FROM termly_fees WHERE year = '$obj->year_selected' AND term = '$fterm' AND class = '$bas3'";
+$res_bas31 = $conn->query($sql_bas31);
+$row_bas31 = mysqli_fetch_array($res_bas31);
+
+$sql_bas32 = "SELECT amount FROM termly_fees WHERE year = '$obj->year_selected' AND term = '$sterm' AND class = '$bas3'";
+$res_bas32 = $conn->query($sql_bas32);
+$row_bas32 = mysqli_fetch_array($res_bas32);
+
+$sql_bas33 = "SELECT amount FROM termly_fees WHERE year = '$obj->year_selected' AND term = '$tterm' AND class = '$bas3'";
+$res_bas33 = $conn->query($sql_bas33);
+$row_bas33 = mysqli_fetch_array($res_bas33);
+
+$sql_bas41 = "SELECT amount FROM termly_fees WHERE year = '$obj->year_selected' AND term = '$fterm' AND class = '$bas4'";
+$res_bas41 = $conn->query($sql_bas41);
+$row_bas41 = mysqli_fetch_array($res_bas41);
+
+$sql_bas42 = "SELECT amount FROM termly_fees WHERE year = '$obj->year_selected' AND term = '$sterm' AND class = '$bas4'";
+$res_bas42 = $conn->query($sql_bas42);
+$row_bas42 = mysqli_fetch_array($res_bas42);
+
+$sql_bas43 = "SELECT amount FROM termly_fees WHERE year = '$obj->year_selected' AND term = '$tterm' AND class = '$bas4'";
+$res_bas43 = $conn->query($sql_bas43);
+$row_bas43 = mysqli_fetch_array($res_bas43);
+
+$sql_bas51 = "SELECT amount FROM termly_fees WHERE year = '$obj->year_selected' AND term = '$fterm' AND class = '$bas5'";
+$res_bas51 = $conn->query($sql_bas51);
+$row_bas51 = mysqli_fetch_array($res_bas51);
+
+$sql_bas52 = "SELECT amount FROM termly_fees WHERE year = '$obj->year_selected' AND term = '$sterm' AND class = '$bas5'";
+$res_bas52 = $conn->query($sql_bas52);
+$row_bas52 = mysqli_fetch_array($res_bas52);
+
+$sql_bas53 = "SELECT amount FROM termly_fees WHERE year = '$obj->year_selected' AND term = '$tterm' AND class = '$bas5'";
+$res_bas53 = $conn->query($sql_bas53);
+$row_bas53 = mysqli_fetch_array($res_bas53);
+
+
+
 
 $sql_js11 = "SELECT amount FROM termly_fees WHERE year = '$obj->year_selected' AND term = '$fterm' AND class = '$js1'";
 $res_js11 = $conn->query($sql_js11);
@@ -126,7 +269,37 @@ $row_ss33 = mysqli_fetch_array($res_ss33);
 
 
 
-if ($res_js11 == True &&
+if ($sql_kind1 == True &&
+	$sql_kind2 == True &&
+	$sql_kind3 == True &&
+	$res_cre1 == True &&
+	$res_cre2 == True &&
+	$res_cre3 == True &&
+	$res_nur11 == True &&
+	$res_nur12 == True &&
+	$res_nur13 == True &&
+	$res_nur21 == True &&
+	$res_nur22 == True &&
+	$res_nur23 == True &&
+	$res_nur31 == True &&
+	$res_nur32 == True &&
+	$res_nur33 == True &&
+	$res_bas11 == True &&
+	$res_bas12 == True &&
+	$res_bas13 == True &&
+	$res_bas21 == True &&
+	$res_bas22 == True &&
+	$res_bas23 == True &&
+	$res_bas31 == True &&
+	$res_bas32 == True &&
+	$res_bas33 == True &&
+	$res_bas41 == True &&
+	$res_bas42 == True &&
+	$res_bas43 == True &&
+	$res_bas51 == True &&
+	$res_bas52 == True &&
+	$res_bas53 == True &&
+	$res_js11 == True &&
 	$res_js12 == True &&
 	$res_js13 == True &&
 	$res_js21 == True &&
@@ -148,6 +321,597 @@ if ($res_js11 == True &&
 	//echo  "Data received successfully!";
 
 //This is for JSS ONE first, second and third term data entering
+
+	
+	if($row_kind1 != ''){
+
+		if($obj->kind_fterm != ''){
+
+		$sql1 = "UPDATE termly_fees SET amount = '$obj->kind_fterm' WHERE  year = '$obj->year_selected' AND term = '$fterm' AND class = '$kind'";
+		$result = $conn->query($sql1);
+
+		echo "KINDERGARTEN first term amount updated \n" ;
+		//echo $row1;
+		};
+	}else{
+		$sql1 = "INSERT INTO termly_fees (year, term, class, amount)
+		VALUES ('$obj->year_selected', '$fterm', '$kind', '$obj->kind_fterm')";
+
+		$result = $conn->query($sql1);
+		//echo $result;
+		echo "KINDERGARTEN first term fees inserted. \n";
+	};
+	
+	if($row_kind2 != ''){
+
+		if($obj->kind_sterm != ''){
+
+		$sql1 = "UPDATE termly_fees SET amount = '$obj->kind_sterm' WHERE  year = '$obj->year_selected' AND term = '$sterm' AND class = '$kind'";
+		$result = $conn->query($sql1);
+
+		echo "KINDERGARTEN second term amount updated \n" ;
+		//echo $row1;
+		};
+	}else{
+		$sql1 = "INSERT INTO termly_fees (year, term, class, amount)
+		VALUES ('$obj->year_selected', '$sterm', '$kind', '$obj->kind_sterm')";
+
+		$result = $conn->query($sql1);
+		//echo $result;
+		echo "KINDERGARTEN second term fees inserted. \n";
+	};
+	
+	if($row_kind3 != ''){
+
+		if($obj->kind_tterm != ''){
+
+		$sql1 = "UPDATE termly_fees SET amount = '$obj->kind_tterm' WHERE  year = '$obj->year_selected' AND term = '$tterm' AND class = '$kind'";
+		$result = $conn->query($sql1);
+
+		echo "KINDERGARTEN third term amount updated \n" ;
+		//echo $row1;
+		};
+	}else{
+		$sql1 = "INSERT INTO termly_fees (year, term, class, amount)
+		VALUES ('$obj->year_selected', '$tterm', '$kind', '$obj->kind_tterm')";
+
+		$result = $conn->query($sql1);
+		//echo $result;
+		echo "KINDERGARTEN third term fees inserted. \n";
+	};
+	
+	if($row_cre1 != ''){
+
+		if($obj->cre_fterm != ''){
+
+		$sql1 = "UPDATE termly_fees SET amount = '$obj->cre_fterm' WHERE  year = '$obj->year_selected' AND term = '$fterm' AND class = '$cre'";
+		$result = $conn->query($sql1);
+
+		echo "CRECHE first term amount updated \n" ;
+		//echo $row1;
+		};
+	}else{
+		$sql1 = "INSERT INTO termly_fees (year, term, class, amount)
+		VALUES ('$obj->year_selected', '$fterm', '$cre', '$obj->cre_fterm')";
+
+		$result = $conn->query($sql1);
+		//echo $result;
+		echo "CRECHE first term fees inserted. \n";
+	};
+	
+	if($row_cre2 != ''){
+
+		if($obj->cre_sterm != ''){
+
+		$sql1 = "UPDATE termly_fees SET amount = '$obj->cre_sterm' WHERE  year = '$obj->year_selected' AND term = '$sterm' AND class = '$cre'";
+		$result = $conn->query($sql1);
+
+		echo "CRECHE second term amount updated \n" ;
+		//echo $row1;
+		};
+	}else{
+		$sql1 = "INSERT INTO termly_fees (year, term, class, amount)
+		VALUES ('$obj->year_selected', '$sterm', '$cre', '$obj->cre_sterm')";
+
+		$result = $conn->query($sql1);
+		//echo $result;
+		echo "CRECHE second term fees inserted. \n";
+	};
+	
+	if($row_cre3 != ''){
+
+		if($obj->cre_tterm != ''){
+
+		$sql1 = "UPDATE termly_fees SET amount = '$obj->cre_tterm' WHERE  year = '$obj->year_selected' AND term = '$tterm' AND class = '$cre'";
+		$result = $conn->query($sql1);
+
+		echo "CRECHE third term amount updated \n" ;
+		//echo $row1;
+		};
+	}else{
+		$sql1 = "INSERT INTO termly_fees (year, term, class, amount)
+		VALUES ('$obj->year_selected', '$tterm', '$cre', '$obj->cre_tterm')";
+
+		$result = $conn->query($sql1);
+		//echo $result;
+		echo "CRECHE third term fees inserted. \n";
+	};
+	
+
+	if($row_nur11 != ''){
+
+		if($obj->nur1_fterm != ''){
+
+		$sql1 = "UPDATE termly_fees SET amount = '$obj->nur1_fterm' WHERE  year = '$obj->year_selected' AND term = '$fterm' AND class = '$nur1'";
+		$result = $conn->query($sql1);
+
+		echo "NURSERY ONE first term amount updated \n" ;
+		//echo $row1;
+		};
+	}else{
+		$sql1 = "INSERT INTO termly_fees (year, term, class, amount)
+		VALUES ('$obj->year_selected', '$fterm', '$nur1', '$obj->nur1_fterm')";
+
+		$result = $conn->query($sql1);
+		//echo $result;
+		echo "NURSERY ONE first term fees inserted. \n";
+	};
+
+	if($row_nur12 != ''){
+
+		if($obj->nur1_sterm != ''){
+
+		$sql1 = "UPDATE termly_fees SET amount = '$obj->nur1_sterm' WHERE  year = '$obj->year_selected' AND term = '$sterm' AND class = '$nur1'";
+		$result = $conn->query($sql1);
+
+		echo "NURSERY ONE second term amount updated \n" ;
+		//echo $row1;
+		};
+	}else{
+		$sql1 = "INSERT INTO termly_fees (year, term, class, amount)
+		VALUES ('$obj->year_selected', '$sterm', '$nur1', '$obj->nur1_sterm')";
+
+		$result = $conn->query($sql1);
+		//echo $result;
+		echo "NURSERY ONE second term fees inserted. \n";
+	};
+
+	if($row_nur13 != ''){
+
+		if($obj->nur1_tterm != ''){
+
+		$sql1 = "UPDATE termly_fees SET amount = '$obj->nur1_tterm' WHERE  year = '$obj->year_selected' AND term = '$tterm' AND class = '$nur1'";
+		$result = $conn->query($sql1);
+
+		echo "NURSERY ONE third term amount updated \n" ;
+		//echo $row1;
+		};
+	}else{
+		$sql1 = "INSERT INTO termly_fees (year, term, class, amount)
+		VALUES ('$obj->year_selected', '$tterm', '$nur1', '$obj->nur1_tterm')";
+
+		$result = $conn->query($sql1);
+		//echo $result;
+		echo "NURSERY ONE third term fees inserted. \n";
+	};
+
+
+
+
+	if($row_nur21 != ''){
+
+		if($obj->nur2_fterm != ''){
+
+		$sql1 = "UPDATE termly_fees SET amount = '$obj->nur2_fterm' WHERE  year = '$obj->year_selected' AND term = '$fterm' AND class = '$nur2'";
+		$result = $conn->query($sql1);
+
+		echo "NURSERY TWO first term amount updated \n" ;
+		//echo $row1;
+		};
+	}else{
+		$sql1 = "INSERT INTO termly_fees (year, term, class, amount)
+		VALUES ('$obj->year_selected', '$fterm', '$nur2', '$obj->nur2_fterm')";
+
+		$result = $conn->query($sql1);
+		//echo $result;
+		echo "NURSERY TWO first term fees inserted. \n";
+	};
+
+	if($row_nur22 != ''){
+
+		if($obj->nur2_sterm != ''){
+
+		$sql1 = "UPDATE termly_fees SET amount = '$obj->nur2_sterm' WHERE  year = '$obj->year_selected' AND term = '$sterm' AND class = '$nur2'";
+		$result = $conn->query($sql1);
+
+		echo "NURSERY TWO second term amount updated \n" ;
+		//echo $row1;
+		};
+	}else{
+		$sql1 = "INSERT INTO termly_fees (year, term, class, amount)
+		VALUES ('$obj->year_selected', '$sterm', '$nur2', '$obj->nur2_sterm')";
+
+		$result = $conn->query($sql1);
+		//echo $result;
+		echo "NURSERY TWO second term fees inserted. \n";
+	};
+
+	if($row_nur23 != ''){
+
+		if($obj->nur2_tterm != ''){
+
+		$sql1 = "UPDATE termly_fees SET amount = '$obj->nur2_tterm' WHERE  year = '$obj->year_selected' AND term = '$tterm' AND class = '$nur2'";
+		$result = $conn->query($sql1);
+
+		echo "NURSERY TWO third term amount updated \n" ;
+		//echo $row1;
+		};
+	}else{
+		$sql1 = "INSERT INTO termly_fees (year, term, class, amount)
+		VALUES ('$obj->year_selected', '$tterm', '$nur2', '$obj->nur2_tterm')";
+
+		$result = $conn->query($sql1);
+		//echo $result;
+		echo "NURSERY TWO third term fees inserted. \n";
+	};
+
+
+
+	if($row_nur31 != ''){
+
+		if($obj->nur3_fterm != ''){
+
+		$sql1 = "UPDATE termly_fees SET amount = '$obj->nur3_fterm' WHERE  year = '$obj->year_selected' AND term = '$fterm' AND class = '$nur3'";
+		$result = $conn->query($sql1);
+
+		echo "NURSERY THREE first term amount updated \n" ;
+		//echo $row1;
+		};
+	}else{
+		$sql1 = "INSERT INTO termly_fees (year, term, class, amount)
+		VALUES ('$obj->year_selected', '$fterm', '$nur3', '$obj->nur3_fterm')";
+
+		$result = $conn->query($sql1);
+		//echo $result;
+		echo "NURSERY THREE first term fees inserted. \n";
+	};
+
+	if($row_nur32 != ''){
+
+		if($obj->nur3_sterm != ''){
+
+		$sql1 = "UPDATE termly_fees SET amount = '$obj->nur3_sterm' WHERE  year = '$obj->year_selected' AND term = '$sterm' AND class = '$nur3'";
+		$result = $conn->query($sql1);
+
+		echo "NURSERY THREE second term amount updated \n" ;
+		//echo $row1;
+		};
+	}else{
+		$sql1 = "INSERT INTO termly_fees (year, term, class, amount)
+		VALUES ('$obj->year_selected', '$sterm', '$nur3', '$obj->nur3_sterm')";
+
+		$result = $conn->query($sql1);
+		//echo $result;
+		echo "NURSERY THREE second term fees inserted. \n";
+	};
+
+	if($row_nur33 != ''){
+
+		if($obj->nur3_tterm != ''){
+
+		$sql1 = "UPDATE termly_fees SET amount = '$obj->nur3_tterm' WHERE  year = '$obj->year_selected' AND term = '$tterm' AND class = '$nur3'";
+		$result = $conn->query($sql1);
+
+		echo "NURSERY THREE third term amount updated \n" ;
+		//echo $row1;
+		};
+	}else{
+		$sql1 = "INSERT INTO termly_fees (year, term, class, amount)
+		VALUES ('$obj->year_selected', '$tterm', '$nur3', '$obj->nur3_tterm')";
+
+		$result = $conn->query($sql1);
+		//echo $result;
+		echo "NURSERY THREE third term fees inserted. \n";
+	};
+
+
+
+
+
+	if($row_bas11 != ''){
+
+		if($obj->bas1_fterm != ''){
+
+		$sql1 = "UPDATE termly_fees SET amount = '$obj->bas1_fterm' WHERE  year = '$obj->year_selected' AND term = '$fterm' AND class = '$bas1'";
+		$result = $conn->query($sql1);
+
+		echo "BASIC ONE first term amount updated \n" ;
+		//echo $row1;
+		};
+	}else{
+		$sql1 = "INSERT INTO termly_fees (year, term, class, amount)
+		VALUES ('$obj->year_selected', '$fterm', '$bas1', '$obj->bas1_fterm')";
+
+		$result = $conn->query($sql1);
+		//echo $result;
+		echo "BASIC ONE first term fees inserted. \n";
+	};
+
+	if($row_bas12 != ''){
+
+		if($obj->bas1_sterm != ''){
+
+		$sql1 = "UPDATE termly_fees SET amount = '$obj->bas1_sterm' WHERE  year = '$obj->year_selected' AND term = '$sterm' AND class = '$bas1'";
+		$result = $conn->query($sql1);
+
+		echo "BASIC ONE second term amount updated \n" ;
+		//echo $row1;
+		};
+	}else{
+		$sql1 = "INSERT INTO termly_fees (year, term, class, amount)
+		VALUES ('$obj->year_selected', '$sterm', '$bas1', '$obj->bas1_sterm')";
+
+		$result = $conn->query($sql1);
+		//echo $result;
+		echo "BASIC ONE second term fees inserted. \n";
+	};
+	if($row_bas13 != ''){
+
+		if($obj->bas1_tterm != ''){
+
+		$sql1 = "UPDATE termly_fees SET amount = '$obj->bas1_tterm' WHERE  year = '$obj->year_selected' AND term = '$tterm' AND class = '$bas1'";
+		$result = $conn->query($sql1);
+
+		echo "BASIC ONE third term amount updated \n" ;
+		//echo $row1;
+		};
+	}else{
+		$sql1 = "INSERT INTO termly_fees (year, term, class, amount)
+		VALUES ('$obj->year_selected', '$tterm', '$bas1', '$obj->bas1_tterm')";
+
+		$result = $conn->query($sql1);
+		//echo $result;
+		echo "BASIC ONE third term fees inserted. \n";
+	};
+
+
+	
+	if($row_bas21 != ''){
+
+		if($obj->bas2_fterm != ''){
+
+		$sql1 = "UPDATE termly_fees SET amount = '$obj->bas2_fterm' WHERE  year = '$obj->year_selected' AND term = '$fterm' AND class = '$bas2'";
+		$result = $conn->query($sql1);
+
+		echo "BASIC TWO first term amount updated \n" ;
+		//echo $row1;
+		};
+	}else{
+		$sql1 = "INSERT INTO termly_fees (year, term, class, amount)
+		VALUES ('$obj->year_selected', '$fterm', '$bas2', '$obj->bas2_fterm')";
+
+		$result = $conn->query($sql1);
+		//echo $result;
+		echo "BASIC TWO first term fees inserted. \n";
+	};
+
+	if($row_bas22 != ''){
+
+		if($obj->bas2_sterm != ''){
+
+		$sql1 = "UPDATE termly_fees SET amount = '$obj->bas2_sterm' WHERE  year = '$obj->year_selected' AND term = '$sterm' AND class = '$bas2'";
+		$result = $conn->query($sql1);
+
+		echo "BASIC TWO second term amount updated \n" ;
+		//echo $row1;
+		};
+	}else{
+		$sql1 = "INSERT INTO termly_fees (year, term, class, amount)
+		VALUES ('$obj->year_selected', '$sterm', '$bas2', '$obj->bas2_sterm')";
+
+		$result = $conn->query($sql1);
+		//echo $result;
+		echo "BASIC TWO second term fees inserted. \n";
+	};
+	if($row_bas23 != ''){
+
+		if($obj->bas2_tterm != ''){
+
+		$sql1 = "UPDATE termly_fees SET amount = '$obj->bas2_tterm' WHERE  year = '$obj->year_selected' AND term = '$tterm' AND class = '$bas2'";
+		$result = $conn->query($sql1);
+
+		echo "BASIC TWO third term amount updated \n" ;
+		//echo $row1;
+		};
+	}else{
+		$sql1 = "INSERT INTO termly_fees (year, term, class, amount)
+		VALUES ('$obj->year_selected', '$tterm', '$bas2', '$obj->bas2_tterm')";
+
+		$result = $conn->query($sql1);
+		//echo $result;
+		echo "BASIC TWO third term fees inserted. \n";
+	};
+
+
+	
+	if($row_bas31 != ''){
+
+		if($obj->bas3_fterm != ''){
+
+		$sql1 = "UPDATE termly_fees SET amount = '$obj->bas3_fterm' WHERE  year = '$obj->year_selected' AND term = '$fterm' AND class = '$bas3'";
+		$result = $conn->query($sql1);
+
+		echo "BASIC THREE first term amount updated \n" ;
+		//echo $row1;
+		};
+	}else{
+		$sql1 = "INSERT INTO termly_fees (year, term, class, amount)
+		VALUES ('$obj->year_selected', '$fterm', '$bas3', '$obj->bas3_fterm')";
+
+		$result = $conn->query($sql1);
+		//echo $result;
+		echo "BASIC THREE first term fees inserted. \n";
+	};
+
+	if($row_bas32 != ''){
+
+		if($obj->bas3_sterm != ''){
+
+		$sql1 = "UPDATE termly_fees SET amount = '$obj->bas3_sterm' WHERE  year = '$obj->year_selected' AND term = '$sterm' AND class = '$bas3'";
+		$result = $conn->query($sql1);
+
+		echo "BASIC THREE second term amount updated \n" ;
+		//echo $row1;
+		};
+	}else{
+		$sql1 = "INSERT INTO termly_fees (year, term, class, amount)
+		VALUES ('$obj->year_selected', '$sterm', '$bas3', '$obj->bas3_sterm')";
+
+		$result = $conn->query($sql1);
+		//echo $result;
+		echo "BASIC THREE second term fees inserted. \n";
+	};
+	if($row_bas33 != ''){
+
+		if($obj->bas3_tterm != ''){
+
+		$sql1 = "UPDATE termly_fees SET amount = '$obj->bas3_tterm' WHERE  year = '$obj->year_selected' AND term = '$tterm' AND class = '$bas3'";
+		$result = $conn->query($sql1);
+
+		echo "BASIC THREE third term amount updated \n" ;
+		//echo $row1;
+		};
+	}else{
+		$sql1 = "INSERT INTO termly_fees (year, term, class, amount)
+		VALUES ('$obj->year_selected', '$tterm', '$bas3', '$obj->bas3_tterm')";
+
+		$result = $conn->query($sql1);
+		//echo $result;
+		echo "BASIC THREE third term fees inserted. \n";
+	};
+
+	
+	if($row_bas41 != ''){
+
+		if($obj->bas4_fterm != ''){
+
+		$sql1 = "UPDATE termly_fees SET amount = '$obj->bas4_fterm' WHERE  year = '$obj->year_selected' AND term = '$fterm' AND class = '$bas4'";
+		$result = $conn->query($sql1);
+
+		echo "BASIC FOUR first term amount updated \n" ;
+		//echo $row1;
+		};
+	}else{
+		$sql1 = "INSERT INTO termly_fees (year, term, class, amount)
+		VALUES ('$obj->year_selected', '$fterm', '$bas4', '$obj->bas4_fterm')";
+
+		$result = $conn->query($sql1);
+		//echo $result;
+		echo "BASIC FOUR first term fees inserted. \n";
+	};
+
+	if($row_bas42 != ''){
+
+		if($obj->bas4_sterm != ''){
+
+		$sql1 = "UPDATE termly_fees SET amount = '$obj->bas4_sterm' WHERE  year = '$obj->year_selected' AND term = '$sterm' AND class = '$bas4'";
+		$result = $conn->query($sql1);
+
+		echo "BASIC FOUR second term amount updated \n" ;
+		//echo $row1;
+		};
+	}else{
+		$sql1 = "INSERT INTO termly_fees (year, term, class, amount)
+		VALUES ('$obj->year_selected', '$sterm', '$bas4', '$obj->bas4_sterm')";
+
+		$result = $conn->query($sql1);
+		//echo $result;
+		echo "BASIC FOUR second term fees inserted. \n";
+	};
+	if($row_bas43 != ''){
+
+		if($obj->bas4_tterm != ''){
+
+		$sql1 = "UPDATE termly_fees SET amount = '$obj->bas4_tterm' WHERE  year = '$obj->year_selected' AND term = '$tterm' AND class = '$bas4'";
+		$result = $conn->query($sql1);
+
+		echo "BASIC FOUR third term amount updated \n" ;
+		//echo $row1;
+		};
+	}else{
+		$sql1 = "INSERT INTO termly_fees (year, term, class, amount)
+		VALUES ('$obj->year_selected', '$tterm', '$bas4', '$obj->bas4_tterm')";
+
+		$result = $conn->query($sql1);
+		//echo $result;
+		echo "BASIC FOUR third term fees inserted. \n";
+	};
+
+	
+	if($row_bas51 != ''){
+
+		if($obj->bas5_fterm != ''){
+
+		$sql1 = "UPDATE termly_fees SET amount = '$obj->bas5_fterm' WHERE  year = '$obj->year_selected' AND term = '$fterm' AND class = '$bas5'";
+		$result = $conn->query($sql1);
+
+		echo "BASIC FIVE first term amount updated \n" ;
+		//echo $row1;
+		};
+	}else{
+		$sql1 = "INSERT INTO termly_fees (year, term, class, amount)
+		VALUES ('$obj->year_selected', '$fterm', '$bas5', '$obj->bas5_fterm')";
+
+		$result = $conn->query($sql1);
+		//echo $result;
+		echo "BASIC FIVE first term fees inserted. \n";
+	};
+
+	if($row_bas52 != ''){
+
+		if($obj->bas5_sterm != ''){
+
+		$sql1 = "UPDATE termly_fees SET amount = '$obj->bas5_sterm' WHERE  year = '$obj->year_selected' AND term = '$sterm' AND class = '$bas5'";
+		$result = $conn->query($sql1);
+
+		echo "BASIC FIVE second term amount updated \n" ;
+		//echo $row1;
+		};
+	}else{
+		$sql1 = "INSERT INTO termly_fees (year, term, class, amount)
+		VALUES ('$obj->year_selected', '$sterm', '$bas5', '$obj->bas5_sterm')";
+
+		$result = $conn->query($sql1);
+		//echo $result;
+		echo "BASIC FIVE second term fees inserted. \n";
+	};
+	if($row_bas53 != ''){
+
+		if($obj->bas5_tterm != ''){
+
+		$sql1 = "UPDATE termly_fees SET amount = '$obj->bas5_tterm' WHERE  year = '$obj->year_selected' AND term = '$tterm' AND class = '$bas5'";
+		$result = $conn->query($sql1);
+
+		echo "BASIC FIVE third term amount updated \n" ;
+		//echo $row1;
+		};
+	}else{
+		$sql1 = "INSERT INTO termly_fees (year, term, class, amount)
+		VALUES ('$obj->year_selected', '$tterm', '$bas5', '$obj->bas5_tterm')";
+
+		$result = $conn->query($sql1);
+		//echo $result;
+		echo "BASIC FIVE third term fees inserted. \n";
+	};
+
+
+
+
+
+
+
+
+
 	if($row_js11 != ''){
 
 		if($obj->js1_fterm != ''){
@@ -213,7 +977,7 @@ if ($res_js11 == True &&
 
 		if($obj->js2_fterm != ''){
 
-		$sql1 = "UPDATE termly_fees SET amount = '$obj->js1_fterm' WHERE  year = '$obj->year_selected' AND term = '$fterm' AND class = '$js2'";
+		$sql1 = "UPDATE termly_fees SET amount = '$obj->js2_fterm' WHERE  year = '$obj->year_selected' AND term = '$fterm' AND class = '$js2'";
 		$result = $conn->query($sql1);
 
 		echo "JS2 first term amount updated \n" ;
@@ -273,7 +1037,7 @@ if ($res_js11 == True &&
 
 		if($obj->js3_fterm != ''){
 
-		$sql1 = "UPDATE termly_fees SET amount = '$obj->js1_fterm' WHERE  year = '$obj->year_selected' AND term = '$fterm' AND class = '$js3'";
+		$sql1 = "UPDATE termly_fees SET amount = '$obj->js3_fterm' WHERE  year = '$obj->year_selected' AND term = '$fterm' AND class = '$js3'";
 		$result = $conn->query($sql1);
 
 		echo "JS3 first term amount updated \n" ;
@@ -576,7 +1340,7 @@ print "</table> \n";
 //header("refresh:20; url=maths.html");
 
 
-} else {echo "ERROR: " . $sql1 . "<br>" . $sql2 . "<br>" . $sql3 . "<br>" . $sql4 . "<br>"  . $conn->error;
+} else {echo "ERROR: " . $sql1 . "<br>" . $conn->error;
 	};
 $conn->close();
 

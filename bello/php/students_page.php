@@ -55,8 +55,9 @@ echo json_encode($data);//to json
 
 
 
-// ;
-//header("refresh:20; url=maths.html");
+
+
+
 } else {echo "ERROR: " . $sql . "<br>" . $conn->error;
 	};
 	

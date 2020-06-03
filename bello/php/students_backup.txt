@@ -1,0 +1,13 @@
+surname: jose
+other name: faith
+class: JS1
+phone: 11111111111
+parent's phone: 11111111111
+email: sss@gmdj.com
+address: ggggggg
+dob: 1111-11-11
+age: 33
+sex: Female
+category: Sciences
+former school: gggggggggggg
+date admitted: 1111-11-11

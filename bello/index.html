@@ -9,6 +9,23 @@
 <!-- load JS files -->
     <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>     
 
+<style type="text/css">
+	#content{
+		width:50%;
+		margin: 20px auto;
+		border:1px solid #cbcbcb;
+	}
+	form{
+		width: 50%;
+		margin:20px auto;
+	}
+	form div{
+		margin-top: 5px;
+		
+	}
+</style>
+
+
 
 </head>
 
@@ -22,12 +39,24 @@
 </script>
 <p>
 in page 1	
-<div id="check">link</div>
+<div id="checkllllllll">link</div>
 </p>
 
+<div id="content">
+	
 
-
-
+<form action="php/test.php" method="post" enctype="multipart/form-data">
+	<div>
+		<input type="file" name="image">
+	</div>
+	<div>
+		<textarea name="text" cols="40" rows="4" placeholder="just something about the image"></textarea>
+	</div>
+	<div>
+		<input type="submit" name="upload" value="upload image">
+	</div>
+</form>
+</div>
 
 
 </body>

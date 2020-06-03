@@ -38,18 +38,18 @@ if ($conn->connect_error){
 
 
 	
-$sql_s1 = "SELECT installment FROM first_term WHERE students_id = '$obj->students_id' AND installment = '$obj->install_v'";
+$sql_s1 = "SELECT installment FROM first_term WHERE students_id = '$obj->students_id' AND year = '$obj->year_v' AND installment = '$obj->install_v'";
 
 $res1 = $conn->query($sql_s1);
 $row1 = mysqli_fetch_array($res1);
 //echo "this works";
 
-$sql_s2 = "SELECT installment FROM second_term WHERE students_id = '$obj->students_id' AND installment = '$obj->install_v'";
+$sql_s2 = "SELECT installment FROM second_term WHERE students_id = '$obj->students_id' AND year = '$obj->year_v' AND installment = '$obj->install_v'";
 
 $res2 = $conn->query($sql_s2);
 $row2 = mysqli_fetch_array($res2);
 
-$sql_s3 = "SELECT installment FROM third_term WHERE students_id = '$obj->students_id' AND installment = '$obj->install_v'";
+$sql_s3 = "SELECT installment FROM third_term WHERE students_id = '$obj->students_id' AND year = '$obj->year_v' AND installment = '$obj->install_v'";
 
 $res3 = $conn->query($sql_s3);
 $row3 = mysqli_fetch_array($res3);
@@ -75,8 +75,8 @@ if($obj->term_v == $first){
 
 	}else{
 
-		$sql1 = "INSERT INTO first_term (students_id, installment, amount, amt_paid, balance, timedate, comments)
-			VALUES ('$obj->students_id', '$obj->install_v', '$obj->amt_v', '$obj->paid_v', '$balance', '$obj->date_v', '$obj->com_v')";
+		$sql1 = "INSERT INTO first_term (students_id, year, installment, amount, amt_paid, balance, timedate, comments)
+			VALUES ('$obj->students_id', '$obj->year_v', '$obj->install_v', '$obj->amt_v', '$obj->paid_v', '$balance', '$obj->date_v', '$obj->com_v')";
 				$result = mysqli_query($conn, $sql1);
 
 				//$row = mysqli_fetch_array($result);
@@ -92,8 +92,8 @@ if($obj->term_v == $first){
 
 	}else{
 
-		$sql1 = "INSERT INTO second_term (students_id, installment, amount, amt_paid, balance, timedate, comments)
-			VALUES ('$obj->students_id', '$obj->install_v', '$obj->amt_v', '$obj->paid_v', '$balance', '$obj->date_v', '$obj->com_v')";
+		$sql1 = "INSERT INTO second_term (students_id, year, installment, amount, amt_paid, balance, timedate, comments)
+			VALUES ('$obj->students_id', '$obj->year_v', '$obj->install_v', '$obj->amt_v', '$obj->paid_v', '$balance', '$obj->date_v', '$obj->com_v')";
 				$result = mysqli_query($conn, $sql1);
 
 				//$row = mysqli_fetch_array($result);
@@ -110,8 +110,8 @@ if($obj->term_v == $first){
 
 	}else{
 
-		$sql1 = "INSERT INTO third_term (students_id, installment, amount, amt_paid, balance, timedate, comments)
-			VALUES ('$obj->students_id', '$obj->install_v', '$obj->amt_v', '$obj->paid_v', '$balance', '$obj->date_v', '$obj->com_v')";
+		$sql1 = "INSERT INTO third_term (students_id, year, installment, amount, amt_paid, balance, timedate, comments)
+			VALUES ('$obj->students_id', '$obj->year_v', '$obj->install_v', '$obj->amt_v', '$obj->paid_v', '$balance', '$obj->date_v', '$obj->com_v')";
 				$result = mysqli_query($conn, $sql1);
 
 				//$row = mysqli_fetch_array($result);
@@ -120,6 +120,40 @@ if($obj->term_v == $first){
 
 
 };
+
+
+
+$output1 = <<< HERE
+students_id: $obj->students_id
+year : $obj->year_v
+installment: $obj->install_v
+amount: $obj->amt_v
+amount paid: $obj->paid_v
+balance : $balance
+date: $obj->date_v
+comments: $obj->com_v
+....
+....
+....
+HERE;
+
+//open file for output
+$fp1 = fopen("C:\\xampp\\htdocs\\projects\\bello\\payments.txt", "a");
+//write to the file
+fwrite($fp1, $output1);
+fclose($fp1);
+
+
+$list = array($obj->students_id, $obj->year_v, $obj->install_v, $obj->amt_v, $obj->paid_v, $balance, $obj->date_v, $obj->com_v);
+
+$fp = fopen("C:\\xampp\\htdocs\\projects\\bello\\amt_table.csv", "a");
+//write to the file
+//foreach($list as $line){
+	fputcsv($fp, $list);
+//};
+//fwrite($fp, $output);
+fclose($fp);
+
 
 
 

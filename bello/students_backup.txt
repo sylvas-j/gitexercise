@@ -1,0 +1,437 @@
+surname: joseph
+other name: fait
+class: JS1
+phone: 
+parent's phone: 11111111111
+email: sss@gmdj.com
+address: ff
+dob: 1111-11-11
+age: 33
+sex: Female
+category: Sciences
+former school: 
+date admitted: 1111-11-11surname: jude
+other name: alright
+class: JS1
+phone: 
+parent's phone: 11111111111
+email: sss@gmdj.com
+address: rr
+dob: 1111-11-11
+age: 33
+sex: Male
+category: Sciences
+former school: 
+date admitted: 1111-11-11
+
+surname: dogdeg
+other name: hackathon
+class: JS1
+phone: 
+parent's phone: 11111111111
+email: 
+address: ffffffff
+dob: 1111-11-11
+age: 33
+sex: Male
+category: Sciences
+former school: 
+date admitted: 1111-11-11
+
+surname: ddoggedd
+other name: farrr
+class: JS1
+phone: 
+parent's phone: 11111111111
+email: sss@gmdj.com
+address: erer
+dob: 1111-11-11
+age: 33
+sex: Male
+category: Sciences
+former school: 
+date admitted: 1111-11-11
+
+surname: doogeed
+other name: gagaga
+class: JS1
+phone: 
+parent's phone: 11111111111
+email: 
+address: eewe
+dob: 1111-11-11
+age: 33
+sex: Male
+category: Commercial
+former school: 
+date admitted: 1111-11-11
+
+surname: gogog
+other name: okksks
+class: JS1
+phone: 
+parent's phone: 11111111111
+email: 
+address: gfgf
+dob: 1111-11-11
+age: 44
+sex: Male
+category: Sciences
+former school: 
+date admitted: 1111-11-11
+
+surname: h
+other name: f
+class: JS1
+phone: 11111111111
+parent's phone: 11111111111
+email: sss@gmdj.com
+address: sss
+dob: 1111-11-11
+age: 11
+sex: Female
+category: Commercial
+former school: ooooiyug
+date admitted: 1111-11-11
+
+surname: j
+other name: HJ
+class: JS1
+phone: 11111111111
+parent's phone: 11111111111
+email: 
+address: ssssssssss
+dob: 1111-11-11
+age: 11
+sex: Male
+category: Commercial
+former school: sssssssssss
+date admitted: 1111-11-11
+
+surname: k
+other name: jbhj
+class: JS1
+phone: 11111111111
+parent's phone: 11111111111
+email: sss@gmdj.com
+address: ggggggggggggg
+dob: 1111-11-11
+age: 11
+sex: Male
+category: Sciences
+former school: kooooooooooooool
+date admitted: 1111-11-11
+
+surname: k
+other name: HJ
+class: JS1
+phone: 
+parent's phone: 11111111111
+email: 
+address: gfd
+dob: 1111-11-11
+age: 11
+sex: Male
+category: Commercial
+former school: 
+date admitted: 1111-11-11
+
+surname: h
+other name: f
+class: JS1
+phone: 
+parent's phone: 11111111111
+email: 
+address: gg
+dob: 1111-11-11
+age: 11
+sex: Male
+category: Commercial
+former school: 
+date admitted: 1111-11-11
+
+surname: hhj
+other name: hhhaaaaaalllllllll
+class: JS1
+phone: 
+parent's phone: 11111111111
+email: 
+address: gggggggg
+dob: 1111-11-11
+age: 11
+sex: Female
+category: Sciences
+former school: 
+date admitted: 1111-11-11
+
+surname: hhj
+other name: hhhaaaaaalllllllll
+class: JS1
+phone: 
+parent's phone: 11111111111
+email: 
+address: gggggggglllllllllll
+dob: 1111-11-11
+age: 11
+sex: Male
+category: Chose department
+former school: 
+date admitted: 1111-11-11
+....
+....
+....surname: hhj
+other name: hhhaaaaaalllllllll
+class: JS1
+phone: 
+parent's phone: 11111111111
+email: 
+address: gggffffffff
+dob: 1111-11-11
+age: 11
+sex: Male
+category: Chose department
+former school: 
+date admitted: 1111-11-11
+....
+....
+....surname: hhj
+other name: hhhaaaaaalllllllll
+class: JS1
+phone: 
+parent's phone: 11111111111
+email: 
+address: gggffffffff
+dob: 1111-11-11
+age: 11
+sex: Male
+category: Chose department
+former school: 
+date admitted: 1111-11-11
+....
+....
+....surname: hhj
+other name: hhhaaaaaalllllllll
+class: JS1
+phone: 
+parent's phone: 11111111111
+email: 
+address: ppppppppppppp
+dob: 1111-11-11
+age: 11
+sex: Male
+category: Chose department
+former school: 
+date admitted: 1111-11-11
+....
+....
+....surname: hhj
+other name: lllllllll
+class: JS1
+phone: 
+parent's phone: 11111111111
+email: 
+address: ppppppppppppp
+dob: 1111-11-11
+age: 11
+sex: Male
+category: Chose department
+former school: 
+date admitted: 1111-11-11
+....
+....
+....surname: hhj
+other name: lllllllll
+class: JS1
+phone: 
+parent's phone: 11111111111
+email: 
+address: vvvvvvv
+dob: 1111-11-11
+age: 11
+sex: Male
+category: Chose department
+former school: 
+date admitted: 1111-11-11
+....
+....
+....surname: hhj
+other name: lllllllll
+class: JS1
+phone: 
+parent's phone: 11111111111
+email: 
+address: vvvvvvvgggg
+dob: 1111-11-11
+age: 11
+sex: Male
+category: Chose department
+former school: 
+date admitted: 1111-11-11
+....
+....
+....surname: hhj
+other name: lllllllll
+class: JS1
+phone: 
+parent's phone: 11111111111
+email: 
+address: vvvvvvvgggg
+dob: 1111-11-11
+age: 11
+sex: Male
+category: Chose department
+former school: 
+date admitted: 1111-11-11
+....
+....
+....surname: hhj
+other name: lllllllll
+class: JS1
+phone: 
+parent's phone: 11111111111
+email: 
+address: fffffff
+dob: 1111-11-11
+age: 11
+sex: Male
+category: Chose department
+former school: 
+date admitted: 1111-11-11
+....
+....
+....surname: hhj
+other name: lllllllll
+class: JS1
+phone: 
+parent's phone: 11111111111
+email: 
+address: fffffffggggg
+dob: 1111-11-11
+age: 11
+sex: Male
+category: Chose department
+former school: 
+date admitted: 1111-11-11
+....
+....
+....surname: hhj
+other name: lllllllll
+class: JS1
+phone: 
+parent's phone: 11111111111
+email: 
+address: bbbbbbbbbbb
+dob: 1111-11-11
+age: 11
+sex: Male
+category: Chose department
+former school: 
+date admitted: 1111-11-11
+....
+....
+....surname: hhj
+other name: lllllllll
+class: JS1
+phone: 
+parent's phone: 11111111111
+email: 
+address: ddddddddddddd
+dob: 1111-11-11
+age: 11
+sex: Male
+category: Chose department
+former school: 
+date admitted: 1111-11-11
+....
+....
+....surname: hhj
+other name: lllllllll
+class: JS1
+phone: 
+parent's phone: 11111111111
+email: 
+address: ffffffffff
+dob: 1111-11-11
+age: 11
+sex: Male
+category: Chose department
+former school: 
+date admitted: 1111-11-11
+....
+....
+....surname: hhj
+other name: lllllllll
+class: JS1
+phone: 
+parent's phone: 11111111111
+email: 
+address: ssssssssssssss
+dob: 1111-11-11
+age: 11
+sex: Male
+category: Chose department
+former school: 
+date admitted: 1111-11-11
+....
+....
+....surname: hhj
+other name: lllllllll
+class: JS1
+phone: 
+parent's phone: 11111111111
+email: 
+address: hhhhhhhhhhhhh
+dob: 1111-11-11
+age: 11
+sex: Male
+category: Chose department
+former school: 
+date admitted: 1111-11-11
+....
+....
+....surname: hhj
+other name: lllllllll
+class: JS1
+phone: 
+parent's phone: 11111111111
+email: 
+address: ggggggggggg
+dob: 1111-11-11
+age: 11
+sex: Male
+category: Chose department
+former school: 
+date admitted: 1111-11-11
+....
+....
+....surname: hhj
+other name: lllllllll
+class: JS1
+phone: 
+parent's phone: 11111111111
+email: 
+address: pppppp
+dob: 1111-11-11
+age: 11
+sex: Male
+category: Chose department
+former school: 
+date admitted: 1111-11-11
+....
+....
+....surname: jude
+other name: simeon
+class: SS2
+phone: 11111111111
+parent's phone: 11111111111
+email: google@GMAIL.COM
+address: TYYY
+dob: 1111-11-11
+age: 27
+sex: Female
+category: Arts
+former school: 
+date admitted: 1111-11-11
+.....
+.....
+.....

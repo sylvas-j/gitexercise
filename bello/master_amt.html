@@ -1,0 +1,1029 @@
+
+
+<style type="text/css">
+  
+.fund_table{
+  width: 100%;
+  float: left;
+  background-color: rgba(227,227,227,0.8);
+  padding-left: 5px;
+}
+
+
+</style>
+
+
+
+<div class="loadin">
+
+
+<!--form div-->
+<div class="form_space"><!--this control the region of the form -->
+
+<form action="" method="POST" class="form_space1">
+ 
+<div class="fund_table_space"> <!--this control the region of the fund tables-->
+
+<div class="fund_table"><!--this control the set in the immediate above region of the fund tables-->
+
+<table class="amt_table input_table">
+  <div class="th_head_div">
+    <tr>
+      <th class="tb_head">ACADEMIC SECTION</th>
+      <th class="tb_head">YEAR</th>
+      <th class="tb_head">SPECIATIES</th>
+    </tr>
+    </div>
+
+    <div class="tb_row">
+      <tr>
+        <td>
+          <select class="textarea" id="section">
+            <option>Choose Section</option>
+            <option value="FIRST TERM">2019/2020</option>
+            <option value="SECOND TERM">2020/2021</option>
+            <option value="THIRD TERM">2021/2022</option>
+          </select>
+        </td>
+
+
+        <td>
+          <select class="textarea" id="year">
+            <option value="">Select Year</option>
+            <option value="2020">2019/2020</option>
+            <option value="2021">2020/2021</option>
+            <option value="2022">2021/2022</option>
+            <option value="2023">2022/2023</option>
+          </select>
+        </td>
+        </td>
+
+        <td><textarea class="com" id="com">ok</textarea></td>
+      </tr>      
+    </div>
+
+    <div class="cal">
+      <tr class="cal_tr">
+        <td colspan="6">
+          <div class="button_div" onclick="checkout_year()">CHECKOUT/UPDATE</div>
+        </td>
+      </tr>
+    </div>
+
+</table>
+
+    
+
+
+
+<p></p>
+<p></p>
+<p></p>
+<!--FIRST TERM TABLE-->
+<table class="amt_table input_table">
+
+  <div class="th_head_div">
+    <tr>
+      <th class="head" colspan="4">SCHOOL FEES AMOUNT</th>
+    </tr>
+  </div>
+
+  <div class="th_head_div">
+    <tr>
+      <th class="tb_head">CLASS</th>
+      <th class="tb_head">FIRST TERM AMOUNT</th>
+      <th>SECOND TERM AMOUNT</th>
+      <th>THIRD TERM AMOUNT</th>
+    </tr>
+  </div>
+
+    <div class="tb_row">
+      <tr id="ff_tb_row">
+        <td><div id="js1">KINDERGARTEN</div></td>
+        <td><textarea class="textarea" id="kind_fterm_amt"></textarea></td>
+        <td><textarea class="textarea" id="kind_sterm_amt"></textarea></td>
+        <td><textarea class="textarea" id="kind_tterm_amt"></textarea></td>
+      </tr>      
+    </div>
+
+    <div class="tb_row">
+      <tr id="ff_tb_row">
+        <td><div id="js1">CRECHE</div></td>
+        <td><textarea class="textarea" id="cre_fterm_amt"></textarea></td>
+        <td><textarea class="textarea" id="cre_sterm_amt"></textarea></td>
+        <td><textarea class="textarea" id="cre_tterm_amt"></textarea></td>
+      </tr>      
+    </div>
+
+    <div class="tb_row">
+      <tr id="ff_tb_row">
+        <td><div id="js1">NURSERY ONE</div></td>
+        <td><textarea class="textarea" id="nur1_fterm_amt"></textarea></td>
+        <td><textarea class="textarea" id="nur1_sterm_amt"></textarea></td>
+        <td><textarea class="textarea" id="nur1_tterm_amt"></textarea></td>
+      </tr>      
+    </div>
+
+    <div class="tb_row">
+      <tr id="ff_tb_row">
+        <td><div id="js1">NURSERY TWO</div></td>
+        <td><textarea class="textarea" id="nur2_fterm_amt"></textarea></td>
+        <td><textarea class="textarea" id="nur2_sterm_amt"></textarea></td>
+        <td><textarea class="textarea" id="nur2_tterm_amt"></textarea></td>
+      </tr>      
+    </div>
+
+    <div class="tb_row">
+      <tr id="ff_tb_row">
+        <td><div id="js1">NURSERY THREE</div></td>
+        <td><textarea class="textarea" id="nur3_fterm_amt"></textarea></td>
+        <td><textarea class="textarea" id="nur3_sterm_amt"></textarea></td>
+        <td><textarea class="textarea" id="nur3_tterm_amt"></textarea></td>
+      </tr>      
+    </div>
+
+    <div class="tb_row">
+      <tr id="ff_tb_row">
+        <td><div id="js1">BASIC ONE</div></td>
+        <td><textarea class="textarea" id="bas1_fterm_amt"></textarea></td>
+        <td><textarea class="textarea" id="bas1_sterm_amt"></textarea></td>
+        <td><textarea class="textarea" id="bas1_tterm_amt"></textarea></td>
+      </tr>      
+    </div>
+
+
+    <div class="tb_row">
+      <tr id="ff_tb_row">
+        <td><div id="js1">BASIC TWO</div></td>
+        <td><textarea class="textarea" id="bas2_fterm_amt"></textarea></td>
+        <td><textarea class="textarea" id="bas2_sterm_amt"></textarea></td>
+        <td><textarea class="textarea" id="bas2_tterm_amt"></textarea></td>
+      </tr>      
+    </div>
+
+    <div class="tb_row">
+      <tr id="ff_tb_row">
+        <td><div id="js1">BASIC THREE</div></td>
+        <td><textarea class="textarea" id="bas3_fterm_amt"></textarea></td>
+        <td><textarea class="textarea" id="bas3_sterm_amt"></textarea></td>
+        <td><textarea class="textarea" id="bas3_tterm_amt"></textarea></td>
+      </tr>      
+    </div>
+
+    <div class="tb_row">
+      <tr id="ff_tb_row">
+        <td><div id="js1">BASIC FOUR</div></td>
+        <td><textarea class="textarea" id="bas4_fterm_amt"></textarea></td>
+        <td><textarea class="textarea" id="bas4_sterm_amt"></textarea></td>
+        <td><textarea class="textarea" id="bas4_tterm_amt"></textarea></td>
+      </tr>      
+    </div>
+
+    <div class="tb_row">
+      <tr id="ff_tb_row">
+        <td><div id="js1">BASIC FIVE</div></td>
+        <td><textarea class="textarea" id="bas5_fterm_amt"></textarea></td>
+        <td><textarea class="textarea" id="bas5_sterm_amt"></textarea></td>
+        <td><textarea class="textarea" id="bas5_tterm_amt"></textarea></td>
+      </tr>      
+    </div>
+
+
+
+
+    <div class="tb_row">
+      <tr id="ff_tb_row">
+        <td><div id="js1">JS1</div></td>
+        <td><textarea class="textarea" id="js1_fterm_amt"></textarea></td>
+        <td><textarea class="textarea" id="js1_sterm_amt"></textarea></td>
+        <td><textarea class="textarea" id="js1_tterm_amt"></textarea></td>
+      </tr>      
+    </div>
+
+    <div class="tb_row">
+      <tr id="ff_tb_row">
+        <td><div id="js2">JS2</div></td>
+        <td><textarea class="textarea" id="js2_fterm_amt"></textarea></td>
+        <td><textarea class="textarea" id="js2_sterm_amt"></textarea></td>
+        <td><textarea class="textarea" id="js2_tterm_amt"></textarea></td>
+      </tr>      
+    </div>
+
+    <div class="tb_row">
+      <tr id="fs_tb_row">
+        <td><div id="js3">JS3</div></td>
+        <td><textarea class="textarea" id="js3_fterm_amt"></textarea></td>
+        <td><textarea class="textarea" id="js3_sterm_amt"></textarea></td>
+        <td><textarea class="textarea" id="js3_tterm_amt"></textarea></td>
+      </tr>      
+    </div>
+
+    <div class="tb_row">
+
+      <tr id="ft_tb_row">
+        <td><div id="ss1">SS1</div></td>
+        <td><textarea class="textarea" id="ss1_fterm_amt"></textarea></td>
+        <td><textarea class="textarea" id="ss1_sterm_amt"></textarea></td>
+        <td><textarea class="textarea" id="ss1_tterm_amt"></textarea></td>
+      </tr>      
+    </div>
+
+    <div class="tb_row">
+      <tr id="fft_tb_row">
+        <td><div id="ss2">SS2</div></td>
+        <td><textarea class="textarea" id="ss2_fterm_amt"></textarea></td>
+        <td><textarea class="textarea" id="ss2_sterm_amt"></textarea></td>
+        <td><textarea class="textarea" id="ss2_tterm_amt"></textarea></td>
+
+      </tr>       
+    </div>
+
+    <div class="tb_row">
+      <tr>
+        <td><div id="ss3">SS3</div></td>
+        <td><textarea class="textarea" id="ss3_fterm_amt"></textarea></td>
+        <td><textarea class="textarea" id="ss3_sterm_amt"></textarea></td>
+        <td><textarea class="textarea" id="ss3_tterm_amt"></textarea></td>
+
+      </tr> 
+
+      <div class="cal">
+      <tr class="cal_tr">
+        <td colspan="6">
+          <div class="button_div" onclick="test()">UPDATE</div>
+        </td>
+      </tr>
+    </div>
+    </div>
+ 
+</table>
+
+
+
+
+<p></p>
+<p></p>
+<p></p>
+<!--SECOND TERM TABLE-->
+
+
+
+</div>
+
+
+</div>
+
+</form>
+  
+
+
+</div>
+</div>
+
+
+
+
+
+
+<script type="text/javascript">
+
+function test(){
+
+var js1 = "JS1";
+var js2 = "JS2";
+var js3 = "JS3";
+
+var ss1 = "SS1";
+var ss2 = "SS2";
+var ss3 = "SS3";
+
+
+var kind_fterm_amt = document.getElementById("kind_fterm_amt").value;
+var kind_sterm_amt = document.getElementById("kind_sterm_amt").value;
+var kind_tterm_amt = document.getElementById("kind_tterm_amt").value;
+
+
+var cre_fterm_amt = document.getElementById("cre_fterm_amt").value;
+var cre_sterm_amt = document.getElementById("cre_sterm_amt").value;
+var cre_tterm_amt = document.getElementById("cre_tterm_amt").value;
+
+var nur1_fterm_amt = document.getElementById("nur1_fterm_amt").value;
+var nur1_sterm_amt = document.getElementById("nur1_sterm_amt").value;
+var nur1_tterm_amt = document.getElementById("nur1_tterm_amt").value;
+
+var nur2_fterm_amt = document.getElementById("nur2_fterm_amt").value;
+var nur2_sterm_amt = document.getElementById("nur2_sterm_amt").value;
+var nur2_tterm_amt = document.getElementById("nur2_tterm_amt").value;
+
+var nur3_fterm_amt = document.getElementById("nur3_fterm_amt").value;
+var nur3_sterm_amt = document.getElementById("nur3_sterm_amt").value;
+var nur3_tterm_amt = document.getElementById("nur3_tterm_amt").value;
+
+var bas1_fterm_amt = document.getElementById("bas1_fterm_amt").value;
+var bas1_sterm_amt = document.getElementById("bas1_sterm_amt").value;
+var bas1_tterm_amt = document.getElementById("bas1_tterm_amt").value;
+
+var bas2_fterm_amt = document.getElementById("bas2_fterm_amt").value;
+var bas2_sterm_amt = document.getElementById("bas2_sterm_amt").value;
+var bas2_tterm_amt = document.getElementById("bas2_tterm_amt").value;
+
+
+var bas3_fterm_amt = document.getElementById("bas3_fterm_amt").value;
+var bas3_sterm_amt = document.getElementById("bas3_sterm_amt").value;
+var bas3_tterm_amt = document.getElementById("bas3_tterm_amt").value;
+
+
+var bas4_fterm_amt = document.getElementById("bas4_fterm_amt").value;
+var bas4_sterm_amt = document.getElementById("bas4_sterm_amt").value;
+var bas4_tterm_amt = document.getElementById("bas4_tterm_amt").value;
+
+
+var bas5_fterm_amt = document.getElementById("bas5_fterm_amt").value;
+var bas5_sterm_amt = document.getElementById("bas5_sterm_amt").value;
+var bas5_tterm_amt = document.getElementById("bas5_tterm_amt").value;
+
+
+
+
+var js1_fterm_amt = document.getElementById("js1_fterm_amt").value;
+var js1_sterm_amt = document.getElementById("js1_sterm_amt").value;
+var js1_tterm_amt = document.getElementById("js1_tterm_amt").value;
+
+var js2_fterm_amt = document.getElementById("js2_fterm_amt").value;
+var js2_sterm_amt = document.getElementById("js2_sterm_amt").value;
+var js2_tterm_amt = document.getElementById("js2_tterm_amt").value;
+
+var js3_fterm_amt = document.getElementById("js3_fterm_amt").value;
+var js3_sterm_amt = document.getElementById("js3_sterm_amt").value;
+var js3_tterm_amt = document.getElementById("js3_tterm_amt").value;
+
+var ss1_fterm_amt = document.getElementById("ss1_fterm_amt").value;
+var ss1_sterm_amt = document.getElementById("ss1_sterm_amt").value;
+var ss1_tterm_amt = document.getElementById("ss1_tterm_amt").value;
+
+var ss2_fterm_amt = document.getElementById("ss2_fterm_amt").value;
+var ss2_sterm_amt = document.getElementById("ss2_sterm_amt").value;
+var ss2_tterm_amt = document.getElementById("ss2_tterm_amt").value;
+
+var ss3_fterm_amt = document.getElementById("ss3_fterm_amt").value;
+var ss3_sterm_amt = document.getElementById("ss3_sterm_amt").value;
+var ss3_tterm_amt = document.getElementById("ss3_tterm_amt").value;
+
+var year = document.getElementById("year").value;
+
+/*
+alert(js1_fterm_amt);
+alert(ss3_sterm_amt);
+
+alert(js1_tterm_amt);
+
+
+alert(js2_fterm_amt);
+alert(js2_sterm_amt);
+alert(js2_tterm_amt);
+
+alert(js3_fterm_amt);
+alert(js3_sterm_amt);
+alert(js3_tterm_amt);
+
+alert(ss1_fterm_amt);
+alert(ss1_sterm_amt);
+alert(ss1_tterm_amt);
+
+alert(ss2_fterm_amt);
+alert(ss2_sterm_amt);
+alert(ss2_tterm_amt);
+
+alert(ss3_fterm_amt);
+alert(ss3_sterm_amt);
+alert(ss3_tterm_amt);
+*/
+
+
+
+
+//function check_phone(){
+  var error = '';
+  var phoneRE = /^\d{0,20}$/;
+
+
+if(phoneRE.test(kind_fterm_amt)){
+  //alert("This is working");
+  }else{
+    //$("#phone_s").html("Name Missing");
+error+="Please enter a valid KINDERGARTEN FIRST term amount \n\n";
+  };
+
+if(phoneRE.test(kind_sterm_amt)){
+  //alert("This is working");
+  }else{
+    //$("#phone_s").html("Name Missing");
+error+="Please enter a valid KINDERGARTEN SECOND term amount \n\n";
+  };
+
+if(phoneRE.test(kind_tterm_amt)){
+  //alert("This is working");
+  }else{
+    //$("#phone_s").html("Name Missing");
+error+="Please enter a valid KINDERGARTEN THIRD term amount \n\n";
+  };
+
+
+if(phoneRE.test(cre_fterm_amt)){
+  //alert("This is working");
+  }else{
+    //$("#phone_s").html("Name Missing");
+error+="Please enter a valid CRECHE FIRST term amount \n\n";
+  };
+
+if(phoneRE.test(cre_sterm_amt)){
+  //alert("This is working");
+  }else{
+    //$("#phone_s").html("Name Missing");
+error+="Please enter a valid CRECHE SECOND term amount \n\n";
+  };
+
+if(phoneRE.test(cre_tterm_amt)){
+  //alert("This is working");
+  }else{
+    //$("#phone_s").html("Name Missing");
+error+="Please enter a valid CRECHE THIRD term amount \n\n";
+  };
+
+
+if(phoneRE.test(nur1_fterm_amt)){
+  //alert("This is working");
+  }else{
+    //$("#phone_s").html("Name Missing");
+error+="Please enter a valid NURSERY ONE FIRST term amount \n\n";
+  };
+
+if(phoneRE.test(nur1_sterm_amt)){
+  //alert("This is working");
+  }else{
+    //$("#phone_s").html("Name Missing");
+error+="Please enter a valid NURSERY ONE SECOND term amount \n\n";
+  };
+
+if(phoneRE.test(nur1_tterm_amt)){
+  //alert("This is working");
+  }else{
+    //$("#phone_s").html("Name Missing");
+error+="Please enter a valid NURSERY ONE THIRD term amount \n\n";
+  };
+
+
+
+if(phoneRE.test(nur2_fterm_amt)){
+  //alert("This is working");
+  }else{
+    //$("#phone_s").html("Name Missing");
+error+="Please enter a valid NURSERY TWO FIRST term amount \n\n";
+  };
+
+if(phoneRE.test(nur2_sterm_amt)){
+  //alert("This is working");
+  }else{
+    //$("#phone_s").html("Name Missing");
+error+="Please enter a valid NURSERY TWO SECOND term amount \n\n";
+  };
+
+if(phoneRE.test(nur2_tterm_amt)){
+  //alert("This is working");
+  }else{
+    //$("#phone_s").html("Name Missing");
+error+="Please enter a valid NURSERY TWO THIRD term amount \n\n";
+  };
+
+
+
+if(phoneRE.test(nur3_fterm_amt)){
+  //alert("This is working");
+  }else{
+    //$("#phone_s").html("Name Missing");
+error+="Please enter a valid NURSERY THREE FIRST term amount \n\n";
+  };
+
+if(phoneRE.test(nur3_sterm_amt)){
+  //alert("This is working");
+  }else{
+    //$("#phone_s").html("Name Missing");
+error+="Please enter a valid NURSERY TWO SECOND term amount \n\n";
+  };
+
+if(phoneRE.test(nur3_tterm_amt)){
+  //alert("This is working");
+  }else{
+    //$("#phone_s").html("Name Missing");
+error+="Please enter a valid NURSERY THREE THIRD term amount \n\n";
+  };
+
+
+
+
+
+
+if(phoneRE.test(bas1_fterm_amt)){
+  //alert("This is working");
+  }else{
+    //$("#phone_s").html("Name Missing");
+error+="Please enter a valid BASIC ONE FIRST term amount \n\n";
+  };
+
+
+if(phoneRE.test(bas1_sterm_amt)){
+  //alert("This is working");
+  }else{
+    //$("#phone_s").html("Name Missing");
+error+="Please enter a valid BASIC ONE SECOND term amount \n\n";
+  };
+
+if(phoneRE.test(bas1_tterm_amt)){
+  //alert("This is working");
+  }else{
+    //$("#phone_s").html("Name Missing");
+error+="Please enter a valid BASIC ONE THIRD term amount \n\n";
+  };
+
+
+if(phoneRE.test(bas2_fterm_amt)){
+  //alert("This is working");
+  }else{
+    //$("#phone_s").html("Name Missing");
+error+="Please enter a valid BASIC TWO FIRST term amount \n\n";
+  };
+
+
+if(phoneRE.test(bas2_sterm_amt)){
+  //alert("This is working");
+  }else{
+    //$("#phone_s").html("Name Missing");
+error+="Please enter a valid BASIC TWO SECOND term amount \n\n";
+  };
+
+if(phoneRE.test(bas2_tterm_amt)){
+  //alert("This is working");
+  }else{
+    //$("#phone_s").html("Name Missing");
+error+="Please enter a valid BASIC TWO THIRD term amount \n\n";
+  };
+
+if(phoneRE.test(bas3_fterm_amt)){
+  //alert("This is working");
+  }else{
+    //$("#phone_s").html("Name Missing");
+error+="Please enter a valid BASIC THREE FIRST term amount \n\n";
+  };
+
+
+if(phoneRE.test(bas3_sterm_amt)){
+  //alert("This is working");
+  }else{
+    //$("#phone_s").html("Name Missing");
+error+="Please enter a valid BASIC THREE SECOND term amount \n\n";
+  };
+
+if(phoneRE.test(bas3_tterm_amt)){
+  //alert("This is working");
+  }else{
+    //$("#phone_s").html("Name Missing");
+error+="Please enter a valid BASIC THREE THIRD term amount \n\n";
+  };
+
+if(phoneRE.test(bas4_fterm_amt)){
+  //alert("This is working");
+  }else{
+    //$("#phone_s").html("Name Missing");
+error+="Please enter a valid BASIC FOUR FIRST term amount \n\n";
+  };
+
+
+if(phoneRE.test(bas4_sterm_amt)){
+  //alert("This is working");
+  }else{
+    //$("#phone_s").html("Name Missing");
+error+="Please enter a valid BASIC FOUR SECOND term amount \n\n";
+  };
+
+if(phoneRE.test(bas4_tterm_amt)){
+  //alert("This is working");
+  }else{
+    //$("#phone_s").html("Name Missing");
+error+="Please enter a valid BASIC FOUR THIRD term amount \n\n";
+  };
+
+if(phoneRE.test(bas5_fterm_amt)){
+  //alert("This is working");
+  }else{
+    //$("#phone_s").html("Name Missing");
+error+="Please enter a valid BASIC FIVE FIRST term amount \n\n";
+  };
+
+
+if(phoneRE.test(bas5_sterm_amt)){
+  //alert("This is working");
+  }else{
+    //$("#phone_s").html("Name Missing");
+error+="Please enter a valid BASIC FIVE SECOND term amount \n\n";
+  };
+
+if(phoneRE.test(bas5_tterm_amt)){
+  //alert("This is working");
+  }else{
+    //$("#phone_s").html("Name Missing");
+error+="Please enter a valid BASIC FIVE THIRD term amount \n\n";
+  };
+
+
+
+
+
+
+
+
+if(phoneRE.test(js1_fterm_amt)){
+  //alert("This is working");
+  }else{
+    //$("#phone_s").html("Name Missing");
+error+="Please enter a valid JS1 FIRST term amount \n\n";
+  };
+
+if(phoneRE.test(js1_sterm_amt)){
+  //alert("This is working");
+  }else{
+    //$("#phone_s").html("Name Missing");
+error+="Please enter valid JS1 SECOND term amount \n\n";
+  };
+
+if(phoneRE.test(js1_tterm_amt)){
+  //alert("This is working");
+  }else{
+    //$("#phone_s").html("Name Missing");
+error+="Please enter valid JS1 THIRD term amount \n\n";
+  };
+
+ // this is for js two 
+if(phoneRE.test(js2_fterm_amt)){
+  //alert("This is working");
+  }else{
+    //$("#phone_s").html("Name Missing");
+error+="Please enter a valid JS2 FIRST term amount \n\n";
+  };
+
+if(phoneRE.test(js2_sterm_amt)){
+  //alert("This is working");
+  }else{
+    //$("#phone_s").html("Name Missing");
+error+="Please enter valid JS2 SECOND term amount \n\n";
+  };
+
+if(phoneRE.test(js2_tterm_amt)){
+  //alert("This is working");
+  }else{
+    //$("#phone_s").html("Name Missing");
+error+="Please enter valid JS2 THIRD term amount \n\n";
+  };
+
+
+ // this is for js three 
+if(phoneRE.test(js3_fterm_amt)){
+  //alert("This is working");
+  }else{
+    //$("#phone_s").html("Name Missing");
+error+="Please enter a valid JS3 FIRST term amount \n\n";
+  };
+
+if(phoneRE.test(js3_sterm_amt)){
+  //alert("This is working");
+  }else{
+    //$("#phone_s").html("Name Missing");
+error+="Please enter valid JS3 SECOND term amount \n\n";
+  };
+
+if(phoneRE.test(js3_tterm_amt)){
+  //alert("This is working");
+  }else{
+    //$("#phone_s").html("Name Missing");
+error+="Please enter valid JS3 THIRD term amount \n\n";
+  };
+
+
+ // this is for SS ONE
+if(phoneRE.test(ss1_fterm_amt)){
+  //alert("This is working");
+  }else{
+    //$("#phone_s").html("Name Missing");
+error+="Please enter a valid SS1 FIRST term amount \n\n";
+  };
+
+if(phoneRE.test(ss1_sterm_amt)){
+  //alert("This is working");
+  }else{
+    //$("#phone_s").html("Name Missing");
+error+="Please enter valid SS1 SECOND term amount \n\n";
+  };
+
+if(phoneRE.test(ss1_tterm_amt)){
+  //alert("This is working");
+  }else{
+    //$("#phone_s").html("Name Missing");
+error+="Please enter valid SS1 THIRD term amount \n\n";
+  };
+
+
+ // this is for SS ONE
+if(phoneRE.test(ss2_fterm_amt)){
+  //alert("This is working");
+  }else{
+    //$("#phone_s").html("Name Missing");
+error+="Please enter a valid SS2 FIRST term amount \n\n";
+  };
+
+if(phoneRE.test(ss2_sterm_amt)){
+  //alert("This is working");
+  }else{
+    //$("#phone_s").html("Name Missing");
+error+="Please enter valid SS2 SECOND term amount \n\n";
+  };
+
+if(phoneRE.test(ss2_tterm_amt)){
+  //alert("This is working");
+  }else{
+    //$("#phone_s").html("Name Missing");
+error+="Please enter valid SS2 THIRD term amount \n\n";
+  };
+
+
+ // this is for SS ONE
+if(phoneRE.test(ss3_fterm_amt)){
+  //alert("This is working");
+  }else{
+    //$("#phone_s").html("Name Missing");
+error+="Please enter a valid SS3 FIRST term amount \n\n";
+  };
+
+if(phoneRE.test(ss3_sterm_amt)){
+  //alert("This is working");
+  }else{
+    //$("#phone_s").html("Name Missing");
+error+="Please enter valid SS3 SECOND term amount \n\n";
+  };
+
+if(phoneRE.test(ss3_tterm_amt)){
+  //alert("This is working");
+  }else{
+    //$("#phone_s").html("Name Missing");
+error+="Please enter valid SS3 THIRD term amount \n";
+  };
+
+var yearRE = /^\d{4}$/;
+if(yearRE.test(year)){
+  //alert("This is working");
+  }else{
+    //$("#phone_s").html("Name Missing");
+error+="Please select SCHOOL FEES YEAR. \n";
+  };
+
+
+
+
+
+if(error == ''){
+    alert("tou asre good");
+
+
+
+//};
+
+//};// end of test function
+
+
+// function accounthhhhhh(){
+if(year != ''){
+
+var termsamt = {
+            "kind_fterm": kind_fterm_amt,
+            "kind_sterm": kind_sterm_amt,
+            "kind_tterm": kind_tterm_amt,
+            "cre_fterm": cre_fterm_amt,
+            "cre_sterm": cre_sterm_amt,
+            "cre_tterm": cre_tterm_amt,
+
+            "nur1_fterm": nur1_fterm_amt,
+            "nur1_sterm": nur1_sterm_amt,
+            "nur1_tterm": nur1_tterm_amt,
+            "nur2_fterm": nur2_fterm_amt,
+            "nur2_sterm": nur2_sterm_amt,
+            "nur2_tterm": nur2_tterm_amt,
+            "nur3_fterm": nur3_fterm_amt,
+            "nur3_sterm": nur3_sterm_amt,
+            "nur3_tterm": nur3_tterm_amt,            
+
+            "bas1_fterm": bas1_fterm_amt,
+            "bas1_sterm": bas1_sterm_amt,
+            "bas1_tterm": bas1_tterm_amt,
+            "bas2_fterm": bas2_fterm_amt,
+            "bas2_sterm": bas2_sterm_amt,
+            "bas2_tterm": bas2_tterm_amt,
+            "bas3_fterm": bas3_fterm_amt,
+            "bas3_sterm": bas3_sterm_amt,
+            "bas3_tterm": bas3_tterm_amt,
+            "bas4_fterm": bas4_fterm_amt,
+            "bas4_sterm": bas4_sterm_amt,
+            "bas4_tterm": bas4_tterm_amt,
+            "bas5_fterm": bas5_fterm_amt,
+            "bas5_sterm": bas5_sterm_amt,
+            "bas5_tterm": bas5_tterm_amt,
+            "js1_fterm": js1_fterm_amt,
+            "js1_sterm": js1_sterm_amt,
+            "js1_tterm": js1_tterm_amt,
+            "js2_fterm": js2_fterm_amt,
+            "js2_sterm": js2_sterm_amt,
+            "js2_tterm": js2_tterm_amt,
+            "js3_fterm": js3_fterm_amt,
+            "js3_sterm": js3_sterm_amt,
+            "js3_tterm": js3_tterm_amt,
+            "ss1_fterm": ss1_fterm_amt,
+            "ss1_sterm": ss1_sterm_amt,
+            "ss1_tterm": ss1_tterm_amt,
+            "ss2_fterm": ss2_fterm_amt,
+            "ss2_sterm": ss2_sterm_amt,
+            "ss2_tterm": ss2_tterm_amt,
+            "ss3_fterm": ss3_fterm_amt,
+            "ss3_sterm": ss3_sterm_amt,
+            "ss3_tterm": ss3_tterm_amt,
+            "year_selected": year};
+
+
+  var text = JSON.stringify(termsamt);
+  var xmlhttp = new XMLHttpRequest();
+  xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200){
+      //var myObj = JSON.parse(this.responseText);
+      var data = this.responseText;
+
+
+      //var data = xmlhttp.responseText;
+      //document.getElementById("ajaxform").innerHTML = data;
+      alert(data);
+
+    }else{
+      //alert("new XMLHttpRequest not done!");
+      //alert(Error-   + xmlhttp.status + ":"  + xmlhttp.statusText);
+        }; //end if
+  }; //end onreadystate
+
+  xmlhttp.open("POST", "php/masterboard.php", true);
+  xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  //xmlhttp.open("GET", "simpleGreet.php?x=" + obj.table, true);
+  xmlhttp.send("z=" + text);
+
+  // OOORRRR THIS
+
+
+setTimeout("window.location.reload(true);", 3000);
+
+}else{
+  alert("Please select year!");
+}// end of year if
+
+  }else{
+    alert(error);
+};//end of error if
+
+
+//}// end account
+
+}// end of test function
+
+</script>
+
+
+
+
+
+
+<script type="text/javascript">
+  
+//$(init);
+
+//$(document).on('change', '#year', function(){
+
+//setTimeout("window.location.reload(true);", 1000);
+
+//});
+
+function checkout_year(){
+//$(document).on('change', '#year', function(){
+
+//setTimeout("window.location.reload(true);", 1000);
+
+alert("alright");
+var year = document.getElementById("year").value;
+    
+    var yearres = {"year_selected": year};
+
+    var test = JSON.stringify(yearres);
+      var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200){
+      //var myObj = JSON.parse(this.responseText);
+
+      var data = JSON.parse(this.responseText);
+
+      //var data = xmlhttp.responseText;
+      $("#kind_fterm_amt").html(data.kind_fterm_amt);
+      $("#kind_sterm_amt").html(data.kind_sterm_amt);
+      $("#kind_tterm_amt").html(data.kind_tterm_amt);
+      $("#cre_fterm_amt").html(data.cre_fterm_amt);
+      $("#cre_sterm_amt").html(data.cre_sterm_amt);
+      $("#cre_tterm_amt").html(data.cre_tterm_amt);
+      $("#nur1_fterm_amt").html(data.nur1_fterm_amt);
+      $("#nur1_sterm_amt").html(data.nur1_sterm_amt);
+      $("#nur1_tterm_amt").html(data.nur1_tterm_amt);
+      $("#nur2_fterm_amt").html(data.nur2_fterm_amt);
+      $("#nur2_sterm_amt").html(data.nur2_sterm_amt);
+      $("#nur2_tterm_amt").html(data.nur2_tterm_amt);
+      $("#nur3_fterm_amt").html(data.nur3_fterm_amt);
+      $("#nur3_sterm_amt").html(data.nur3_sterm_amt);
+      $("#nur3_tterm_amt").html(data.nur3_tterm_amt);
+
+      $("#bas1_fterm_amt").html(data.bas1_fterm_amt);
+      $("#bas1_sterm_amt").html(data.bas1_sterm_amt);
+      $("#bas1_tterm_amt").html(data.bas1_tterm_amt);
+      $("#bas2_fterm_amt").html(data.bas2_fterm_amt);
+      $("#bas2_sterm_amt").html(data.bas2_sterm_amt);
+      $("#bas2_tterm_amt").html(data.bas2_tterm_amt);
+      $("#bas3_fterm_amt").html(data.bas3_fterm_amt);
+      $("#bas3_sterm_amt").html(data.bas3_sterm_amt);
+      $("#bas3_tterm_amt").html(data.bas3_tterm_amt);
+      $("#bas4_fterm_amt").html(data.bas4_fterm_amt);
+      $("#bas4_sterm_amt").html(data.bas4_sterm_amt);
+      $("#bas4_tterm_amt").html(data.bas4_tterm_amt);
+      $("#bas5_fterm_amt").html(data.bas5_fterm_amt);
+      $("#bas5_sterm_amt").html(data.bas5_sterm_amt);
+      $("#bas5_tterm_amt").html(data.bas5_tterm_amt);
+
+      $("#js1_fterm_amt").html(data.js1_fterm_amt);
+      $("#js1_sterm_amt").html(data.js1_sterm_amt);
+      $("#js1_tterm_amt").html(data.js1_tterm_amt);
+      $("#js2_fterm_amt").html(data.js2_fterm_amt);
+      $("#js2_sterm_amt").html(data.js2_sterm_amt);
+      $("#js2_tterm_amt").html(data.js2_tterm_amt);
+      $("#js3_fterm_amt").html(data.js3_fterm_amt);
+      $("#js3_sterm_amt").html(data.js3_sterm_amt);
+      $("#js3_tterm_amt").html(data.js3_tterm_amt);
+
+      $("#ss1_fterm_amt").html(data.ss1_fterm_amt);
+      $("#ss1_sterm_amt").html(data.ss1_sterm_amt);
+      $("#ss1_tterm_amt").html(data.ss1_tterm_amt);
+      $("#ss2_fterm_amt").html(data.ss2_fterm_amt);
+      $("#ss2_sterm_amt").html(data.ss2_sterm_amt);
+      $("#ss2_tterm_amt").html(data.ss2_tterm_amt);
+      $("#ss3_fterm_amt").html(data.ss3_fterm_amt);
+      $("#ss3_sterm_amt").html(data.ss3_sterm_amt);
+      $("#ss3_tterm_amt").html(data.ss3_tterm_amt);
+      //alert(data.ss3_fterm_amt);
+      
+      //document.getElementById("schfeesbal").innerHTML = data.sname;// this also works
+
+    }else{
+      //alert(Error-   + xmlhttp.status + ":"  + xmlhttp.statusText);
+        }; //end if
+  }; //end onreadystate
+
+  xmlhttp.open("POST", "php/masterboardresult.php", true);
+  xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  //xmlhttp.open("GET", "simpleGreet.php?x=" + obj.table, true);
+  xmlhttp.send("g=" + test);
+
+
+
+//}); // end onchange function
+};// end of checkout_year function
+
+</script>
+
+
+
+
+
+<script type="text/javascript">     
+  
+
+/*
+$("#fund").click(function(){
+
+  //$("#display").load("funds.html");
+  $("#display").load("amt_table.html");
+
+});
+
+$("#student_data").click(function(){
+
+  $("#display").load("students_data.html");
+
+});
+*/
+
+</script>

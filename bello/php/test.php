@@ -1,4 +1,160 @@
 <?php
+//header("Content-Type: application/json; charset=UTF-8");
+
+//if ($_SERVER["REQUEST_METHOD"] == "POST")
+if (isset($_POST['submit']))
+//if(!empty($fname && $lname && $message && $emailtest))
+{
+
+	echo "just testing \n";
+$msg = '';
+$target = "../images/".basename($_FILES['image']['name']);
+$image = $_FILES['image']['name'];
+$text = $_POST['text'];
+
+//this insert data in my data base
+$dsn1='localhost';
+$user= 'root';
+$password='?/iPTSJ\^@\$TYOEs\|';  
+$dbname  = 'pilot';
+
+$conn = new mysqli ($dsn1, $user, $password, $dbname);
+
+if ($conn->connect_error){
+	die("Connection Failed: " . $conn->connect_error);
+};
+
+echo $image . "\n";
+
+// this is to save the image to folder in server or anywhere in the system.
+
+$sql = "INSERT INTO images (images) VALUES ('$image')";
+$input = mysqli_query($conn, $sql);
+
+if($input == true){
+
+
+	if(move_uploaded_file($_FILES['image']['tmp_name'], $target)){
+		$msg = "image uploaded successfully";
+		echo $msg;
+
+	}else{
+		$msg = "there was a problem uploading the image.";
+		echo $msg;
+	};
+} else {echo "ERROR: " . $sql . "<br>"  . $conn->error;
+	};
+$conn->close();
+
+//this is to send the image to databass straight form with datatype blog.
+/*
+$imagename = $_FILES['image']['name']
+$imagetmp = addslashes(file_get_contents($_FILES['image']['tmp_name']))
+$sql = "INSERT INTO images (images, imagename) VALUES ('$imagetmp', 'imagename')"
+
+*/
+
+};
+
+?>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pilot Home page</title>
+
+<link href="css/dashstyle.css" type="text/css" rel="stylesheet" media="all">
+
+
+<!-- load JS files -->
+    <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>     
+
+<style type="text/css">
+	#content{
+		width:50%;
+		margin: 20px auto;
+		border:1px solid #cbcbcb;
+	}
+	form{
+		width: 50%;
+		margin:20px auto;
+	}
+	form div{
+		margin-top: 5px;
+		
+	}
+</style>
+
+
+
+</head>
+
+
+
+
+<body>
+
+<script type="text/javascript">
+	
+</script>
+<p>
+in page 1	
+<div id="checkllllllll">link</div>
+</p>
+
+<div id="content">
+
+<div class="display">
+<?php
+$dsn1='localhost';
+$user= 'root';
+$password='?/iPTSJ\^@\$TYOEs\|';  
+$dbname  = 'pilot';
+
+$conn = new mysqli ($dsn1, $user, $password, $dbname);
+
+if ($conn->connect_error){
+	die("Connection Failed: " . $conn->connect_error);
+};
+
+
+	$req = "SELECT * FROM images";
+	$result = mysqli_query($conn, $req);
+
+	while ($row = mysqli_fetch_array($result)) {
+		echo "<img src= '../images/" . $row['images'] . "'>";
+	};
+
+
+?>
+</div>	
+
+<form action="test.php" method="post" enctype="multipart/form-data">
+	<div>
+		<input type="file" name="image">
+	</div>
+	<div>
+		<textarea name="text" cols="40" rows="4" placeholder="just something about the image"></textarea>
+	</div>
+	<div>
+		<input type="submit" name="submit" value="upload image">
+	</div>
+</form>
+</div>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+<?php
 
 
 //error_reporting(-1);
@@ -31,7 +187,7 @@ if (preg_match($emailRE, $_POST['emailtest'])){
 } else {//echo "complete form!";
 		};
 
-*/
+
 header("Content-Type: application/json; charset=UTF-8");
 
 
@@ -66,29 +222,19 @@ $res = $conn->query($sql_s);
 $row = mysqli_fetch_array($res);
 
 
-if ($conn->query($sql_s) == True){
-
-	if($row != ''){
-
-		$sql1 = "UPDATE uniform SET unifees_amt = '111' WHERE students_id = '$obj'";
-		$result = $conn->query($sql1);
-		echo "already exist, so inserted";
-		echo $row;
-
-	}else{
 		$sql2 = "INSERT INTO uniform (students_id, amount_paid)
 		VALUES ('$obj', '100')";
 
 		$result = $conn->query($sql2);
 		//echo $result;
 		echo "found so inserted with students_id";
-	};
+
 
 	//echo  "Data received successfully!";
 
 
-}else {echo "ERROR: " . $sql1 . "<br>" . $sql2 . "<br>" . $sql3 . "<br>" . $sql4 . "<br>"  . $conn->error;
-	};
+
+
 $conn->close();
 
 
@@ -99,7 +245,7 @@ $conn->close();
 };
 //echo  "A drop of comment will enhance our services to you!";
 
-
+*/
 /**
 
 

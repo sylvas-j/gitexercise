@@ -25,6 +25,8 @@ $(init);
 
 
 var id = localStorage.getItem('id_passed');
+//var id = document.location.search.replace(/^.*?\=/, '');
+
 function init(){
 	//alert("alright");
 		
@@ -59,7 +61,8 @@ function init(){
 
 
 
-$("#display").load("fundsdash.html");
+//$("#display").load("fundsdash.html");
+$("#display").load("amt_table_res.html");
 }; // end init function
 
 
@@ -111,13 +114,23 @@ $("#display").load("fundsdash.html");
 
 <body>
 
-<h3 style="text-align: center;">STUDENT DASHBOARD</h3>
+<div class="nav">
+	<select class="year" id="year">
+        <option value="2020">2019/2020</option>
+        <option value="2021">2020/2021</option>
+        <option value="2022">2021/2022</option>
+   	</select>
 
-<div class="logout" style="float: right; position: relative;top: -50px;">
-	
-	<a href="test.php" class="dash">LOG OUT</a>
+	<h3 class="pagetitle">STUDENT DASHBOARD</h3>
+
+	<div class="logout">
 		
+		<a href="test.php" class="dash">LOG OUT</a>
+			
+	</div>
 </div>
+
+
 
 <!--sidebar div-->
 <div class="sidebar">
@@ -183,6 +196,43 @@ $("#fund").click(function(){
 $("#student_data").click(function(){
 
 	$("#display").load("students_data.html");
+
+});
+
+//this code may be required later when upgrading the system.
+$("#delete").click(function(){
+
+	
+//var id = localStorage.getItem('id_passed');
+//var id = document.location.search.replace(/^.*?\=/, '');
+
+	//alert("alright");
+		
+		var	del = { "iddd": id};
+
+		var test = JSON.stringify(del);
+    	var xmlhttp = new XMLHttpRequest();
+		xmlhttp.onreadystatechange = function() {
+	  if (this.readyState == 4 && this.status == 200){
+	    //var myObj = JSON.parse(this.responseText);
+
+	    var data = this.responseText;
+	    alert(data);
+
+	  }else{
+	  	//alert(Error-   + xmlhttp.status + ":"  + xmlhttp.statusText);
+	  };
+	}; //end onreadystate
+
+	xmlhttp.open("POST", "php/delete.php", true);
+	xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	//xmlhttp.open("GET", "simpleGreet.php?x=" + obj.table, true);
+	xmlhttp.send("x=" + test);
+
+
+//setTimeout("window.location.reload(true);", 3000);
+//window.document.location = './test.php';
+
 
 });
 

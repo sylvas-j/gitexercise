@@ -37,7 +37,7 @@ $third = 'THIRD TERM';
 //
 // THIS WHOLE LINES OF CODE PULL OUT THE DIFFERENT CONTENTS OF FIRST TERM TABLE
 //
-$sqls_ff = "SELECT * FROM first_term WHERE students_id = '$obj1->pageid' AND installment = 'FIRST INSTALLMENT'";
+$sqls_ff = "SELECT * FROM first_term WHERE students_id = '$obj1->pageid' AND year = '$obj1->year_v' AND installment = 'FIRST INSTALLMENT'";
 $result11 = $conn->query($sqls_ff);
 //$result = mysqli_query($conn, $sql);
 //echo $obj1->pageid;
@@ -56,7 +56,7 @@ while($row11 = mysqli_fetch_array($result11)){
 };
 };
 
-$sqls_fs = "SELECT * FROM first_term WHERE students_id = '$obj1->pageid' AND installment = 'SECOND INSTALLMEMT'";
+$sqls_fs = "SELECT * FROM first_term WHERE students_id = '$obj1->pageid' AND year = '$obj1->year_v' AND installment = 'SECOND INSTALLMEMT'";
 $result12 = $conn->query($sqls_fs);
 //$result = mysqli_query($conn, $sql);
 if ($result12 == True){
@@ -73,7 +73,7 @@ while($row12 = mysqli_fetch_array($result12)){
 };
 };
 
-$sqls_ft = "SELECT * FROM first_term WHERE students_id = '$obj1->pageid' AND installment = 'THIRD INSTALLMENT'";
+$sqls_ft = "SELECT * FROM first_term WHERE students_id = '$obj1->pageid' AND year = '$obj1->year_v' AND installment = 'THIRD INSTALLMENT'";
 $result13 = $conn->query($sqls_ft);
 //$result = mysqli_query($conn, $sql);
 if ($result13 == True){
@@ -90,7 +90,7 @@ while($row13 = mysqli_fetch_array($result13)){
 };
 };
 
-$sqls_fft = "SELECT * FROM first_term WHERE students_id = '$obj1->pageid' AND installment = 'FOURTH INSTALLMENT'";
+$sqls_fft = "SELECT * FROM first_term WHERE students_id = '$obj1->pageid' AND year = '$obj1->year_v' AND installment = 'FOURTH INSTALLMENT'";
 $result14 = $conn->query($sqls_fft);
 //$result = mysqli_query($conn, $sql);
 if ($result14 == True){
@@ -115,7 +115,7 @@ while($row14 = mysqli_fetch_array($result14)){
 // THIS WHOLE LINES OF CODE PULL OUT THE DIFFERENT CONTENTS OF SECOND TERM TABLE
 //SECOND TERM TABLE
 
-$sqls_sf = "SELECT * FROM second_term WHERE students_id = '$obj1->pageid' AND installment = 'FIRST INSTALLMENT'";
+$sqls_sf = "SELECT * FROM second_term WHERE students_id = '$obj1->pageid' AND year = '$obj1->year_v' AND installment = 'FIRST INSTALLMENT'";
 $result21 = $conn->query($sqls_sf);
 //$result = mysqli_query($conn, $sql);
 if ($result21 == True){
@@ -132,7 +132,7 @@ while($row21 = mysqli_fetch_array($result21)){
 };
 };
 
-$sqls_ss = "SELECT * FROM second_term WHERE students_id = '$obj1->pageid' AND installment = 'SECOND INSTALLMEMT'";
+$sqls_ss = "SELECT * FROM second_term WHERE students_id = '$obj1->pageid' AND year = '$obj1->year_v' AND installment = 'SECOND INSTALLMEMT'";
 $result22 = $conn->query($sqls_ss);
 //$result = mysqli_query($conn, $sql);
 if ($result22 == True){
@@ -149,7 +149,7 @@ while($row22 = mysqli_fetch_array($result22)){
 };
 };
 
-$sqls_st = "SELECT * FROM second_term WHERE students_id = '$obj1->pageid' AND installment = 'THIRD INSTALLMENT'";
+$sqls_st = "SELECT * FROM second_term WHERE students_id = '$obj1->pageid' AND year = '$obj1->year_v' AND installment = 'THIRD INSTALLMENT'";
 $result23 = $conn->query($sqls_st);
 //$result = mysqli_query($conn, $sql);
 if ($result23 == True){
@@ -166,7 +166,7 @@ while($row23 = mysqli_fetch_array($result23)){
 };
 };
 
-$sqls_sft = "SELECT * FROM second_term WHERE students_id = '$obj1->pageid' AND installment = 'FOURTH INSTALLMENT'";
+$sqls_sft = "SELECT * FROM second_term WHERE students_id = '$obj1->pageid' AND year = '$obj1->year_v' AND installment = 'FOURTH INSTALLMENT'";
 $result24 = $conn->query($sqls_sft);
 //$result = mysqli_query($conn, $sql);
 if ($result24 == True){
@@ -190,7 +190,7 @@ while($row24 = mysqli_fetch_array($result24)){
 // THIS WHOLE LINES OF CODE PULL OUT THE DIFFERENT CONTENTS OF THIRD TERM TABLE
 //THIRD TERM TABLE
 
-$sqls_tf = "SELECT * FROM third_term WHERE students_id = '$obj1->pageid' AND installment = 'FIRST INSTALLMENT'";
+$sqls_tf = "SELECT * FROM third_term WHERE students_id = '$obj1->pageid' AND year = '$obj1->year_v' AND installment = 'FIRST INSTALLMENT'";
 $result31 = $conn->query($sqls_tf);
 //$result = mysqli_query($conn, $sql);
 if ($result31 == True){
@@ -207,7 +207,7 @@ while($row31 = mysqli_fetch_array($result31)){
 };
 };
 
-$sqls_ts = "SELECT * FROM third_term WHERE students_id = '$obj1->pageid' AND installment = 'SECOND INSTALLMEMT'";
+$sqls_ts = "SELECT * FROM third_term WHERE students_id = '$obj1->pageid' AND year = '$obj1->year_v' AND installment = 'SECOND INSTALLMEMT'";
 $result32 = $conn->query($sqls_ts);
 //$result = mysqli_query($conn, $sql);
 if ($result32 == True){
@@ -224,7 +224,7 @@ while($row32 = mysqli_fetch_array($result32)){
 };
 };
 
-$sqls_tt = "SELECT * FROM third_term WHERE students_id = '$obj1->pageid' AND installment = 'THIRD INSTALLMENT'";
+$sqls_tt = "SELECT * FROM third_term WHERE students_id = '$obj1->pageid' AND year = '$obj1->year_v' AND installment = 'THIRD INSTALLMENT'";
 $result33 = $conn->query($sqls_tt);
 //$result = mysqli_query($conn, $sql);
 if ($result33 == True){
@@ -241,7 +241,7 @@ while($row33 = mysqli_fetch_array($result33)){
 };
 };
 
-$sqls_tft = "SELECT * FROM third_term WHERE students_id = '$obj1->pageid' AND installment = 'FOURTH INSTALLMENT'";
+$sqls_tft = "SELECT * FROM third_term WHERE students_id = '$obj1->pageid' AND year = '$obj1->year_v' AND installment = 'FOURTH INSTALLMENT'";
 $result34 = $conn->query($sqls_tft);
 //$result = mysqli_query($conn, $sql);
 if ($result34 == True){
@@ -257,6 +257,48 @@ while($row34 = mysqli_fetch_array($result34)){
 
 };
 };
+
+//THIS IS FOR THE OUTSTANDING CALCULATIONS
+
+$sql1 = "SELECT amount FROM termly_fees WHERE term = '$first' AND year = '$obj1->year_v' AND class = (SELECT class FROM students_data WHERE students_id = '$obj1->pageid')";
+$result1 = $conn->query($sql1);
+//$result = mysqli_query($conn, $sql);
+if ($result1 == True){
+	//echo  "Thanks for your cooperation!";
+while($row1 = mysqli_fetch_array($result1)){
+
+	$data['ff_fees_amt'] = $row1['amount'];
+
+};
+};
+
+
+$sql2 = "SELECT amount FROM termly_fees WHERE term = '$second' AND year = '$obj1->year_v' AND class = (SELECT class FROM students_data WHERE students_id = '$obj1->pageid')";
+$result2 = $conn->query($sql2);
+//$result = mysqli_query($conn, $sql);
+if ($result2 == True){
+	//echo  "Thanks for your cooperation!";
+while($row2 = mysqli_fetch_array($result2)){
+
+	$data['sf_fees_amt'] = $row2['amount'];
+
+};
+};
+
+
+$sql3 = "SELECT amount FROM termly_fees WHERE term = '$third' AND year = '$obj1->year_v' AND class = (SELECT class FROM students_data WHERE students_id = '$obj1->pageid')";
+$result3 = $conn->query($sql3);
+//$result = mysqli_query($conn, $sql);
+if ($result3 == True){
+	//echo  "Thanks for your cooperation!";
+while($row3 = mysqli_fetch_array($result3)){
+
+	$data['tf_fees_amt'] = $row3['amount'];
+
+};
+};
+
+
 //echo json_encode($row);
 
 

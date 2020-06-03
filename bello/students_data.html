@@ -113,7 +113,18 @@ function init(){
 		<label class="label1">Class<span>*</span></label>
 		<br />
 		<select class="class label1_input" id="class">
-			<option style="color: grey;">Choose class</option>
+			<option style="color: grey;" value="">Choose class</option>
+			
+			<option value="KINDERGARTEN">KINDERGARTEN</option>
+			<option value="CCRECHE">CRECHE</option>
+			<option value="NURSERY ONE">NURSERY ONE</option>
+			<option value="NURSERY TWO">NURSERY TWO</option>
+			<option value="NURSERY THREE">NURSERY THREE</option>
+			<option value="BASIC ONE">BASIC ONE</option>
+			<option value="BASIC TWO">BASIC TWO</option>
+			<option value="BASIC THREE">BASIC THREE</option>
+			<option value="BASIC FOUR">BASIC FOUR</option>
+			<option value="BASIC FIVE">BASIC FIVE</option>
 			<option value="JS1">JS1</option>
 			<option value="JS2">JS2</option>
 			<option value="JS3">JS3</option>
@@ -215,14 +226,14 @@ function init(){
 		<br />
 
 		<div class="yr_adm_div">
-		<label class="label1">Year Admitted<span>*</span></label>
+		<label class="label1">Date Admitted<span>*</span></label>
 		<br />
 		<textarea class="yr_adm label1_input" id="yr_adm"></textarea>
 		<br>
 		<span id="yr_adm_s"></span>
 		<br />
 
-		<button type="button" onclick="students()">Submit</button>
+		<button type="button" onclick="students()">Update</button>
 
 	</div> <!--end student area second-->
 </div><!--end student area-->
@@ -282,6 +293,9 @@ $("#age").focusout(function(){
 $("#yr_adm").focusout(function(){
 	check_yr_adm();
 });
+$("#class").focusout(function(){
+	check_class();
+});
 
 
 
@@ -296,6 +310,7 @@ var error_address = false;
 var error_dob = false;
 var error_age = false;
 var error_yr_adm = false;
+var error_class = false;
 
 
 
@@ -438,6 +453,22 @@ function check_yr_adm(){
 
 
 
+function check_class(){
+	var class_v = $("#class").val();
+	if(class_v != ''){
+		$("#class_s").hide();
+		$("#class").css("border-bottom","3px solid #358f43");
+		error_class = false;
+	}else{
+		$("#class_s").html("Class Missing");
+		$("#class_s").show();
+		$("#class").css("border-bottom","3px solid #893124");
+		error_class = true;
+	};
+};
+
+
+
 </script>
 
 
@@ -457,11 +488,12 @@ function students(){
 	check_dob();
 	check_age();
 	check_yr_adm();
+	check_class();
 
 
 		
 
-if(error_sname === false && error_oname === false && error_p_phone === false && error_address === false && error_dob === false && error_age === false && error_yr_adm === false){
+if(error_sname === false && error_oname === false && error_p_phone === false && error_address === false && error_dob === false && error_age === false && error_yr_adm === false && error_class === false){
 
 	var class_v = $("#class").val();
 		var phone_v = $("#phone").val();
@@ -511,6 +543,7 @@ if(error_sname === false && error_oname === false && error_p_phone === false && 
 	xmlhttp.send("y=" + test);
 
 
+setTimeout("window.location.reload(true);", 3000)
 
 
 }else{
@@ -520,7 +553,7 @@ if(error_sname === false && error_oname === false && error_p_phone === false && 
 
 
 
-setTimeout("window.location.reload(true);", 3000)
+//setTimeout("window.location.reload(true);", 3000)
 
 } // end init function
 </script>
