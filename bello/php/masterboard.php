@@ -29,11 +29,12 @@ if ($conn->connect_error){
 
 
 $kind = "KINDERGARTEN";
-$cre = "CRECHE";
+//CRECHE NOW GOES WITH THE NAME PRE NURSERY
+$cre = "PRE NURSERY";
 
 $nur1 = "NURSERY ONE";
 $nur2 = "NURSERY TWO";
-$nur3 = "NURSERY THREE";
+$nur3 = "TRANSCENSION";
 
 $bas1 = "BASIC ONE";
 $bas2 = "BASIC TWO";
@@ -387,7 +388,7 @@ if ($sql_kind1 == True &&
 		$sql1 = "UPDATE termly_fees SET amount = '$obj->cre_fterm' WHERE  year = '$obj->year_selected' AND term = '$fterm' AND class = '$cre'";
 		$result = $conn->query($sql1);
 
-		echo "CRECHE first term amount updated \n" ;
+		echo "PRE NURSERY first term amount updated \n" ;
 		//echo $row1;
 		};
 	}else{
@@ -396,7 +397,7 @@ if ($sql_kind1 == True &&
 
 		$result = $conn->query($sql1);
 		//echo $result;
-		echo "CRECHE first term fees inserted. \n";
+		echo "PRE NURSERY first term fees inserted. \n";
 	};
 	
 	if($row_cre2 != ''){
@@ -406,7 +407,7 @@ if ($sql_kind1 == True &&
 		$sql1 = "UPDATE termly_fees SET amount = '$obj->cre_sterm' WHERE  year = '$obj->year_selected' AND term = '$sterm' AND class = '$cre'";
 		$result = $conn->query($sql1);
 
-		echo "CRECHE second term amount updated \n" ;
+		echo "PRE NURSERY second term amount updated \n" ;
 		//echo $row1;
 		};
 	}else{
@@ -415,7 +416,7 @@ if ($sql_kind1 == True &&
 
 		$result = $conn->query($sql1);
 		//echo $result;
-		echo "CRECHE second term fees inserted. \n";
+		echo "PRE NURSERY second term fees inserted. \n";
 	};
 	
 	if($row_cre3 != ''){
@@ -425,7 +426,7 @@ if ($sql_kind1 == True &&
 		$sql1 = "UPDATE termly_fees SET amount = '$obj->cre_tterm' WHERE  year = '$obj->year_selected' AND term = '$tterm' AND class = '$cre'";
 		$result = $conn->query($sql1);
 
-		echo "CRECHE third term amount updated \n" ;
+		echo "PRE NURSERY third term amount updated \n" ;
 		//echo $row1;
 		};
 	}else{
@@ -434,7 +435,7 @@ if ($sql_kind1 == True &&
 
 		$result = $conn->query($sql1);
 		//echo $result;
-		echo "CRECHE third term fees inserted. \n";
+		echo "PRE NURSERY third term fees inserted. \n";
 	};
 	
 
@@ -564,7 +565,7 @@ if ($sql_kind1 == True &&
 		$sql1 = "UPDATE termly_fees SET amount = '$obj->nur3_fterm' WHERE  year = '$obj->year_selected' AND term = '$fterm' AND class = '$nur3'";
 		$result = $conn->query($sql1);
 
-		echo "NURSERY THREE first term amount updated \n" ;
+		echo "TRANSCENSION first term amount updated \n" ;
 		//echo $row1;
 		};
 	}else{
@@ -573,7 +574,7 @@ if ($sql_kind1 == True &&
 
 		$result = $conn->query($sql1);
 		//echo $result;
-		echo "NURSERY THREE first term fees inserted. \n";
+		echo "TRANSCENSION first term fees inserted. \n";
 	};
 
 	if($row_nur32 != ''){
@@ -583,7 +584,7 @@ if ($sql_kind1 == True &&
 		$sql1 = "UPDATE termly_fees SET amount = '$obj->nur3_sterm' WHERE  year = '$obj->year_selected' AND term = '$sterm' AND class = '$nur3'";
 		$result = $conn->query($sql1);
 
-		echo "NURSERY THREE second term amount updated \n" ;
+		echo "TRANSCENSION second term amount updated \n" ;
 		//echo $row1;
 		};
 	}else{
@@ -592,7 +593,7 @@ if ($sql_kind1 == True &&
 
 		$result = $conn->query($sql1);
 		//echo $result;
-		echo "NURSERY THREE second term fees inserted. \n";
+		echo "TRANSCENSION second term fees inserted. \n";
 	};
 
 	if($row_nur33 != ''){
@@ -602,7 +603,7 @@ if ($sql_kind1 == True &&
 		$sql1 = "UPDATE termly_fees SET amount = '$obj->nur3_tterm' WHERE  year = '$obj->year_selected' AND term = '$tterm' AND class = '$nur3'";
 		$result = $conn->query($sql1);
 
-		echo "NURSERY THREE third term amount updated \n" ;
+		echo "TRANSCENSION third term amount updated \n" ;
 		//echo $row1;
 		};
 	}else{
@@ -611,7 +612,7 @@ if ($sql_kind1 == True &&
 
 		$result = $conn->query($sql1);
 		//echo $result;
-		echo "NURSERY THREE third term fees inserted. \n";
+		echo "TRANSCENSION third term fees inserted. \n";
 	};
 
 

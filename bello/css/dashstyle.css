@@ -2,7 +2,8 @@
 
 .nav{
 	display:flex;
-	background-color: rgba(227,227,227,1);
+	font-family: sans-serif;
+	background-color: rgba(50,50,227,1);
 }
 
 .year{
@@ -25,6 +26,15 @@
 	top: 25px;
 }
 
+.dashout {
+	color: rgba(227,0,0, 1);
+	text-decoration: none;
+
+}
+.dashout:hover {
+	color: black;
+	text-decoration: none;
+}
 
 .sidebar {
 	background-color: rgba(227,227,227, 1);
@@ -41,6 +51,7 @@
 .side {
 	text-align: center;
 	margin:50px 30px 100px 20px;
+	
 }
 
 /*
@@ -62,7 +73,7 @@ end of masterboard ccs styling
 	background-color: #e3e3e3;
 	width: 74%;
 	height: 130px;
-	box-shadow: 5px 5px 10px 10px;
+	box-shadow: 5px 5px 15px 0px;
 	border-radius: 5px;
 	
 	position: relative;
@@ -72,7 +83,7 @@ end of masterboard ccs styling
 
 .info {
 	display: inline;
-	background-color: blue;
+	background-color: rgba(100,100,225,0.8);
 	margin: 50px;
 	padding: 10px;
 	width: 50px;

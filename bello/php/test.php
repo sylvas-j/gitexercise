@@ -86,7 +86,9 @@ $sql = "INSERT INTO images (images, imagename) VALUES ('$imagetmp', 'imagename')
 	}
 </style>
 
-
+<script type="text/javascript">
+	console.log("this is okkkkkkkkkkkkkkkkkkkkkk");
+</script>
 
 </head>
 

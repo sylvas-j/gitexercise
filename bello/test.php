@@ -60,7 +60,7 @@
 
 	var class_v = $("#students_list").val();
 
-	alert(class_v);
+	//alert(class_v);
 
 	//var class_v = 1;
 //var one = 11111;
@@ -231,10 +231,10 @@ var two = 2;
 
 //if($class_vp == 'JS1' || $class_vp == 'JS2' || $class_vp == 'JS3' || $class_vp == 'SS1' || $class_vp == 'SS2' || $class_vp == 'SS3'){
 if($_POST["class_listphp"] == "KINDERGARTEN" || 
-  $_POST["class_listphp"] == "CRECHE" || 
+  $_POST["class_listphp"] == "PRE NURSERY" || 
   $_POST["class_listphp"] == "NURSERY ONE" || 
   $_POST["class_listphp"] == "NURSERY TWO" || 
-  $_POST["class_listphp"] == "NURSERY THREE" ||
+  $_POST["class_listphp"] == "TRANSCENSION" ||
   $_POST["class_listphp"] == "BASIC ONE" || 
   $_POST["class_listphp"] == "BASIC TWO" || 
   $_POST["class_listphp"] == "BASIC THREE" || 
@@ -283,10 +283,10 @@ if($_POST["class_listphp"] == "KINDERGARTEN" ||
 <?php
 	//if($class_vp == 'JS1' || $class_vp == 'JS2' || $class_vp == 'JS3' || $class_vp == 'SS1' || $class_vp == 'SS2' || $class_vp == 'SS3'){
 if($_POST["class_listphp"] == "KINDERGARTEN" || 
-  $_POST["class_listphp"] == "CRECHE" || 
+  $_POST["class_listphp"] == "PRE NURSERY" || 
   $_POST["class_listphp"] == "NURSERY ONE" || 
   $_POST["class_listphp"] == "NURSERY TWO" || 
-  $_POST["class_listphp"] == "NURSERY THREE" ||
+  $_POST["class_listphp"] == "TRANSCENSION" ||
   $_POST["class_listphp"] == "BASIC ONE" || 
   $_POST["class_listphp"] == "BASIC TWO" || 
   $_POST["class_listphp"] == "BASIC THREE" || 
@@ -337,12 +337,13 @@ if($_POST["class_listphp"] == "KINDERGARTEN" ||
 
                 <select class="list class_list" id="class_list" name="class_listphp">
                 	<option value="">Classes</option>
-
+<!--
       <option value="KINDERGARTEN">KINDERGARTEN</option>
-      <option value="CCRECHE">CRECHE</option>
+-->
+      <option value="PRE NURSERY">PRE NURSERY</option>
       <option value="NURSERY ONE">NURSERY ONE</option>
       <option value="NURSERY TWO">NURSERY TWO</option>
-      <option value="NURSERY THREE">NURSERY THREE</option>
+      <option value="TRANSCENSION">TRANSCENSION</option>
       <option value="BASIC ONE">BASIC ONE</option>
       <option value="BASIC TWO">BASIC TWO</option>
       <option value="BASIC THREE">BASIC THREE</option>
