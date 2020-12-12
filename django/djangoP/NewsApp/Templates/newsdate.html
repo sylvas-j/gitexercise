@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}
+	Newsdate
+{% endblock %}
+
+{% block body %}
+
+
+<h1>Thiss is our latest newsdate page</h1>
+	<p>This is our latest filter newa description</p>
+
+<h1>News for year {{year}}</h1>
+
+{% for news in article_list %}
+	<h2>{{news.author}}</h2>
+	<h1>{{news.title}}</h1>
+	<p>{{news.description}}</p>
+	<h4>{{news.pub_date}}</h4>
+{% endfor %}
+
+{% endblock %}
